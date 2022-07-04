@@ -206,7 +206,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/04/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Hexo | 初体验之建立博客</a>
+          <a href="/2022/07/04/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Hexo | 初体验之建立个人博客</a>
         </h2>
 
         <div class="post-meta-container">
@@ -218,7 +218,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-04 22:34:47 / Modified: 22:46:18" itemprop="dateCreated datePublished" datetime="2022-07-04T22:34:47+08:00">2022-07-04</time>
+      <time title="Created: 2022-07-04 22:54:37 / Modified: 23:05:43" itemprop="dateCreated datePublished" datetime="2022-07-04T22:54:37+08:00">2022-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,7 +237,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.1k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -263,8 +263,11 @@
 </ul>
 <h3 id="Hexo-Command"><a href="#Hexo-Command" class="headerlink" title="Hexo Command"></a>Hexo Command</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span>  <span class="comment">#安装Hexo</span></span><br><span class="line">npm update hexo <span class="literal">-g</span> <span class="comment">#升级</span></span><br><span class="line">hexo init <span class="comment">#初始化博客</span></span><br><span class="line"></span><br><span class="line">hexo n <span class="string">&#x27;我的文章&#x27;</span> == hexo new <span class="string">&#x27;我的文章&#x27;</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo g == hexo gengerate <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server <span class="comment">#启动</span></span><br><span class="line">hexo d == hexo deploy <span class="comment">#部署</span></span><br><span class="line"></span><br><span class="line">hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">hexo server <span class="literal">-s</span> <span class="comment">#静态模式</span></span><br><span class="line">hexo server <span class="literal">-p</span> <span class="number">5000</span> <span class="comment">#更改端口</span></span><br><span class="line">hexo server <span class="literal">-i</span> <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义IP</span></span><br><span class="line">hexo clean <span class="comment">#清除缓存，若是网页正常情况可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E8%AF%B4%E6%98%8E1.png" alt="avatar"></p>
-<h3 id="关联Hexo和Github-blog-x2F-config-yml"><a href="#关联Hexo和Github-blog-x2F-config-yml" class="headerlink" title="关联Hexo和Github_blog&#x2F;_config.yml"></a>关联Hexo和Github_blog&#x2F;_config.yml</h3><p>如下修改：<br><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E9%85%8D%E7%BD%AE1.png" alt="avatar"></p>
+<h2 id="新建post"><a href="#新建post" class="headerlink" title="新建post"></a>新建post</h2><p>按如下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new (post name)</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%B4%E6%98%8E1.png" alt="avatar"></p>
+<h3 id="关联Hexo和Github-blog-x2F-config-yml"><a href="#关联Hexo和Github-blog-x2F-config-yml" class="headerlink" title="关联Hexo和Github_blog&#x2F;_config.yml"></a>关联Hexo和Github_blog&#x2F;_config.yml</h3><p>如下修改：<br><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%85%8D%E7%BD%AE1.png" alt="avatar"></p>
 <h3 id="保存站点配置文件"><a href="#保存站点配置文件" class="headerlink" title="保存站点配置文件"></a>保存站点配置文件</h3><p>意思是给hexo deploy这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，显然，要部署在github仓库中</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
 
@@ -280,21 +283,21 @@
 
 <p>可以看到theme文件夹里面已经有next文件夹了</p>
 <h3 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h3><p>打开site的配置文件（blog&#x2F;_config.yml）,把theme改为next</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E9%85%8D%E7%BD%AE2.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%85%8D%E7%BD%AE2.png" alt="avatar"></p>
 <p>NexT主题有四个样式可以选择配置：（next&#x2F;_config.yml）</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E9%85%8D%E7%BD%AE3.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%85%8D%E7%BD%AE3.png" alt="avatar"></p>
 <h4 id="本地查看"><a href="#本地查看" class="headerlink" title="本地查看"></a>本地查看</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
 <h4 id="远程配置"><a href="#远程配置" class="headerlink" title="远程配置"></a>远程配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>文章主要用markdown编写，放置在&#x2F;blog&#x2F;source&#x2F;_posts文件夹下</p>
 <h3 id="预览文章"><a href="#预览文章" class="headerlink" title="预览文章"></a>预览文章</h3><p>自带Markdown编辑器或者本地hexo预览</p>
-<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><h3 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h3><p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E4%B8%AA%E6%80%A7%E5%8C%961.png" alt="avatar"></p>
+<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><h3 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h3><p><strong><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%AA%E6%80%A7%E5%8C%961.png" alt="avatar"></strong></p>
 <p>标题、副标题、描述、关键词、语言、时区</p>
 <h3 id="主题配置-1"><a href="#主题配置-1" class="headerlink" title="主题配置"></a>主题配置</h3><p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/">https://theme-next.js.org/docs/theme-settings/</a></p>
-<h4 id="设置社交账号"><a href="#设置社交账号" class="headerlink" title="设置社交账号"></a>设置社交账号</h4><p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E4%B8%AA%E6%80%A7%E5%8C%962.png" alt="avatar"></p>
+<h4 id="设置社交账号"><a href="#设置社交账号" class="headerlink" title="设置社交账号"></a>设置社交账号</h4><p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%AA%E6%80%A7%E5%8C%962.png" alt="avatar"></p>
 <h4 id="侧边栏配置"><a href="#侧边栏配置" class="headerlink" title="侧边栏配置"></a>侧边栏配置</h4><p>把想要的开启即可</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E4%BE%A7%E8%BE%B9%E6%A0%8F1.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%BE%A7%E8%BE%B9%E6%A0%8F1.png" alt="avatar"></p>
 <p>文档中有提及：除了Home和archives，其他的页面都需要自己配置，配置流程看</p>
 <ul>
 <li>Step1：Adding new pages</li>
@@ -311,13 +314,13 @@
 </ul>
 <h2 id="踩坑-amp-amp-问题记录"><a href="#踩坑-amp-amp-问题记录" class="headerlink" title="踩坑&amp;&amp;问题记录"></a>踩坑&amp;&amp;问题记录</h2><h3 id="1-github-和-hexo关联没有关联上"><a href="#1-github-和-hexo关联没有关联上" class="headerlink" title="1. github 和 hexo关联没有关联上"></a>1. github 和 hexo关联没有关联上</h3><ul>
 <li><p>原因1：注意仓库大小写问题</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E8%B8%A9%E5%9D%911_1.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%B8%A9%E5%9D%911_1.png" alt="avatar"></p>
 </li>
 <li><p>原因2：配置url</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E8%B8%A9%E5%9D%911_3.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%B8%A9%E5%9D%911_3.png" alt="avatar"></p>
 <p>注意这里一定要根据你的仓库来，因为我是直接配置在仓库里的，而我之前手贱错吧SuperKatrina_Blog当成了project name，所以后面样式失效了，控制台查看原因后发现是路径的问题</p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E8%B8%A9%E5%9D%911_2.png" alt="avatar"></p>
-<p><img src="/png/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C/%E8%B8%A9%E5%9D%911_4.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%B8%A9%E5%9D%911_2.png" alt="avatar"></p>
+<p><img src="/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%B8%A9%E5%9D%911_4.png" alt="avatar"></p>
 </li>
 </ul>
 <h3 id="2-配置主题后本地生效-但是-站点一直没生效"><a href="#2-配置主题后本地生效-但是-站点一直没生效" class="headerlink" title="2. 配置主题后本地生效 但是 站点一直没生效"></a>2. 配置主题后本地生效 但是 站点一直没生效</h3><ul>
