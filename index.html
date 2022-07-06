@@ -253,7 +253,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-06 16:28:40 / Modified: 17:39:12" itemprop="dateCreated datePublished" datetime="2022-07-06T16:28:40+08:00">2022-07-06</time>
+      <time title="Created: 2022-07-06 16:28:40 / Modified: 17:43:42" itemprop="dateCreated datePublished" datetime="2022-07-06T16:28:40+08:00">2022-07-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -310,8 +310,8 @@
 
 
 
-<h3><span id="知识补充">知识补充</span></h3><p>手写Object.create</p>
-<p>手写new</p>
+<h3><span id="知识补充">知识补充</span></h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
 
       
     </div>
@@ -368,7 +368,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-06 16:28:33 / Modified: 17:24:42" itemprop="dateCreated datePublished" datetime="2022-07-06T16:28:33+08:00">2022-07-06</time>
+      <time title="Created: 2022-07-06 16:28:33 / Modified: 17:44:25" itemprop="dateCreated datePublished" datetime="2022-07-06T16:28:33+08:00">2022-07-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -433,8 +433,8 @@
 <p><strong>测试</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);   <span class="comment">// &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person <span class="keyword">instanceof</span> <span class="title class_">Person</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h3><span id="知识补充">知识补充</span></h3><p><a href>手写instanceof</a></p>
-<p><a href>手写Object.create</a></p>
+<h3><span id="知识补充">知识补充</span></h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
 
       
     </div>
@@ -491,7 +491,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-06 16:27:42 / Modified: 17:40:17" itemprop="dateCreated datePublished" datetime="2022-07-06T16:27:42+08:00">2022-07-06</time>
+      <time title="Created: 2022-07-06 16:27:42 / Modified: 17:44:12" itemprop="dateCreated datePublished" datetime="2022-07-06T16:27:42+08:00">2022-07-06</time>
     </span>
 
   
@@ -536,8 +536,8 @@
 <p><strong>测试：</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h2><span id="知识补充">知识补充</span></h2><p><a href>手写new</a></p>
-<p><a href>手写instanceof</a></p>
+<h2><span id="知识补充">知识补充</span></h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
 
       
     </div>
