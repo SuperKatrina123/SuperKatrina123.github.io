@@ -20,32 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="回顾 每一个函数都是Function类型的实例，Function有属性和方法  函数是对象，函数名就是指向函数对象的指针  所有函数对象都会暴露一个只读的name属性，其中包含关于函数的信息  情况一：正常情况 &#x3D;&gt; 标识符，或者字符串化的变量名 情况二：函数没有名称 &#x3D;&gt; 空字符串 情况三：构造函数创建 &#x3D;&gt; anonymous 情况四：如果函数是">
+    <meta name="description" content="MDN instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上  语法 1object instancof constructor  参数 object：某个实例对象 constructor：某个构造函数 返回值 布尔值 手写实现实现思路：根据原型链的思想，判断实例对象的__proto__是否指向构造函数的原型，一级一级向上判断，直至null 注意：ins">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数 | 深刻理解函数名是指向函数的指针">
-<meta property="og:url" content="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/index.html">
+<meta property="og:title" content="手写原理_instanceof">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/index.html">
 <meta property="og:site_name" content="小迟在努力">
-<meta property="og:description" content="回顾 每一个函数都是Function类型的实例，Function有属性和方法  函数是对象，函数名就是指向函数对象的指针  所有函数对象都会暴露一个只读的name属性，其中包含关于函数的信息  情况一：正常情况 &#x3D;&gt; 标识符，或者字符串化的变量名 情况二：函数没有名称 &#x3D;&gt; 空字符串 情况三：构造函数创建 &#x3D;&gt; anonymous 情况四：如果函数是">
+<meta property="og:description" content="MDN instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上  语法 1object instancof constructor  参数 object：某个实例对象 constructor：某个构造函数 返回值 布尔值 手写实现实现思路：根据原型链的思想，判断实例对象的__proto__是否指向构造函数的原型，一级一级向上判断，直至null 注意：ins">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/%E6%8C%87%E9%92%881.png">
-<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/%E6%8C%87%E9%92%882.png">
-<meta property="article:published_time" content="2022-07-05T07:53:03.000Z">
-<meta property="article:modified_time" content="2022-07-05T08:32:53.622Z">
+<meta property="article:published_time" content="2022-07-06T08:28:40.000Z">
+<meta property="article:modified_time" content="2022-07-06T09:39:12.152Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="JavaScript函数">
+<meta property="article:tag" content="手写原理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/%E6%8C%87%E9%92%881.png">
 
 
-<link rel="canonical" href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/">
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/","path":"2022/07/05/JavaScript/函数-深刻理解函数名是指向函数的指针/","title":"函数 | 深刻理解函数名是指向函数的指针"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/","path":"2022/07/06/手写原理/手写原理_instanceof/","title":"手写原理_instanceof"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>函数 | 深刻理解函数名是指向函数的指针 | 小迟在努力</title>
+<title>手写原理_instanceof | 小迟在努力</title>
   
 
 
@@ -153,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">函数名是函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">没有重载</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">MDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">手写实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">知识补充</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -179,7 +176,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -232,7 +229,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -245,12 +242,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="函数 | 深刻理解函数名是指向函数的指针 | 小迟在努力">
+      <meta itemprop="name" content="手写原理_instanceof | 小迟在努力">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          函数 | 深刻理解函数名是指向函数的指针
+          手写原理_instanceof
         </h1>
 
         <div class="post-meta-container">
@@ -262,7 +259,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-05 15:53:03 / Modified: 16:32:53" itemprop="dateCreated datePublished" datetime="2022-07-05T15:53:03+08:00">2022-07-05</time>
+      <time title="Created: 2022-07-06 16:28:40 / Modified: 17:39:12" itemprop="dateCreated datePublished" datetime="2022-07-06T16:28:40+08:00">2022-07-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -270,7 +267,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
     </span>
 
@@ -281,7 +278,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.2k</span>
+      <span>774</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -299,41 +296,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2><span id="回顾">回顾</span></h2><ul>
-<li><p>每一个函数都是Function类型的实例，Function有属性和方法</p>
-</li>
-<li><p>函数是对象，函数名就是指向函数对象的指针</p>
-</li>
-<li><p>所有函数对象都会暴露一个只读的name属性，其中包含关于函数的信息</p>
-<ul>
-<li>情况一：正常情况 &#x3D;&gt; 标识符，或者字符串化的变量名</li>
-<li>情况二：函数没有名称 &#x3D;&gt; 空字符串</li>
-<li>情况三：构造函数创建 &#x3D;&gt; anonymous</li>
-<li>情况四：如果函数是set get 函数或者使用bind实例化 &#x3D;&gt; 前缀 + 函数名</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> bar = <span class="keyword">function</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> <span class="title function_">baz</span> = (<span class="params"></span>) =&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo.<span class="property">name</span>);                 <span class="comment">// foo</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(bar.<span class="property">name</span>);                 <span class="comment">// bar</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(baz.<span class="property">name</span>);                 <span class="comment">// baz</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="function">() =&gt;</span> &#123;&#125;).<span class="property">name</span>);          <span class="comment">// (空字符串)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="keyword">new</span> <span class="title class_">Function</span>()).<span class="property">name</span>);    <span class="comment">// anonymous</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo.<span class="title function_">bind</span>(<span class="literal">null</span>).<span class="property">name</span>);      <span class="comment">// bind foo</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2><span id="函数名是函数指针">函数名是函数指针</span></h2><blockquote>
-<p>注意：使用不带括号的函数名会访问函数指针，而不会执行函数</p>
+        <h3><span id="mdn">MDN</span></h3><blockquote>
+<p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> anotherSum = sum;   <span class="comment">// #1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">anotherSum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">//  20</span></span><br><span class="line"></span><br><span class="line">sum = <span class="literal">null</span>;  <span class="comment">// #2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">anotherSum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">//  20</span></span><br></pre></td></tr></table></figure>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">object instancof constructor</span><br></pre></td></tr></table></figure>
 
-<p>以上过程可抽象为下图：</p>
-<img src="/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/%E6%8C%87%E9%92%881.png" class title="指针1">
+<p><strong>参数</strong></p>
+<p><code>object</code>：某个实例对象</p>
+<p><code>constructor</code>：某个构造函数</p>
+<p><strong>返回值</strong></p>
+<p>布尔值</p>
+<h3><span id="手写实现">手写实现</span></h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
+<p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>Step1：将sum赋值给anotherSum的时候其实是相当于把指针赋值给anotherSum，于是anotherSum也指向求和函数</p>
-<p>Step2：将sum的指针指向null，这并没有改变anotherSum的指针指向，所以并不会影响anotherSum执行</p>
-<h2><span id="没有重载">没有重载</span></h2><blockquote>
-<p>重载函数：允许在同一范围中声明几个功能类似的同名函数，但是同名函数的签名不同，比如形参类型不同，数量不同等。</p>
-</blockquote>
-<p><strong>如果在JS中定义两个同名函数会发生什么情况？</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num += <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num+=<span class="number">200</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">100</span>)); <span class="comment">// 300</span></span><br></pre></td></tr></table></figure>
+<p><strong>测试</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;KK&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Person</span>));   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Object</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<p>从打印结果来看，前一个add被后一个add给覆盖了</p>
-<p>其实理解了”函数名是函数指针“之后，很容易能够抽象出下图：</p>
-<img src="/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0-%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/%E6%8C%87%E9%92%882.png" class title="指针2">
 
-<p>当然，函数表达式也是一样的情况，这里不再赘述。</p>
+
+<h3><span id="知识补充">知识补充</span></h3><p>手写Object.create</p>
+<p>手写new</p>
 
     </div>
 
@@ -344,21 +328,18 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
-              <a href="/tags/JavaScript%E5%87%BD%E6%95%B0/" rel="tag"><i class="fa fa-tag"></i> JavaScript函数</a>
+              <a href="/tags/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 手写原理</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="函数 | 函数声明与函数表达式">
-                  <i class="fa fa-chevron-left"></i> 函数 | 函数声明与函数表达式
+                <a href="/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/" rel="prev" title="手写原理 | new操作符">
+                  <i class="fa fa-chevron-left"></i> 手写原理 | new操作符
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/05/JavaScript/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5_for-in&&for-of%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="循环语句 | for-in&&for-of的区别">
-                  循环语句 | for-in&&for-of的区别 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -390,13 +371,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">13k</span>
+    <span title="Symbols count total">19k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">12 mins.</span>
+    <span title="Reading time total">18 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
