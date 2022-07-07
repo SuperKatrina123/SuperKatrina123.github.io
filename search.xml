@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>数据类型_集合引用类型</title>
-    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E9%9B%86%E5%90%88%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>数据类型_原始值包装类型</title>
-    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E5%80%BC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>深浅拷贝</title>
-    <url>/2022/07/07/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Hexo | next主题添加搜索功能</title>
     <url>/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p>随着posts增多，考虑增加一个搜索功能（起初是因为看了NexT主题官方有个搜索功能觉得很酷），于是乎有了想法就立马行动起来！</p>
@@ -213,113 +198,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>JavaScript函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | Object.create</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/</url>
-    <content><![CDATA[<h3 id="mdn-文档"><a href="#MDN-文档" class="headerlink" title="MDN 文档"></a>MDN 文档</h3><blockquote>
-<p>Object.create()方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型。</p>
-</blockquote>
-<p><strong>语法如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.create(proto);</span><br><span class="line">Object.create(proto, propertiesObject);</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数说明：</strong></p>
-<p><code>proto</code>：新建对象的原型对象</p>
-<p><code>propertiesObject</code>（可选）：传入对象的可枚举属性将为新创建的对象添加指定的属性值和对应的属性描述符，这些属性对应于<code>Object.defineProperties()</code>的第二个参数</p>
-<p><strong>返回值：</strong></p>
-<p>一个新对象，带着指定的原型对象及其属性</p>
-<h3 id="手写objectcreate"><a href="#手写Object-create" class="headerlink" title="手写Object.create()"></a>手写Object.create()</h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCreate</span> = <span class="keyword">function</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">   	<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span> = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | new操作符</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/</url>
-    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
-<p>new运算符创建一个用户定义的对象类型的实例或者具有构造函数的内置对象的实例</p>
-</blockquote>
-<p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> constructor[([<span class="variable language_">arguments</span>])]</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<p><code>constructor</code>：一个指定对象实例的类型的类或函数</p>
-<p><code>arguments</code>：一个用于被<code>constructor</code>调用的参数列表</p>
-<h3 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h3><p><strong>new关键字会进行如下操作</strong></p>
-<ol>
-<li>创建一个空对象</li>
-<li>为空对象添加<code>__proto__</code>，指向构造函数的<code>prototype</code>对象</li>
-<li>将新对象作为<code>this</code>的上下文</li>
-<li>如果该函数没有返回对象，则返回<code>this</code></li>
-</ol>
-<p><strong>对于返回值的说明</strong></p>
-<ul>
-<li>如果构造函数有返回值且是对象，则返回这个对象</li>
-<li>如果构造函数有返回值且不是对象，则返回创建的空对象</li>
-<li>如果构造函数没有返回值，返回创建的空对象</li>
-</ul>
-<p><strong>手写new</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myNew</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> newObj = &#123;&#125;;</span><br><span class="line">	<span class="keyword">let</span> constr = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">shift</span>.<span class="title function_">call</span>([...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">let</span> proto = constr.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    newObj = <span class="title class_">Object</span>.<span class="title function_">create</span>(proto);</span><br><span class="line">    <span class="keyword">let</span> res = constr.<span class="title function_">apply</span>(newObj, [...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> res === <span class="string">&#x27;object&#x27;</span> ? res : newObj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);   <span class="comment">// &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person <span class="keyword">instanceof</span> <span class="title class_">Person</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | instanceof</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/</url>
-    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
-<p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
-</blockquote>
-<p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">object instancof constructor</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<p><code>object</code>：某个实例对象</p>
-<p><code>constructor</code>：某个构造函数</p>
-<p><strong>返回值</strong></p>
-<p>布尔值</p>
-<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
-<p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;KK&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Person</span>));   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Object</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
       </tags>
   </entry>
   <entry>
@@ -670,40 +548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>字符串 | String_API（含手写原理）</title>
-    <url>/2022/07/06/JavaScript/%E5%AD%97%E7%AC%A6%E4%B8%B2_String_API/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaScript</category>
-        <category>手写原理</category>
-        <category>和我一起做总结</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
-        <tag>和我一起做总结</tag>
-        <tag>JavaScript字符串</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>循环语句 | for-in&amp;&amp;for-of的区别</title>
-    <url>/2022/07/05/JavaScript/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5_for-in&amp;&amp;for-of%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="forof"><a href="#for…of" class="headerlink" title="for…of.."></a>for…of..</h2><p>for…of用于遍历可迭代对象的元素，在可迭代对象上创建一个迭代循环，调用自定义迭代钩子的next()方法来遍历元素，是有序遍历</p>
-<h2 id="forin"><a href="#for…in" class="headerlink" title="for…in.."></a>for…in..</h2><p>for…in用于枚举对象中的属性（包括原型链上的可枚举属性），是无序遍历</p>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key);   <span class="comment">// name age gender</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据打印结果可以看到 for...in枚举原型链上的属性，那么如何改进呢？使用hasOwnProperty</span></span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (o.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(key)   <span class="comment">// name age</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-        <category>常见方法对比</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>常见方法对比</tag>
-        <tag>JavaScript语句</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对象 | 对象属性的类型</title>
     <url>/2022/07/06/JavaScript/%E5%AF%B9%E8%B1%A1_%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%9A%84%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<blockquote>
@@ -778,6 +622,24 @@
         <tag>JavaScript</tag>
         <tag>和我一起读红宝书</tag>
         <tag>JavaScript对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>循环语句 | for-in&amp;&amp;for-of的区别</title>
+    <url>/2022/07/05/JavaScript/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5_for-in&amp;&amp;for-of%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="forof"><a href="#for…of" class="headerlink" title="for…of.."></a>for…of..</h2><p>for…of用于遍历可迭代对象的元素，在可迭代对象上创建一个迭代循环，调用自定义迭代钩子的next()方法来遍历元素，是有序遍历</p>
+<h2 id="forin"><a href="#for…in" class="headerlink" title="for…in.."></a>for…in..</h2><p>for…in用于枚举对象中的属性（包括原型链上的可枚举属性），是无序遍历</p>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key);   <span class="comment">// name age gender</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据打印结果可以看到 for...in枚举原型链上的属性，那么如何改进呢？使用hasOwnProperty</span></span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (o.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(key)   <span class="comment">// name age</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>常见方法对比</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>常见方法对比</tag>
+        <tag>JavaScript语句</tag>
       </tags>
   </entry>
   <entry>
@@ -1122,18 +984,18 @@
 ]]></content>
       <categories>
         <category>JavaScript</category>
-        <category>手写原理</category>
         <category>和我一起读红宝书</category>
         <category>和我一起做总结</category>
+        <category>手写原理</category>
         <category>ES6</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>手写原理</tag>
         <tag>ES6</tag>
         <tag>和我一起读红宝书</tag>
         <tag>和我一起做总结</tag>
         <tag>JavaScript数组</tag>
+        <tag>手写原理</tag>
       </tags>
   </entry>
   <entry>
@@ -1163,11 +1025,6 @@
         <tag>常见方法对比</tag>
         <tag>JavaScript数组</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>强大的reduce</title>
-    <url>/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E5%BC%BA%E5%A4%A7%E7%9A%84reduce/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>数组 | 数组空位和undefined</title>
@@ -1219,6 +1076,113 @@
         <tag>JavaScript</tag>
         <tag>常见方法对比</tag>
         <tag>JavaScript数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写原理 | Object.create</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/</url>
+    <content><![CDATA[<h3 id="mdn-文档"><a href="#MDN-文档" class="headerlink" title="MDN 文档"></a>MDN 文档</h3><blockquote>
+<p>Object.create()方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型。</p>
+</blockquote>
+<p><strong>语法如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.create(proto);</span><br><span class="line">Object.create(proto, propertiesObject);</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明：</strong></p>
+<p><code>proto</code>：新建对象的原型对象</p>
+<p><code>propertiesObject</code>（可选）：传入对象的可枚举属性将为新创建的对象添加指定的属性值和对应的属性描述符，这些属性对应于<code>Object.defineProperties()</code>的第二个参数</p>
+<p><strong>返回值：</strong></p>
+<p>一个新对象，带着指定的原型对象及其属性</p>
+<h3 id="手写objectcreate"><a href="#手写Object-create" class="headerlink" title="手写Object.create()"></a>手写Object.create()</h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCreate</span> = <span class="keyword">function</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">   	<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span> = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
+]]></content>
+      <categories>
+        <category>手写原理</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>手写原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写原理 | instanceof</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/</url>
+    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
+<p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
+</blockquote>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">object instancof constructor</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<p><code>object</code>：某个实例对象</p>
+<p><code>constructor</code>：某个构造函数</p>
+<p><strong>返回值</strong></p>
+<p>布尔值</p>
+<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
+<p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;KK&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Person</span>));   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Object</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
+]]></content>
+      <categories>
+        <category>手写原理</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>手写原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写原理 | new操作符</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/</url>
+    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
+<p>new运算符创建一个用户定义的对象类型的实例或者具有构造函数的内置对象的实例</p>
+</blockquote>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> constructor[([<span class="variable language_">arguments</span>])]</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<p><code>constructor</code>：一个指定对象实例的类型的类或函数</p>
+<p><code>arguments</code>：一个用于被<code>constructor</code>调用的参数列表</p>
+<h3 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h3><p><strong>new关键字会进行如下操作</strong></p>
+<ol>
+<li>创建一个空对象</li>
+<li>为空对象添加<code>__proto__</code>，指向构造函数的<code>prototype</code>对象</li>
+<li>将新对象作为<code>this</code>的上下文</li>
+<li>如果该函数没有返回对象，则返回<code>this</code></li>
+</ol>
+<p><strong>对于返回值的说明</strong></p>
+<ul>
+<li>如果构造函数有返回值且是对象，则返回这个对象</li>
+<li>如果构造函数有返回值且不是对象，则返回创建的空对象</li>
+<li>如果构造函数没有返回值，返回创建的空对象</li>
+</ul>
+<p><strong>手写new</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myNew</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> newObj = &#123;&#125;;</span><br><span class="line">	<span class="keyword">let</span> constr = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">shift</span>.<span class="title function_">call</span>([...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">let</span> proto = constr.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    newObj = <span class="title class_">Object</span>.<span class="title function_">create</span>(proto);</span><br><span class="line">    <span class="keyword">let</span> res = constr.<span class="title function_">apply</span>(newObj, [...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> res === <span class="string">&#x27;object&#x27;</span> ? res : newObj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);   <span class="comment">// &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person <span class="keyword">instanceof</span> <span class="title class_">Person</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+]]></content>
+      <categories>
+        <category>手写原理</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>手写原理</tag>
       </tags>
   </entry>
   <entry>
