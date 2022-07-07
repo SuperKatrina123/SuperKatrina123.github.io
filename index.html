@@ -849,11 +849,11 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
         </span>
     </span>
 
@@ -944,7 +944,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-07 17:04:00" itemprop="dateModified" datetime="2022-07-07T17:04:00+08:00">2022-07-07</time>
+      <time title="Modified: 2022-07-07 18:01:47" itemprop="dateModified" datetime="2022-07-07T18:01:47+08:00">2022-07-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -956,7 +956,7 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -964,11 +964,11 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ES6/" itemprop="url" rel="index"><span itemprop="name">ES6</span></a>
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+          <a href="/categories/ES6/" itemprop="url" rel="index"><span itemprop="name">ES6</span></a>
         </span>
     </span>
 
@@ -1000,7 +1000,7 @@
           <h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><h4 id="1new-array-es5"><a href="#（1）new-Array-【ES5】" class="headerlink" title="（1）new Array()        【ES5】"></a>（1）new Array()        【ES5】</h4><p>创建数组可以通过<code>Array</code>构造函数的方式构造数组 （new 操作符可以省略）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);  <span class="comment">// [&#x27;red&#x27;, &#x27;green&#x27;, &#x27;yellow&#x27;]</span></span><br></pre></td></tr></table></figure>
 
-<p>特殊：当传入一个数值的时候，会创建一个指定数组的数组，用逗号创建的数组空位，值为<code>undefined</code>（关于数组空位，发现一些好玩的，请看这篇<a href="%E5%8D%A0%E4%BD%8D">博文</a>）</p>
+<p>特殊：当传入一个数值的时候，会创建一个指定数组的数组，用逗号创建的数组空位，值为<code>undefined</code>（关于数组空位，发现一些好玩的，请看这篇<a href="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/">博文</a>）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="title class_">Array</span>(<span class="number">10</span>);  <span class="comment">// 这里省略了new操作符</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);  <span class="comment">// [empty × 10]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="property">length</span>);  <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="2arrayof-es6"><a href="#（2）Array-of-【ES6】" class="headerlink" title="（2）Array.of()       【ES6】"></a>（2）Array.of()       【ES6】</h4><blockquote>
@@ -1303,8 +1303,8 @@
 <h4 id="2reduceright"><a href="#（2）reduceRight" class="headerlink" title="（2）reduceRight()"></a>（2）reduceRight()</h4><blockquote>
 <p><code>reduceRight()</code>与<code>reduce()</code>唯一不同的就是遍历方向是从最后一项到第一项，其余全部相同</p>
 </blockquote>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="1改变原数组方法"><a href="#（1）改变原数组方法" class="headerlink" title="（1）改变原数组方法"></a>（1）改变原数组方法</h4><h4 id="2es6新增方法"><a href="#（2）ES6新增方法" class="headerlink" title="（2）ES6新增方法"></a>（2）ES6新增方法</h4><h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="%E5%8D%A0%E4%BD%8D">数组空位</a></p>
-<p><a href="%E5%8D%A0%E4%BD%8D">map和forEach的区别</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="1改变原数组方法"><a href="#（1）改变原数组方法" class="headerlink" title="（1）改变原数组方法"></a>（1）改变原数组方法</h4><h4 id="2es6新增方法"><a href="#（2）ES6新增方法" class="headerlink" title="（2）ES6新增方法"></a>（2）ES6新增方法</h4><h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/">数组空位</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_map%E5%92%8CforEach%E7%9A%84%E5%8C%BA%E5%88%AB/">map和forEach的区别</a></p>
 <p><a href="%E5%8D%A0%E4%BD%8D">强大的reduce</a></p>
 <p><a href="%E5%8D%A0%E4%BD%8D">深浅拷贝</a></p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN Array</a></p>
