@@ -28,7 +28,7 @@
 <meta property="og:description" content="前情提要举例1 之前在做算法题的时候遇到这样一个问题：我想创建一个n*m 的数组，于是我采用这样的方式 12const n &#x3D; 10, m &#x3D; 10const grid &#x3D; Array(n).map(() &#x3D;&gt; Array(m))  结果，grid打印的结果为[empty × 10]，这说明map根本没起作用，阅读红宝书的时候发现在第四版141页数组空位的地方有说明，原话是“map()会跳过">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-07T06:49:09.000Z">
-<meta property="article:modified_time" content="2022-07-07T09:58:23.244Z">
+<meta property="article:modified_time" content="2022-07-07T11:46:53.768Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="常见方法对比">
@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">20</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">前情提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined"><span class="nav-number">2.</span> <span class="nav-text">空位和undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E7%A9%BA%E4%BD%8D%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">产生空位的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8in%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%A3%80%E6%B5%8B%E7%A9%BA%E5%80%BC%E5%92%8Cundefined"><span class="nav-number">2.2.</span> <span class="nav-text">用in操作符检测空值和undefined</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95%E5%AF%B9%E7%A9%BA%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">不同方法对空值的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E7%A9%BA%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">忽略空值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">前情提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined"><span class="nav-number">2.</span> <span class="nav-text">空位和undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E7%A9%BA%E4%BD%8D%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">产生空位的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8in%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%88%96%E8%80%85hasownproperty%E6%A3%80%E6%B5%8B%E7%A9%BA%E5%80%BC%E5%92%8Cundefined"><span class="nav-number">2.2.</span> <span class="nav-text">用in操作符或者hasOwnProperty()检测空值和undefined</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95%E5%AF%B9%E7%A9%BA%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">不同方法对空值的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E7%A9%BA%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">忽略空值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,18 +166,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -260,7 +260,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-07 14:49:09 / Modified: 17:58:23" itemprop="dateCreated datePublished" datetime="2022-07-07T14:49:09+08:00">2022-07-07</time>
+      <time title="Created: 2022-07-07 14:49:09 / Modified: 19:46:53" itemprop="dateCreated datePublished" datetime="2022-07-07T14:49:09+08:00">2022-07-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -283,7 +283,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.9k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -325,18 +325,18 @@
 <h3 id="空位和undefined"><a href="#空位和undefined" class="headerlink" title="空位和undefined"></a>空位和undefined</h3><h4 id="产生空位的操作"><a href="#产生空位的操作" class="headerlink" title="产生空位的操作"></a>产生空位的操作</h4><p>以下操作均会产生空位</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array构造函数传一个数值表示数组长度</span></span><br><span class="line"><span class="keyword">let</span> arr1 = <span class="title class_">Array</span>(<span class="number">5</span>);   <span class="comment">// [,,,,]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组字面量创建</span></span><br><span class="line"><span class="keyword">let</span> arr2 = [,,,,,];</span><br><span class="line"></span><br><span class="line"><span class="comment">// length属性</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [];</span><br><span class="line">arr3.<span class="property">length</span> = <span class="number">5</span>;   <span class="comment">// [,,,,,]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过索引增加数组元素是超过数组长度</span></span><br><span class="line"><span class="keyword">let</span> arr4 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line">arr4[<span class="number">10</span>] = <span class="number">5</span>;   <span class="comment">// [1,2,3,,,,,,,,,5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除数组元素产生空位</span></span><br><span class="line"><span class="keyword">let</span> arr5 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">delete</span> arr5[<span class="number">1</span>];   <span class="comment">// [1,,3]</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="用in操作符检测空值和undefined"><a href="#用in操作符检测空值和undefined" class="headerlink" title="用in操作符检测空值和undefined"></a>用in操作符检测空值和undefined</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>];   <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [,,,]   <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h4 id="用in操作符或者hasownproperty检测空值和undefined"><a href="#用in操作符或者hasOwnProperty-检测空值和undefined" class="headerlink" title="用in操作符或者hasOwnProperty()检测空值和undefined"></a>用in操作符或者hasOwnProperty()检测空值和undefined</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>];   <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [,,,]   <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> o = <span class="title class_">Object</span>(a);</span><br><span class="line"></span><br><span class="line">o.<span class="title function_">hasOwnProperty</span>(<span class="number">2</span>);  <span class="comment">// false</span></span><br><span class="line">o.<span class="title function_">hasOwnProperty</span>(<span class="number">1</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <p>说明<code>[undefined, undefined, undefined]</code>在索引0处有值，<code>[,,,]</code>在索引0处没有值</p>
 <h3 id="不同方法对空值的处理"><a href="#不同方法对空值的处理" class="headerlink" title="不同方法对空值的处理"></a>不同方法对空值的处理</h3><h4 id="忽略空值"><a href="#忽略空值" class="headerlink" title="忽略空值"></a>忽略空值</h4><blockquote>
 <p><code>map()</code>：跳过空位，但会保留这个值</p>
-<p><code>forEach()</code>, <code>filter()</code>, <code>every()</code>，<code>some()</code>：跳过空位</p>
+<p><code>forEach()</code>, <code>filter()</code>, <code>every()</code>，<code>some()</code>，<code>reduce()</code>：跳过空位</p>
 <p><code>join()</code>，<code>toString()</code>，<code>Array.from</code>，<code>展开运算符</code>：会将空位视为空字符串</p>
 <p><code>fill()</code>：将空位视为正常值</p>
 <p><code>copyWithin()</code>：连着空位一起拷贝</p>
 </blockquote>
 <p><strong>举例</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> newArr = arr.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> item*<span class="number">2</span>);  <span class="comment">// [2,,6];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,,,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">arr.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">4</span>);  <span class="comment">// [1,2,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// join</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line">arr.<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>)  <span class="comment">// 1--3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fill</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>).<span class="title function_">fill</span>(<span class="number">0</span>);   <span class="comment">// [0, 0, 0, 0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copyWithin()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">arr.<span class="title function_">copyWithin</span>(<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>);   <span class="comment">// [1,4,,4,,6,7]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> newArr = arr.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> item*<span class="number">2</span>);  <span class="comment">// [2,,6];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,,,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">arr.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">4</span>);  <span class="comment">// [1,2,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// join</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line">arr.<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>)  <span class="comment">// 1--3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fill</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>).<span class="title function_">fill</span>(<span class="number">0</span>);   <span class="comment">// [0, 0, 0, 0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copyWithin()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">arr.<span class="title function_">copyWithin</span>(<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>);   <span class="comment">// [1,4,,4,,6,7]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// reduce()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,,<span class="number">4</span>];</span><br><span class="line">arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, cur</span>) =&gt;</span> prev+cur);  <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/178302866">JS中的数组空位和undefined</a></p>
 
@@ -362,8 +362,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_map%E5%92%8CforEach%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="数组 | map和forEach的区别">
-                  数组 | map和forEach的区别 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E5%BC%BA%E5%A4%A7%E7%9A%84reduce/" rel="next" title="数组 | 强大的reduce（含手写原理）">
+                  数组 | 强大的reduce（含手写原理） <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -396,13 +396,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">42k</span>
+    <span title="Symbols count total">50k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">38 mins.</span>
+    <span title="Reading time total">46 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
