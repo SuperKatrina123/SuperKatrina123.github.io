@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">MDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">手写实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">知识补充</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mdn"><span class="nav-number">1.</span> <span class="nav-text">MDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">手写实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-number">3.</span> <span class="nav-text">知识补充</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -296,7 +296,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3><span id="mdn">MDN</span></h3><blockquote>
+        <h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
 <p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
 </blockquote>
 <p><strong>语法</strong></p>
@@ -307,7 +307,7 @@
 <p><code>constructor</code>：某个构造函数</p>
 <p><strong>返回值</strong></p>
 <p>布尔值</p>
-<h3><span id="手写实现">手写实现</span></h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
+<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
 <p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -316,7 +316,7 @@
 
 
 
-<h3><span id="知识补充">知识补充</span></h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
 <p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
 
     </div>

@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">MDN 文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">手写Object.create()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text">知识补充</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mdn-%E6%96%87%E6%A1%A3"><span class="nav-number">1.</span> <span class="nav-text">MDN 文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%86%99objectcreate"><span class="nav-number">2.</span> <span class="nav-text">手写Object.create()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-number"></span> <span class="nav-text">知识补充</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -296,7 +296,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3><span id="mdn-文档">MDN 文档</span></h3><blockquote>
+        <h3 id="mdn-文档"><a href="#MDN-文档" class="headerlink" title="MDN 文档"></a>MDN 文档</h3><blockquote>
 <p>Object.create()方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型。</p>
 </blockquote>
 <p><strong>语法如下：</strong></p>
@@ -307,13 +307,13 @@
 <p><code>propertiesObject</code>（可选）：传入对象的可枚举属性将为新创建的对象添加指定的属性值和对应的属性描述符，这些属性对应于<code>Object.defineProperties()</code>的第二个参数</p>
 <p><strong>返回值：</strong></p>
 <p>一个新对象，带着指定的原型对象及其属性</p>
-<h3><span id="手写objectcreate">手写Object.create()</span></h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
+<h3 id="手写objectcreate"><a href="#手写Object-create" class="headerlink" title="手写Object.create()"></a>手写Object.create()</h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCreate</span> = <span class="keyword">function</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">   	<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span> = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>测试：</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h2><span id="知识补充">知识补充</span></h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
 <p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
 
     </div>

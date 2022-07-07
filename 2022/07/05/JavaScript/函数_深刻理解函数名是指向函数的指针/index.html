@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">函数名是函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">没有重载</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number">2.</span> <span class="nav-text">函数名是函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E9%87%8D%E8%BD%BD"><span class="nav-number">3.</span> <span class="nav-text">没有重载</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -299,7 +299,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2><span id="回顾">回顾</span></h2><ul>
+        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ul>
 <li><p>每一个函数都是Function类型的实例，Function有属性和方法</p>
 </li>
 <li><p>函数是对象，函数名就是指向函数对象的指针</p>
@@ -313,7 +313,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> bar = <span class="keyword">function</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> <span class="title function_">baz</span> = (<span class="params"></span>) =&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo.<span class="property">name</span>);                 <span class="comment">// foo</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(bar.<span class="property">name</span>);                 <span class="comment">// bar</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(baz.<span class="property">name</span>);                 <span class="comment">// baz</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="function">() =&gt;</span> &#123;&#125;).<span class="property">name</span>);          <span class="comment">// (空字符串)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="keyword">new</span> <span class="title class_">Function</span>()).<span class="property">name</span>);    <span class="comment">// anonymous</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo.<span class="title function_">bind</span>(<span class="literal">null</span>).<span class="property">name</span>);      <span class="comment">// bind foo</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2><span id="函数名是函数指针">函数名是函数指针</span></h2><blockquote>
+<h2 id="函数名是函数指针"><a href="#函数名是函数指针" class="headerlink" title="函数名是函数指针"></a>函数名是函数指针</h2><blockquote>
 <p>注意：使用不带括号的函数名会访问函数指针，而不会执行函数</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> anotherSum = sum;   <span class="comment">// #1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">anotherSum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">//  20</span></span><br><span class="line"></span><br><span class="line">sum = <span class="literal">null</span>;  <span class="comment">// #2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">anotherSum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">//  20</span></span><br></pre></td></tr></table></figure>
@@ -323,7 +323,7 @@
 
 <p>Step1：将sum赋值给anotherSum的时候其实是相当于把指针赋值给anotherSum，于是anotherSum也指向求和函数</p>
 <p>Step2：将sum的指针指向null，这并没有改变anotherSum的指针指向，所以并不会影响anotherSum执行</p>
-<h2><span id="没有重载">没有重载</span></h2><blockquote>
+<h2 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h2><blockquote>
 <p>重载函数：允许在同一范围中声明几个功能类似的同名函数，但是同名函数的签名不同，比如形参类型不同，数量不同等。</p>
 </blockquote>
 <p><strong>如果在JS中定义两个同名函数会发生什么情况？</strong></p>
