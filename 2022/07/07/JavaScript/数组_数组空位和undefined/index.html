@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前情提要举例1 之前在做算法题的时候遇到这样一个问题：我想创建一个n*m 的数组，于是我采用这样的方式 12const n &#x3D; 10, m &#x3D; 10const grid &#x3D; Array(n).map(() &#x3D;&gt; Array(m))  结果，grid打印的结果为[empty × 10]，这说明map根本没起作用，阅读红宝书的时候发现在第四版141页数组空位的地方有说明，原话是“map()会跳过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组 | 数组空位和undefined">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="前情提要举例1 之前在做算法题的时候遇到这样一个问题：我想创建一个n*m 的数组，于是我采用这样的方式 12const n &#x3D; 10, m &#x3D; 10const grid &#x3D; Array(n).map(() &#x3D;&gt; Array(m))  结果，grid打印的结果为[empty × 10]，这说明map根本没起作用，阅读红宝书的时候发现在第四版141页数组空位的地方有说明，原话是“map()会跳过">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-07T06:49:09.000Z">
+<meta property="article:modified_time" content="2022-07-07T09:58:23.244Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="常见方法对比">
+<meta property="article:tag" content="JavaScript数组">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/","path":"2022/07/07/JavaScript/数组_数组空位和undefined/","title":"数组 | 数组空位和undefined"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数组 | 数组空位和undefined | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">22</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">前情提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined"><span class="nav-number">2.</span> <span class="nav-text">空位和undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E7%A9%BA%E4%BD%8D%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">产生空位的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8in%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%A3%80%E6%B5%8B%E7%A9%BA%E5%80%BC%E5%92%8Cundefined"><span class="nav-number">2.2.</span> <span class="nav-text">用in操作符检测空值和undefined</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95%E5%AF%B9%E7%A9%BA%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">不同方法对空值的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E7%A9%BA%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">忽略空值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/07/JavaScript/%E6%95%B0%E7%BB%84_%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E5%92%8Cundefined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数组 | 数组空位和undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数组 | 数组空位和undefined
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-07 14:49:09 / Modified: 17:58:23" itemprop="dateCreated datePublished" datetime="2022-07-07T14:49:09+08:00">2022-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" itemprop="url" rel="index"><span itemprop="name">常见方法对比</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p><strong>举例1</strong></p>
+<p>之前在做算法题的时候遇到这样一个问题：我想创建一个n*m 的数组，于是我采用这样的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> n = <span class="number">10</span>, m = <span class="number">10</span></span><br><span class="line"><span class="keyword">const</span> grid = <span class="title class_">Array</span>(n).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="title class_">Array</span>(m))</span><br></pre></td></tr></table></figure>
+
+<p>结果，<code>grid</code>打印的结果为<code>[empty × 10]</code>，这说明<code>map</code>根本没起作用，阅读红宝书的时候发现在第四版141页数组空位的地方有说明，原话是“<code>map()</code>会跳过空位置”，用专业术语说，**<code>map</code>仅对每一项已分配值的索引调用**，所以要是我想实现我想要的效果，我应该写如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> n = <span class="number">10</span>, m = <span class="number">10</span></span><br><span class="line"><span class="keyword">const</span> grid = <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="title class_">Array</span>(m))  </span><br><span class="line"><span class="comment">// [Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10)]    length = 10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>举例2</strong></p>
+<p>我们已经直到，<code>map</code>方法会跳过空位置，并且红宝书第四版P140页提到”<code>ES6</code>中普遍将空位当作存在的元素，值为<code>undefined</code>“，下面的例子证实了这个说法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,,<span class="number">4</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">2</span>] === <span class="literal">undefined</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>再看下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="literal">undefined</span>,<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr1_n = arr1.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">&#125;);   <span class="comment">// [2,2,,2]</span></span><br><span class="line"><span class="keyword">let</span> arr2_n = arr2.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">&#125;);    <span class="comment">// [2,2,2,2]</span></span><br></pre></td></tr></table></figure>
+
+<p>咦？<code>undefined</code>的位置没有被跳过，而空值显然被跳过了</p>
+<p>于是引发了两个问题：</p>
+<ol>
+<li>尽管空值位置的值是<code>undefined</code>，但是和<code>undefined</code>还是有本质的区别，究竟是怎么样的区别呢？</li>
+<li><code>map</code>是怎么判断是空值还是<code>undefined</code>的呢？通过<code>arr[index] === undefined</code>显然是行不通的</li>
+</ol>
+<p>要解答这两个问题，就要回归到上面说的**<code>map</code>仅对每一项已分配值的索引调用**，<code>undefined</code>数据基本数据类型，当然属于值</p>
+<h3 id="空位和undefined"><a href="#空位和undefined" class="headerlink" title="空位和undefined"></a>空位和undefined</h3><h4 id="产生空位的操作"><a href="#产生空位的操作" class="headerlink" title="产生空位的操作"></a>产生空位的操作</h4><p>以下操作均会产生空位</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array构造函数传一个数值表示数组长度</span></span><br><span class="line"><span class="keyword">let</span> arr1 = <span class="title class_">Array</span>(<span class="number">5</span>);   <span class="comment">// [,,,,]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组字面量创建</span></span><br><span class="line"><span class="keyword">let</span> arr2 = [,,,,,];</span><br><span class="line"></span><br><span class="line"><span class="comment">// length属性</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [];</span><br><span class="line">arr3.<span class="property">length</span> = <span class="number">5</span>;   <span class="comment">// [,,,,,]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过索引增加数组元素是超过数组长度</span></span><br><span class="line"><span class="keyword">let</span> arr4 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line">arr4[<span class="number">10</span>] = <span class="number">5</span>;   <span class="comment">// [1,2,3,,,,,,,,,5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除数组元素产生空位</span></span><br><span class="line"><span class="keyword">let</span> arr5 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">delete</span> arr5[<span class="number">1</span>];   <span class="comment">// [1,,3]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="用in操作符检测空值和undefined"><a href="#用in操作符检测空值和undefined" class="headerlink" title="用in操作符检测空值和undefined"></a>用in操作符检测空值和undefined</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>];   <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [,,,]   <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>说明<code>[undefined, undefined, undefined]</code>在索引0处有值，<code>[,,,]</code>在索引0处没有值</p>
+<h3 id="不同方法对空值的处理"><a href="#不同方法对空值的处理" class="headerlink" title="不同方法对空值的处理"></a>不同方法对空值的处理</h3><h4 id="忽略空值"><a href="#忽略空值" class="headerlink" title="忽略空值"></a>忽略空值</h4><blockquote>
+<p><code>map()</code>：跳过空位，但会保留这个值</p>
+<p><code>forEach()</code>, <code>filter()</code>, <code>every()</code>，<code>some()</code>：跳过空位</p>
+<p><code>join()</code>，<code>toString()</code>，<code>Array.from</code>，<code>展开运算符</code>：会将空位视为空字符串</p>
+<p><code>fill()</code>：将空位视为正常值</p>
+<p><code>copyWithin()</code>：连着空位一起拷贝</p>
+</blockquote>
+<p><strong>举例</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> newArr = arr.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> item*<span class="number">2</span>);  <span class="comment">// [2,,6];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,,,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">arr.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">4</span>);  <span class="comment">// [1,2,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// join</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,,<span class="number">3</span>];</span><br><span class="line">arr.<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>)  <span class="comment">// 1--3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fill</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>).<span class="title function_">fill</span>(<span class="number">0</span>);   <span class="comment">// [0, 0, 0, 0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copyWithin()</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">arr.<span class="title function_">copyWithin</span>(<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>);   <span class="comment">// [1,4,,4,,6,7]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/178302866">JS中的数组空位和undefined</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" rel="tag"><i class="fa fa-tag"></i> 常见方法对比</a>
+              <a href="/tags/JavaScript%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> JavaScript数组</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/06/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E5%80%BC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/" rel="prev" title="数据类型_原始值包装类型">
+                  <i class="fa fa-chevron-left"></i> 数据类型_原始值包装类型
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/07/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="next" title="深浅拷贝">
+                  深浅拷贝 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">42k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">38 mins.</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
