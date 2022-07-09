@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">19</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">23</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">25</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -171,7 +171,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1263,6 +1263,218 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">数据类型 | 深浅拷贝</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-05 16:54:19" itemprop="dateCreated datePublished" datetime="2022-07-05T16:54:19+08:00">2022-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-09 16:45:25" itemprop="dateModified" datetime="2022-07-09T16:45:25+08:00">2022-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><strong>基本数据类型</strong>：简单的数据，保存基本数据类型的变量是按<strong>值</strong>进行访问的，因此直接保存在栈内存中</li>
+<li><strong>引用数据类型</strong>：保存在堆内存中，在栈内存中保存了一个堆内存中实际对象的引用，引用数据类型的变量是按照<strong>引用</strong>进行访问的</li>
+</ul>
+<h2 id="复制值"><a href="#复制值" class="headerlink" title="复制值"></a>复制值</h2><ul>
+<li><strong>基本数据类型</strong>：在通过变量把一个基本数据赋值到另一个变量时，基本数据会被复制到新变量的位置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> num2 = num1;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" class title="基本数据类型">
+
+<p>从上图可知，num1和num2是独立使用的，互不干扰</p>
+<ul>
+<li><strong>引用数据类型</strong>：在把引用值从一个变量赋给另一个变量时，存储在变量中的值也会被复制到新变量所在的位置。<strong>区别在于，这里复制的值实际上是一个指针，它指向存储在堆内存中的对象</strong>，操作完成后，两个变量实际上指向同一个对象，因此一个对象上面的变化会在另一个对象上反映出来</li>
+</ul>
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" class title="引用数据类型">
+
+<h2 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h2><blockquote>
+<p>深浅拷贝都是针对于<strong>引用类型</strong>的，因为引用类型是存放在堆内存中的，在栈地址中有一个或者多个地址来指向堆内存的某一数据</p>
+</blockquote>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><blockquote>
+<p>创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝</p>
+<p>如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址 ，所以如果其中一个对象改变了这个地址，就会影响到另一个对象</p>
+</blockquote>
+<p>浅拷贝是指被复制对象的所有变量都与原来的对象含有相同的值，而所有的对其他对象的引用仍然指向原来的对象</p>
+<p>浅拷贝仅仅复制所考虑的对象，而不复制它所引用的对象，如果你修改了“副本”的值，那么原来的对象也会被修改</p>
+<p>浅拷贝只拷贝一层，深层次的引用类型则共享内存地址</p>
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class title="浅拷贝示意图">
+
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><blockquote>
+<p>将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象</p>
+</blockquote>
+<p>深拷贝是一个整个独立对象的拷贝，深拷贝会拷贝所有的属性，并且拷贝属性指向的动态分配的内存</p>
+<p>深拷贝把要复制的对象所引用的对象都复制了一遍，如果你修改了“副本”的值，那么原来的对象不会被修改，两者是相互独立的</p>
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class title="深拷贝示意图">
+
+<h2 id="实现浅拷贝的方式"><a href="#实现浅拷贝的方式" class="headerlink" title="实现浅拷贝的方式"></a>实现浅拷贝的方式</h2><ul>
+<li><code>Object.assign</code></li>
+<li><code>Array.protptype.slice</code></li>
+<li><code>Array.protptype.concat</code></li>
+<li>使用拓展运算符</li>
+<li>手写浅拷贝</li>
+</ul>
+<h3 id="objectassign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h3><p>补课：<a href="https://superkatrina123.github.io/2022/07/06/JavaScript/%E5%AF%B9%E8%B1%A1_Object_API/#%EF%BC%882%EF%BC%89%E5%90%88%E5%B9%B6%E5%AF%B9%E8%B1%A1%EF%BC%9AObject-assign-%E3%80%90ES6%E3%80%91">Object.assign</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="arrayprototypeslice"><a href="#Array-prototype-slice" class="headerlink" title="Array.prototype.slice()"></a>Array.prototype.slice()</h3><p>补课：<a href="https://superkatrina123.github.io/2022/07/06/JavaScript/%E6%95%B0%E7%BB%84_Array_API/#%EF%BC%882%EF%BC%89%E6%88%AA%E5%8F%96%E6%95%B0%E7%BB%84%EF%BC%9Aslice-%E3%80%90ES5%E3%80%91">slice</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;black&#x27;</span>]];</span><br><span class="line"><span class="keyword">const</span> colors1 = colors.<span class="title function_">slice</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">colors1[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);      <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors1);     <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="arrayprototypeconcat"><a href="#Array-prototype-concat" class="headerlink" title="Array.prototype.concat()"></a>Array.prototype.concat()</h3><p>补课：<a href="https://superkatrina123.github.io/2022/07/06/JavaScript/%E6%95%B0%E7%BB%84_Array_API/#%EF%BC%881%EF%BC%89%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84%EF%BC%9Aconcat-%E3%80%90ES5%E3%80%91">concat</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;black&#x27;</span>]];</span><br><span class="line"><span class="keyword">const</span> colors1 = colors.<span class="title function_">concat</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">colors1[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);      <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors1);     <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="拓展运算符"><a href="#拓展运算符" class="headerlink" title="拓展运算符"></a>拓展运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;black&#x27;</span>]];</span><br><span class="line"><span class="keyword">const</span> colors1 = [...colors];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">colors1[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);      <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors1);     <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手写浅拷贝"><a href="#手写浅拷贝" class="headerlink" title="手写浅拷贝"></a>手写浅拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">shallowClone</span>(<span class="params">target</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res, targetType = <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(target).<span class="title function_">slice</span>(<span class="number">8</span>,-<span class="number">1</span>).<span class="title function_">toLowerCase</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (target === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        res = &#123;&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target === <span class="string">&#x27;array&#x27;</span>) &#123;</span><br><span class="line">        res = [];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">        res[key] = target[key];</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test1</span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;black&#x27;</span>]];</span><br><span class="line"><span class="keyword">const</span> colors1 = <span class="title function_">shallowClone</span>(colors);</span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">colors1[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);      <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors1);     <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test2</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="title function_">shallowClone</span>(person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现深拷贝的方式"><a href="#实现深拷贝的方式" class="headerlink" title="实现深拷贝的方式"></a>实现深拷贝的方式</h2><ul>
+<li><code>_.cloneDeep()</code></li>
+<li><code>JQuery.extend()</code></li>
+<li><code>JSON.stringify()</code></li>
+<li>手写深拷贝</li>
+</ul>
+<h3 id="_clonedeep"><a href="#cloneDeep" class="headerlink" title="_.cloneDeep()"></a>_.cloneDeep()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;loash&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> person1 = _.<span class="title function_">cloneDeep</span>(person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play football&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="jqueryextend"><a href="#JQuery-extend" class="headerlink" title="JQuery.extend()"></a>JQuery.extend()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $ = <span class="built_in">require</span>(<span class="string">&#x27;jquery&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> person1 = $.<span class="title function_">extend</span>(person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play football&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="jsonstringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify()"></a>JSON.stringify()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(person));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play football&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印person1发现...</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如下图，function不见了...这就是JSON.stringify()方法的弊端</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/JSON.stringify%E5%BC%8A%E7%AB%AF.png" class title="JSON.stringify弊端">
+
+<p>这种方法会存在弊端：会忽略<code>undefined</code>，<code>function</code>，<code>symbol</code>的存在</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="attr">c</span>: <span class="title class_">Symbol</span>(<span class="string">&#x27;I am fine&#x27;</span>),</span><br><span class="line">    <span class="attr">d</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;and you?&#x27;</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> test1 = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(test));</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(test1);    <span class="comment">// &#123;a: &#x27;hello&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手写深拷贝"><a href="#手写深拷贝" class="headerlink" title="手写深拷贝"></a>手写深拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">target</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res, targetType = <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(target).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>).<span class="title function_">toLowerCase</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (targetType === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        res = &#123;&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (targetType === <span class="string">&#x27;array&#x27;</span>) &#123;</span><br><span class="line">        res = [];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">        res[key] = <span class="title function_">deepClone</span>(target[key]);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test1</span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;black&#x27;</span>]];</span><br><span class="line"><span class="keyword">const</span> colors1 = <span class="title function_">deepClone</span>(colors);</span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">colors1[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors);      <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;black&#x27;]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors1);     <span class="comment">// [&#x27;red&#x27;, &#x27;yellow&#x27;, [&#x27;green&#x27;, &#x27;pink&#x27;]]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test2</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">hobbies</span>: [<span class="string">&#x27;run&#x27;</span>, <span class="string">&#x27;swim&#x27;</span>, <span class="string">&#x27;play football&#x27;</span>],</span><br><span class="line">    <span class="attr">love</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;She is a cool girl！&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="title function_">deepClone</span>(person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检验深拷贝or浅拷贝</span></span><br><span class="line">person1.<span class="property">hobbies</span>[<span class="number">2</span>] = <span class="string">&#x27;play tennies&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">hobbies</span>);    <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play tennies&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">hobbies</span>);     <span class="comment">// [&#x27;run&#x27;, &#x27;swim&#x27;, &#x27;play football&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="拓展赋值和拷贝"><a href="#拓展：赋值和拷贝" class="headerlink" title="拓展：赋值和拷贝"></a>拓展：赋值和拷贝</h2><p>拷贝区别于赋值最重要的一点是：拷贝会在堆上创建一个新的对象</p>
+<p>示意图如下图所示：</p>
+<img src="/2022/07/05/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B_%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/%E8%B5%8B%E5%80%BC%E5%92%8C%E6%8B%B7%E8%B4%9D.png" class title="赋值和拷贝">
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">和原对象是否指向同一地址</th>
+<th align="center">第一层数据为基本数据类型</th>
+<th align="center">原数据中包含子对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>赋值</strong></td>
+<td align="center">是</td>
+<td align="center">改变会使原数据一同改变</td>
+<td align="center">改变会使原数据一同改变</td>
+</tr>
+<tr>
+<td align="center"><strong>浅拷贝</strong></td>
+<td align="center">否</td>
+<td align="center">改变不会使原数据一同改变</td>
+<td align="center">改变会使原数据一同改变</td>
+</tr>
+<tr>
+<td align="center"><strong>深拷贝</strong></td>
+<td align="center">否</td>
+<td align="center">改变不会使原数据一同改变</td>
+<td align="center">改变不会使原数据一同改变</td>
+</tr>
+</tbody></table>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017773877">深入理解JS深浅拷贝</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7035975489906802702">赋值和拷贝</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%8F%98%E9%87%8F_var%20let%20const%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%BA%94%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1413,113 +1625,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5_for-in&&for-of%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/05/JavaScript/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5_for-in&&for-of%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">循环语句 | for-in&&for-of的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-05 16:39:59" itemprop="dateCreated datePublished" datetime="2022-07-05T16:39:59+08:00">2022-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-07 17:03:29" itemprop="dateModified" datetime="2022-07-07T17:03:29+08:00">2022-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" itemprop="url" rel="index"><span itemprop="name">常见方法对比</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>544</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="forof"><a href="#for…of" class="headerlink" title="for…of.."></a>for…of..</h2><p>for…of用于遍历可迭代对象的元素，在可迭代对象上创建一个迭代循环，调用自定义迭代钩子的next()方法来遍历元素，是有序遍历</p>
-<h2 id="forin"><a href="#for…in" class="headerlink" title="for…in.."></a>for…in..</h2><p>for…in用于枚举对象中的属性（包括原型链上的可枚举属性），是无序遍历</p>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key);   <span class="comment">// name age gender</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据打印结果可以看到 for...in枚举原型链上的属性，那么如何改进呢？使用hasOwnProperty</span></span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">gender</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (o.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(key)   <span class="comment">// name age</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1544,13 +1649,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">72k</span>
+    <span title="Symbols count total">79k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:06</span>
+    <span title="Reading time total">1:12</span>
   </span>
 </div>
 <div class="busuanzi-count">
