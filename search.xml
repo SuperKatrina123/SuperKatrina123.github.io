@@ -1,44 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo | next主题添加搜索功能</title>
-    <url>/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<p>随着posts增多，考虑增加一个搜索功能（起初是因为看了NexT主题官方有个搜索功能觉得很酷），于是乎有了想法就立马行动起来！</p>
-<p>其实搜索next主题的_config.yml文件，next主题已经帮我们写好了搜索功能相关的配置。</p>
-<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD1.png" class title="搜索功能1">
-
-<p>所以打开上图中的github仓库进行相关配置即可。</p>
-<h3 id="step1安装hexo-generator-searchdb"><a href="#Step1：安装hexo-generator-searchdb" class="headerlink" title="Step1：安装hexo-generator-searchdb"></a>Step1：安装hexo-generator-searchdb</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-searchdb</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="step2在site里的_configxml增加如下配置"><a href="#Step2：在site里的-config-xml增加如下配置" class="headerlink" title="Step2：在site里的_config.xml增加如下配置"></a>Step2：在site里的_config.xml增加如下配置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 站点搜索</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="step3把next主题的_configxml的配置打开"><a href="#Step3：把next主题的-config-xml的配置打开" class="headerlink" title="Step3：把next主题的_config.xml的配置打开"></a>Step3：把next主题的_config.xml的配置打开</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>    <span class="comment"># 这里原本是false 改为true即可</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ul>
-<li>侧边菜单增加了search</li>
-</ul>
-<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD2.png" class title="搜索功能2">
-
-<blockquote>
-<p>注意：配置好了search功能后侧边菜单会自动更新，不需要去menu那里设置search</p>
-</blockquote>
-<ul>
-<li>可以正常搜索</li>
-</ul>
-<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD3.png" class title="搜索功能3">
-
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://github.com/theme-next/hexo-generator-searchdb">https://github.com/theme-next/hexo-generator-searchdb</a></p>
-<p><a href="https://blog.csdn.net/weixin_45877759/article/details/107141789">https://blog.csdn.net/weixin_45877759/article/details/107141789</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next个性化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo | 初体验之建立个人博客</title>
     <url>/2022/07/04/Hexo/Hexo_%E5%88%9D%E4%BD%93%E9%AA%8C%E4%B9%8B%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="hexo建立个人博客"><a href="#Hexo建立个人博客" class="headerlink" title="Hexo建立个人博客"></a>Hexo建立个人博客</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -156,6 +118,290 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo | next主题添加搜索功能</title>
+    <url>/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p>随着posts增多，考虑增加一个搜索功能（起初是因为看了NexT主题官方有个搜索功能觉得很酷），于是乎有了想法就立马行动起来！</p>
+<p>其实搜索next主题的_config.yml文件，next主题已经帮我们写好了搜索功能相关的配置。</p>
+<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD1.png" class title="搜索功能1">
+
+<p>所以打开上图中的github仓库进行相关配置即可。</p>
+<h3 id="step1安装hexo-generator-searchdb"><a href="#Step1：安装hexo-generator-searchdb" class="headerlink" title="Step1：安装hexo-generator-searchdb"></a>Step1：安装hexo-generator-searchdb</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-searchdb</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="step2在site里的_configxml增加如下配置"><a href="#Step2：在site里的-config-xml增加如下配置" class="headerlink" title="Step2：在site里的_config.xml增加如下配置"></a>Step2：在site里的_config.xml增加如下配置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 站点搜索</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="step3把next主题的_configxml的配置打开"><a href="#Step3：把next主题的-config-xml的配置打开" class="headerlink" title="Step3：把next主题的_config.xml的配置打开"></a>Step3：把next主题的_config.xml的配置打开</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>    <span class="comment"># 这里原本是false 改为true即可</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ul>
+<li>侧边菜单增加了search</li>
+</ul>
+<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD2.png" class title="搜索功能2">
+
+<blockquote>
+<p>注意：配置好了search功能后侧边菜单会自动更新，不需要去menu那里设置search</p>
+</blockquote>
+<ul>
+<li>可以正常搜索</li>
+</ul>
+<img src="/2022/07/06/Hexo/Hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD3.png" class title="搜索功能3">
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://github.com/theme-next/hexo-generator-searchdb">https://github.com/theme-next/hexo-generator-searchdb</a></p>
+<p><a href="https://blog.csdn.net/weixin_45877759/article/details/107141789">https://blog.csdn.net/weixin_45877759/article/details/107141789</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next个性化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数 | call apply bind区别（含手写）</title>
+    <url>/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_call%20apply%20bind%E5%8C%BA%E5%88%AB%EF%BC%88%E5%90%AB%E6%89%8B%E5%86%99%EF%BC%89/</url>
+    <content><![CDATA[<blockquote>
+<p>call apply bind都可用于修改this的指向</p>
+</blockquote>
+<h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span>.<span class="title function_">call</span>(thisArg, arg1, arg2, ...)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>thisArg</code>：在function函数运行时使用的this值，在非严格模式下，如果指定为<code>null</code>或者<code>undefined</code>，<code>this</code>为<code>window</code></li>
+<li><code>arg1 arg2 arg3</code>：指定的参数列表</li>
+</ul>
+<p><strong>返回值</strong></p>
+<p>使用<code>thisArg</code>和参数调用该函数的返回值，若该方法没有返回值，则返回<code>undefined</code></p>
+<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span>.<span class="title function_">apply</span>(thisArg, argsArray)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>thisArg</code>：在function函数运行时使用的this值，在非严格模式下，如果指定为<code>null</code>或者<code>undefined</code>，<code>this</code>为<code>window</code></li>
+<li><code>argsArray</code>：一个数组或者是类数组对象，其中数组元素将作为单独的参数传给<code>function</code>函数，如果该参数的值为<code>null</code>或者<code>undefined</code>，则表示不需要传入任何参数</li>
+</ul>
+<p><strong>返回值</strong></p>
+<p>使用<code>thisArg</code>和参数调用该函数的返回值，若该方法没有返回值，则返回<code>undefined</code></p>
+<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span>.<span class="title function_">bind</span>(thisArg, arg1, arg2, ...)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>thisArg</code>：在function函数运行时使用的this值，在非严格模式下，如果指定为<code>null</code>或者<code>undefined</code>，<code>this</code>为<code>window</code></li>
+<li><code>arg1 arg2 arg3</code>：指定的参数列表</li>
+</ul>
+<p><strong>返回值</strong></p>
+<p>返回一个绑定了指定的<code>this</code>值和初始函数的原函数的拷贝</p>
+<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><ul>
+<li><p><code>call</code> 和<code>apply</code>： 传入形式不同，<code>call</code>第二个参数开始都是<code>function</code>所需要的参数，而<code>apply</code>则把<code>function</code>所需的参数以数组的形式作为第二个参数传入</p>
+</li>
+<li><p><code>call</code> <code>apply</code> 和 <code>bind</code>：call 和 apply 是立即执行，而bind的方法是创建一个新的函数，这个函数是原函数的拷贝</p>
+</li>
+</ul>
+<h2 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h2><h3 id="手写call"><a href="#手写call" class="headerlink" title="手写call"></a>手写call</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">context,...args</span>) &#123;   <span class="comment">// ...rest： ...剩余参数数组名称</span></span><br><span class="line">    <span class="comment">// 1. 判断传入context是否为空</span></span><br><span class="line"> 	context = context ? context : <span class="variable language_">window</span>;</span><br><span class="line">    <span class="comment">// 2. 给context指定一个方法，指向this</span></span><br><span class="line">    context.<span class="property">fn</span> = <span class="variable language_">this</span>;</span><br><span class="line">    <span class="comment">// 3. 执行fn</span></span><br><span class="line">    <span class="keyword">let</span> res = context.<span class="title function_">fn</span>(...args);</span><br><span class="line">    <span class="comment">// 4. 执行完毕后删除自定义的方法</span></span><br><span class="line">    <span class="keyword">delete</span> context.<span class="property">fn</span>;</span><br><span class="line">    <span class="comment">// 5. 返回调用函数的返回值</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test </span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Kate&#x27;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params">p1, p2, p3</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>, they are my friends, <span class="subst">$&#123;p1&#125;</span>, <span class="subst">$&#123;p2&#125;</span>, <span class="subst">$&#123;p3&#125;</span>.`</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> person2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line">person.<span class="property">sayName</span>.<span class="title function_">myCall</span>(person2, <span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;John&#x27;</span>);  <span class="comment">// Hello, Katrina, they are my friends, Jack, Jenny, John.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手写apply"><a href="#手写apply" class="headerlink" title="手写apply"></a>手写apply</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myApply</span> = <span class="keyword">function</span>(<span class="params">context, args=[]</span>) &#123;</span><br><span class="line">    <span class="comment">// 1. 判断传入context是否为空</span></span><br><span class="line"> 	context = context ? context : <span class="variable language_">window</span>;</span><br><span class="line">    <span class="comment">// 2. 给context指定一个方法，指向this</span></span><br><span class="line">    context.<span class="property">fn</span> = <span class="variable language_">this</span>;</span><br><span class="line">    <span class="comment">// 3. 执行fn</span></span><br><span class="line">    <span class="keyword">let</span> res = context.<span class="title function_">fn</span>(...args);</span><br><span class="line">    <span class="comment">// 4. 执行完毕后删除自定义的方法</span></span><br><span class="line">    <span class="keyword">delete</span> context.<span class="property">fn</span>;</span><br><span class="line">    <span class="comment">// 5. 返回调用函数的返回值</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test </span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Kate&#x27;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params">p1, p2, p3</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>, they are my friends, <span class="subst">$&#123;p1&#125;</span>, <span class="subst">$&#123;p2&#125;</span>, <span class="subst">$&#123;p3&#125;</span>.`</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> person2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line">person.<span class="property">sayName</span>.<span class="title function_">myApply</span>(person2, [<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;John&#x27;</span>]);  <span class="comment">// Hello, Katrina, they are my friends, Jack, Jenny, John.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手写bind"><a href="#手写bind" class="headerlink" title="手写bind"></a>手写bind</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myBind</span> = <span class="keyword">function</span>(<span class="params">context, ...args</span>) &#123;</span><br><span class="line">    <span class="comment">// 1. 判断传入context是否为空</span></span><br><span class="line"> 	context = context ? context : <span class="variable language_">window</span>;</span><br><span class="line">    <span class="comment">// 2. 保存this</span></span><br><span class="line">    <span class="keyword">const</span> self = <span class="variable language_">this</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 返回函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...newArgs</span>) &#123;</span><br><span class="line">        <span class="comment">// 4. 柯里化函数</span></span><br><span class="line">        <span class="keyword">return</span> self.<span class="title function_">myApply</span>(context, [...args, ...newArgs]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test </span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Kate&#x27;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params">p1, p2, p3</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>, they are my friends, <span class="subst">$&#123;p1&#125;</span>, <span class="subst">$&#123;p2&#125;</span>, <span class="subst">$&#123;p3&#125;</span>.`</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> person2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = person.<span class="property">sayName</span>.<span class="title function_">myBind</span>(person2)(<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;John&#x27;</span>);  <span class="comment">// Hello, Katrina, they are my friends, Jack, Jenny, John.</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>手写原理</category>
+        <category>常见方法对比</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>this指向</tag>
+        <tag>手写原理</tag>
+        <tag>常见方法对比</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数 | callee属性和caller属性</title>
+    <url>/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_callee%E5%B1%9E%E6%80%A7%E5%92%8Ccaller%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ul>
+<li><p>arguments对象是一个类数组对象，包含调用函数时传入的所有参数，可以使用中括号语法访问其中的元素</p>
+</li>
+<li><p>arguments可以用length属性来检查传入参数的个数，主要length由实参决定，而不是形参（这里需要区分的是，函数也有length属性，函数的length表示函数需要传入形参的个数）</p>
+</li>
+<li><p>arguments的值始终会与对应的命名参数同步</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">    <span class="comment">// 此处arguments如下</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	arguments = &#123;</span></span><br><span class="line"><span class="comment">    		0: 1,</span></span><br><span class="line"><span class="comment">    		1: 2,</span></span><br><span class="line"><span class="comment">    		length: 2</span></span><br><span class="line"><span class="comment">    	&#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="variable language_">arguments</span>[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 此处arguments如下</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	arguments = &#123;</span></span><br><span class="line"><span class="comment">    		0: 10,</span></span><br><span class="line"><span class="comment">    		1: 2,</span></span><br><span class="line"><span class="comment">    		length: 2</span></span><br><span class="line"><span class="comment">    	&#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>[<span class="number">0</span>] + num2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sum</span>(<span class="number">1</span>,<span class="number">2</span>);    <span class="comment">// 所以打印结果为10+2 = 12</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="callee属性arguments的属性"><a href="#callee属性：arguments的属性" class="headerlink" title="callee属性：arguments的属性"></a>callee属性：arguments的属性</h2><blockquote>
+<p>arguments的callee属性，是一个指向arguments对象所在函数的指针</p>
+</blockquote>
+<img src="/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_callee%E5%B1%9E%E6%80%A7%E5%92%8Ccaller%E5%B1%9E%E6%80%A7/callee%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0.png" class title="callee指向函数">
+
+<h3 id="callee作用让函数逻辑与函数名解耦"><a href="#callee作用：让函数逻辑与函数名解耦" class="headerlink" title="callee作用：让函数逻辑与函数名解耦"></a>callee作用：让函数逻辑与函数名解耦</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 经典阶乘例子</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">factorial</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num * <span class="title function_">fractorial</span>(num - <span class="number">1</span>);   <span class="comment">// 这里需要递归factorial，说明这个函数和factorial是紧密耦合的，修改了函数名函数就会有问题</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用callee可以让函数逻辑与函数名解耦</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">factorial</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num * <span class="variable language_">arguments</span>.<span class="title function_">callee</span>(num - <span class="number">1</span>);    <span class="comment">// 这样的话无论之后函数叫什么都没什么问题了</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="小缺陷-严格模式下不能访问argumentscallee"><a href="#小缺陷：-严格模式下不能访问arguments-callee" class="headerlink" title="小缺陷： 严格模式下不能访问arguments.callee"></a>小缺陷： 严格模式下不能访问arguments.callee</h4><p>可以使用命名函数表达式进行优化</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> factorial = (<span class="keyword">function</span> <span class="title function_">f</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num * <span class="title function_">f</span>(num - <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="caller属性函数对象的属性"><a href="#caller属性：函数对象的属性" class="headerlink" title="caller属性：函数对象的属性"></a>caller属性：函数对象的属性</h2><blockquote>
+<p>caller属性引用的是调用当前函数的函数，或者如果是在全局作用域中调用的则是null</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(inner.<span class="property">caller</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">inner</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">outer</span>();   <span class="comment">// function outer() &#123; inner()&#125;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_callee%E5%B1%9E%E6%80%A7%E5%92%8Ccaller%E5%B1%9E%E6%80%A7/caller%E5%B1%9E%E6%80%A7%E6%8C%87%E5%90%91.png" class title="caller属性指向">
+
+<p>如果要降低耦合度，可以使用<code>arguments.callee</code>属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">inner</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>.<span class="property">callee</span>.<span class="property">caller</span>);   <span class="comment">// arguments.callee指向inner函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在严格模式下访问<code>arguments.callee</code>会报错，在ES5中也定义了<code>arguments.caller</code>，严格模式下访问会报错，非严格模式下为<code>undefined</code>，在严格模式下，不能给函数的<code>caller</code>属性赋值</p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>小众知识点</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JavaScript函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数 | new.target属性</title>
+    <url>/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<blockquote>
+<p>new.target属性是ES6中新增的函数属性，new.target用于<strong>检测函数是否使用new关键字调用</strong></p>
+</blockquote>
+<p>如果函数是正常调用的，new.target的值为undefined；如果是使用new关键字调用的，则new.target将引用被调用的构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">King</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">new</span>.<span class="property">target</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&#x27;King must be instantiated unsing &quot;new&quot;!&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;King instantiated unsing &quot;new&quot;!&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">King</span>();  <span class="comment">// King instantiated unsing &quot;new&quot;!</span></span><br><span class="line"><span class="title class_">King</span>();  <span class="comment">// Error: King instantiated unsing &quot;new&quot;!</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>小众知识点</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JavaScript函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数 | 函数声明与函数表达式</title>
+    <url>/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h2><p>函数通常可以以（1）<strong>函数声明</strong>；（2）<strong>函数表达式</strong> ；（3）<strong>Function构造函数</strong>【不推荐】 三种方式进行定义。</p>
+<h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><p>（一般来说，函数声明最后没有分号，因为在代码块的结尾不需要加分号）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line"> 	reutrn num1 + num2;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>（函数表达式实际上是赋值的形式，建议加上分号）</p>
+<blockquote>
+<p>函数表达式就像一个普通的变量定义和赋值，即创建一个函数再把它赋值给一个变量functionName，这样创建的函数叫做匿名函数（未赋值给其他变量的匿名函数的name属性是空字符串）</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sum = <span class="keyword">function</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>函数表达式有几种不同的形式：</p>
+<ul>
+<li><p>形式一（最常见）：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> functionName = <span class="keyword">function</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">	<span class="comment">// 函数体</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>形式二：一个函数把另一个函数当作值返回</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createComparisonFunction</span>(<span class="params">propertyName</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">object1, object2</span>) &#123;</span><br><span class="line">		<span class="keyword">let</span> value1 = object1[propertyName];</span><br><span class="line">		<span class="keyword">let</span> value2 = object2[propertyName];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> value1 + value2;</span><br><span class="line">	&#125;;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>createComparisonFunction()函数返回一个匿名函数，这个匿名函数可以被赋值给一个变量或者直接调用，<strong>任何时候，只要函数被当作值来使用，它就是一个函数表达式</strong></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="函数声明-和-函数表达式的区别"><a href="#函数声明-和-函数表达式的区别" class="headerlink" title="函数声明 和 函数表达式的区别"></a>函数声明 和 函数表达式的区别</h2><p><strong>两者最主要的区别是：函数声明提前</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// eg1:函数声明提前</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));  <span class="comment">// 20</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line"> 	reutrn num1 + num2;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//eg2:函数表达式不提前 </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">// Uncaught ReferenceError: sum is not defined</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="keyword">function</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：这个报错并不是let引起的，将let改为var也会报错，即使var也会声明提前，但console.log的时候，sum为undefined，所以会引起报错：Uncaught TypeError: sum is not a function</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>红宝书解释如下： JavaScript引擎在任何代码执行之前，会先读取函数声明，并在执行器上下文中生成函数定义，而函数表达式必须等到代码执行到它那一行，才会在执行上下文中生成函数定义。</p>
+</blockquote>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// eg1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>));           <span class="comment">// 打印结果为13，函数声明提前+函数覆盖</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="keyword">function</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num+<span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num+<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num+<span class="number">3</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JavaScript函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数 | this指向</title>
+    <url>/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_this%E6%8C%87%E5%90%91/</url>
+    <content><![CDATA[<p>thist指向问题是非常重要的，主要有以下几种情况：</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数所处位置</th>
+<th align="center">this指向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">全局函数且没有直接调用的对象</td>
+<td align="center">非严格模式下，<code>this</code>指向全局<code>window</code>或者<code>global</code><br>严格模式下，<code>this</code>指向<code>undefined</code></td>
+</tr>
+<tr>
+<td align="center">属性方法</td>
+<td align="center">this指向调用这个方法的对象</td>
+</tr>
+<tr>
+<td align="center">构造函数</td>
+<td align="center"><code>this</code>指向实例对象</td>
+</tr>
+<tr>
+<td align="center">属性方法</td>
+<td align="center"><code>this</code>指向调用这个方法的对象</td>
+</tr>
+<tr>
+<td align="center">定时器</td>
+<td align="center"><code>this</code>指向<code>window</code></td>
+</tr>
+<tr>
+<td align="center">事件函数</td>
+<td align="center"><code>this</code>指向绑定这个事件的对象</td>
+</tr>
+<tr>
+<td align="center">call apply bind</td>
+<td align="center"><code>this</code>指向第一个参数，若第一个参数是<code>null</code>，在非严格模式下，<code>this</code>指向<code>window</code></td>
+</tr>
+<tr>
+<td align="center">箭头函数</td>
+<td align="center"><code>this</code>指向定义箭头函数的上下文</td>
+</tr>
+</tbody></table>
+<h3 id="全局函数window"><a href="#全局函数：window" class="headerlink" title="全局函数：window"></a>全局函数：window</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line"> 	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;全局函数this&#x27;</span>, <span class="variable language_">this</span>);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 全局函数this window</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="属性方法调用方法的对象"><a href="#属性方法：调用方法的对象" class="headerlink" title="属性方法：调用方法的对象"></a>属性方法：调用方法的对象</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;对象中的this&#x27;</span>, <span class="variable language_">this</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">sayHello</span>();   <span class="comment">// 对象中的this &#123;name: &#x27;Katrina&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="构造函数实例对象"><a href="#构造函数：实例对象" class="headerlink" title="构造函数：实例对象"></a>构造函数：实例对象</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;构造函数中的this&#x27;</span>, <span class="variable language_">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);  <span class="comment">// Person &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定时器-window"><a href="#定时器：-window" class="headerlink" title="定时器： window"></a>定时器： window</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;定时器的this&#x27;</span>, <span class="variable language_">this</span>)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    sayHello,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">sayHello</span>();   <span class="comment">// 定时器的this Window</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>解释：<code>setTimeout()</code>等同于<code>window.setTimeout()</code></p>
+</blockquote>
+<p>若要让定时器的this指向person对象，可以把定期器的函数改为箭头函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;定时器的this&#x27;</span>, <span class="variable language_">this</span>)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    sayHello,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">sayHello</span>();   <span class="comment">// 定时器的this &#123;name: &#x27;Katrina&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件函数绑定事件的对象"><a href="#事件函数：绑定事件的对象" class="headerlink" title="事件函数：绑定事件的对象"></a>事件函数：绑定事件的对象</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">&#x27;box&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;box&#x27;</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="language-javascript">    box.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;事件绑定函数的this&#x27;</span>, <span class="variable language_">this</span>);    <span class="comment">//  事件绑定函数的this &lt;div class = &#x27;box&#x27;&gt;&lt;/div&gt;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="call-apply-bind指定的第一个参数"><a href="#call-apply-bind：指定的第一个参数" class="headerlink" title="call apply bind：指定的第一个参数"></a>call apply bind：指定的第一个参数</h3><p>补课：[函数 | call apply bind区别（含手写）](<a href="http://localhost:4000/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_call">http://localhost:4000/2022/07/09/JavaScript/函数_call</a> apply bind区别（含手写）&#x2F;)</p>
+<h3 id="箭头函数-定义箭头函数时的上下文"><a href="#箭头函数：-定义箭头函数时的上下文" class="headerlink" title="箭头函数： 定义箭头函数时的上下文"></a>箭头函数： 定义箭头函数时的上下文</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;green&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">sayColor</span> = (<span class="params"></span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">color</span>);  <span class="comment">// 箭头函数的this引用定义时的上下文，此时是window</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">sayColor</span>();   <span class="comment">// red</span></span><br><span class="line">o.<span class="property">sayColor</span> = sayColor;</span><br><span class="line">o.<span class="title function_">sayColor</span>();  <span class="comment">// res</span></span><br></pre></td></tr></table></figure>
+
+<p>在事件回调或定时回调中调用某个函数时，this 值指向的并非想要的对象，此时将回调函数写成箭头函数就可以解决问题</p>
+<p>这是因为箭头函数中的this 会保留定义该函数时的上下文</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">function <span class="title function_">King</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">this</span>.royaltyName = <span class="string">&#x27;Henry&#x27;</span>;</span><br><span class="line">	<span class="comment">// this 引用King 的实例</span></span><br><span class="line">	setTimeout(() =&gt; console.log(<span class="built_in">this</span>.royaltyName), <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function <span class="title function_">Queen</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">this</span>.royaltyName = <span class="string">&#x27;Elizabeth&#x27;</span>;</span><br><span class="line">	<span class="comment">// this 引用window 对象</span></span><br><span class="line">	setTimeout(function() &#123; console.log(<span class="built_in">this</span>.royaltyName); &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">King</span>(); <span class="comment">// Henry</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Queen</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>this指向</tag>
+        <tag>JavaScript函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>函数 | 深刻理解函数名是指向函数的指针</title>
     <url>/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0%E5%90%8D%E6%98%AF%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ul>
@@ -205,64 +451,6 @@
       </tags>
   </entry>
   <entry>
-    <title>函数 | 函数声明与函数表达式</title>
-    <url>/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h2><p>函数通常可以以（1）<strong>函数声明</strong>；（2）<strong>函数表达式</strong> ；（3）<strong>Function构造函数</strong>【不推荐】 三种方式进行定义。</p>
-<h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><p>（一般来说，函数声明最后没有分号，因为在代码块的结尾不需要加分号）</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line"> 	reutrn num1 + num2;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>（函数表达式实际上是赋值的形式，建议加上分号）</p>
-<blockquote>
-<p>函数表达式就像一个普通的变量定义和赋值，即创建一个函数再把它赋值给一个变量functionName，这样创建的函数叫做匿名函数（未赋值给其他变量的匿名函数的name属性是空字符串）</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sum = <span class="keyword">function</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>函数表达式有几种不同的形式：</p>
-<ul>
-<li><p>形式一（最常见）：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> functionName = <span class="keyword">function</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">	<span class="comment">// 函数体</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>形式二：一个函数把另一个函数当作值返回</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createComparisonFunction</span>(<span class="params">propertyName</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">object1, object2</span>) &#123;</span><br><span class="line">		<span class="keyword">let</span> value1 = object1[propertyName];</span><br><span class="line">		<span class="keyword">let</span> value2 = object2[propertyName];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> value1 + value2;</span><br><span class="line">	&#125;;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>createComparisonFunction()函数返回一个匿名函数，这个匿名函数可以被赋值给一个变量或者直接调用，<strong>任何时候，只要函数被当作值来使用，它就是一个函数表达式</strong></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="函数声明-和-函数表达式的区别"><a href="#函数声明-和-函数表达式的区别" class="headerlink" title="函数声明 和 函数表达式的区别"></a>函数声明 和 函数表达式的区别</h2><p><strong>两者最主要的区别是：函数声明提前</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// eg1:函数声明提前</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));  <span class="comment">// 20</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line"> 	reutrn num1 + num2;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//eg2:函数表达式不提前 </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">10</span>));   <span class="comment">// Uncaught ReferenceError: sum is not defined</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="keyword">function</span>(<span class="params">num1, num2</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：这个报错并不是let引起的，将let改为var也会报错，即使var也会声明提前，但console.log的时候，sum为undefined，所以会引起报错：Uncaught TypeError: sum is not a function</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>红宝书解释如下： JavaScript引擎在任何代码执行之前，会先读取函数声明，并在执行器上下文中生成函数定义，而函数表达式必须等到代码执行到它那一行，才会在执行上下文中生成函数定义。</p>
-</blockquote>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// eg1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>));           <span class="comment">// 打印结果为13，函数声明提前+函数覆盖</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="keyword">function</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num+<span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num+<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num+<span class="number">3</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JavaScript函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据类型 | 深刻理解所有函数的参数都是按值传递的</title>
-    <url>/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E6%89%80%E6%9C%89%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E9%83%BD%E6%98%AF%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaScript</category>
-        <category>和我一起读红宝书</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>和我一起读红宝书</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>原型和原型链 | 分解Function与Object的原型关系</title>
     <url>/2022/07/08/JavaScript/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE_%E5%88%86%E8%A7%A3Function%E4%B8%8EObject%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%85%B3%E7%B3%BB/</url>
     <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ul>
@@ -299,6 +487,77 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>原型和原型链</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据类型 | 深刻理解所有函数的参数都是按值传递的</title>
+    <url>/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E6%89%80%E6%9C%89%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E9%83%BD%E6%98%AF%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84/</url>
+    <content><![CDATA[<p>这部分有一句很重要但是比较难理解的话：</p>
+<blockquote>
+<p><strong>ECMAScript 中所有函数的参数都是按值传递的</strong></p>
+</blockquote>
+<p>一看很懵，红宝书紧接着就做出了解释：</p>
+<blockquote>
+<p> 这意味着函数外的值会被复制到函数内部的参数中，就像从一个变量复制到另一个变量一样</p>
+<p>如果是原始值，那么就跟原始值变量的复制一样，如果是引用值，那么就跟引用值变量的复制一样</p>
+</blockquote>
+<p>大概理解了，但是还是云里雾里，那么我们首先要清楚，按值传递和按引用传递参数会造成什么样的结果？</p>
+<blockquote>
+<p>按值传递参数：值会被复制到一个局部变量（可以理解为<code>arguments</code>的一个槽位【补充：<code>agruments</code>是一个类数组对象，包含调用函数时传入的所有参数】）</p>
+<p>按引用传递参数：在按引用传递参数时，值在内存中的位置会被保存在一个局部变量，这意味着对本地变量的修改会反映到函数外部（在ECMAScript中显得不科学）</p>
+</blockquote>
+<ul>
+<li>看一下这个例子：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">addTen</span>(<span class="params">num</span>) &#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> res = <span class="title function_">addTen</span>(count);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 10  没有变化</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res);  <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+
+<p>原始值的例子很容易理解，<code>num</code>是一个局部变量，在调用时，<code>count</code>作为参数传入，被复制到<code>num</code>一边在<code>addTen</code>内部使用</p>
+<p>在函数内部，参数<code>num</code>的值被加上了10，但这不会影响函数外部的原始变量<code>count</code>，参数<code>num</code> 和变量<code>count </code>互不干扰，如果<code>num </code>是按引用传递的，那么<code>count</code> 的值也会被修改为20</p>
+<ul>
+<li>再看一下一个引用数据类型的例子：（比较不容易理解）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setName</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">	obj.<span class="property">name</span> = <span class="string">&#x27;Jenny&#x27;</span>;    <span class="comment">// 修改传入obj的name属性的值</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">setName</span>(person);   <span class="comment">// 调用函数</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);  <span class="comment">// &#123;name: &#x27;Jenny&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这次创建了一个对象并保存在<code>person</code>中，然后这个对象被传给<code>setName</code>方法，并且复制给<code>obj</code></p>
+<p>在函数内部，<code>obj</code>和<code>person</code>是指向同一个对象的，这样就会导致，即使对象是按值传进函数的，<code>obj</code>也会通过引用访问对象，这样的话，当函数内部修改了<code>obj</code>的<code>name</code>属性的值的时候，函数外部的对象也会反映这个变化，因为，<code>obj</code>指向的对象保存在全局作用域的堆内存上</p>
+<img src="/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E6%89%80%E6%9C%89%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E9%83%BD%E6%98%AF%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84/%E4%B8%BE%E4%BE%8B1.png" class title="举例1">
+
+<p>上面的过程会给人一种错觉：你在函数局部作用域中修改对象而导致反映到全局，不就意味着参数是按引用传递的吗？（一开始我也这样以为的！！！）</p>
+<p>那么请看下面这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setName</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">	obj.<span class="property">name</span> = <span class="string">&#x27;Jenny&#x27;</span>;    </span><br><span class="line">    obj = &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">setName</span>(person);   <span class="comment">// 调用函数</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);  <span class="comment">// &#123;name: &#x27;Jenny&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子比上面的例子就多了一行，也就是在函数内部将obj重新定义为了一个有着不同name的新对象</p>
+<p>分析整个过程：</p>
+<ul>
+<li><p>创建了一个对象并保存在<code>person</code>中，然后这个对象被传给<code>setName</code>方法，并且复制给<code>obj</code></p>
+</li>
+<li><p>在函数内部内部修改了<code>obj</code>的<code>name</code>属性的值，并且又作妖地把<code>obj</code>设置为<code>name</code>为<code>&#39;Jack&#39;</code>的一个新对象</p>
+</li>
+<li><p>但是，当我们访问<code>person.name</code>的时候，打印的结果是<code>Jenny</code>而不是<code>Jack</code></p>
+</li>
+<li><p>这表明函数中参数的值改变之后，原始的引用仍然没变，当<code>obj </code>在函数内部被重写时，它变成了一个指向本地对象的指针，而那个本地对象在函数执行结束时就被销毁了</p>
+</li>
+</ul>
+<img src="/2022/07/05/JavaScript/%E5%87%BD%E6%95%B0_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3%E6%89%80%E6%9C%89%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E9%83%BD%E6%98%AF%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84/%E4%B8%BE%E4%BE%8B2.png" class title="举例2">
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>和我一起读红宝书</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>和我一起读红宝书</tag>
       </tags>
   </entry>
   <entry>
@@ -430,59 +689,9 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>常见方法对比</tag>
         <tag>JavaScript变量</tag>
         <tag>ES6</tag>
-        <tag>常见方法对比</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字符串 | slice substr substring的区别</title>
-    <url>/2022/07/08/JavaScript/%E5%AD%97%E7%AC%A6%E4%B8%B2_slice%20substr%20substring%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<blockquote>
-<p>三个方法都是用来从字符串中提取子字符串的，因为是提取，三个方法都不改变原字符串</p>
-</blockquote>
-<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">slice</span>(startIndex, [endIndex])</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<ul>
-<li><code>startIndex</code>：从该索引开始</li>
-<li><code>endIndex</code>（可选）：在该索引处结束提取字符串（不含），默认为字符串长度</li>
-</ul>
-<p><strong>返回值</strong></p>
-<p>返回提取出来的子字符串</p>
-<h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">substring</span>(startIndex, [endIndex])</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<ul>
-<li><code>startIndex</code>：从该索引开始</li>
-<li><code>endIndex</code>（可选）：在该索引处结束提取字符串（不含），默认为字符串长度</li>
-</ul>
-<p><strong>返回值</strong></p>
-<p>返回提取出来的子字符串</p>
-<h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">substring</span>(startIndex, [length])</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<ul>
-<li><code>startIndex</code>：从该索引开始</li>
-<li><code>length</code>（可选）：提取的字符数</li>
-</ul>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>三者的主要区别在于面对0参数的处理上</p>
-<ul>
-<li><code>slice</code>方法会将所有负值参数都使用<code>负值+length</code>的方法进行处理</li>
-<li><code>substr</code>方法会将第一个负参数值使用<code>负值+length</code>的方法进行处理，第二个负参数转为0</li>
-<li><code>substring</code>方法会将所有的负参数转为0</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-        <category>常见方法对比</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>常见方法对比</tag>
       </tags>
   </entry>
   <entry>
@@ -649,6 +858,56 @@
         <tag>ES6</tag>
         <tag>JavaScript对象</tag>
         <tag>和我一起做总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串 | slice substr substring的区别</title>
+    <url>/2022/07/08/JavaScript/%E5%AD%97%E7%AC%A6%E4%B8%B2_slice%20substr%20substring%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<blockquote>
+<p>三个方法都是用来从字符串中提取子字符串的，因为是提取，三个方法都不改变原字符串</p>
+</blockquote>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">slice</span>(startIndex, [endIndex])</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>startIndex</code>：从该索引开始</li>
+<li><code>endIndex</code>（可选）：在该索引处结束提取字符串（不含），默认为字符串长度</li>
+</ul>
+<p><strong>返回值</strong></p>
+<p>返回提取出来的子字符串</p>
+<h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">substring</span>(startIndex, [endIndex])</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>startIndex</code>：从该索引开始</li>
+<li><code>endIndex</code>（可选）：在该索引处结束提取字符串（不含），默认为字符串长度</li>
+</ul>
+<p><strong>返回值</strong></p>
+<p>返回提取出来的子字符串</p>
+<h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">substring</span>(startIndex, [length])</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>startIndex</code>：从该索引开始</li>
+<li><code>length</code>（可选）：提取的字符数</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>三者的主要区别在于面对0参数的处理上</p>
+<ul>
+<li><code>slice</code>方法会将所有负值参数都使用<code>负值+length</code>的方法进行处理</li>
+<li><code>substr</code>方法会将第一个负参数值使用<code>负值+length</code>的方法进行处理，第二个负参数转为0</li>
+<li><code>substring</code>方法会将所有的负参数转为0</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>常见方法对比</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>常见方法对比</tag>
       </tags>
   </entry>
   <entry>
@@ -1145,9 +1404,9 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>手写原理</tag>
         <tag>JavaScript数据类型</tag>
         <tag>深浅拷贝</tag>
-        <tag>手写原理</tag>
       </tags>
   </entry>
   <entry>
@@ -1511,16 +1770,16 @@
       <categories>
         <category>JavaScript</category>
         <category>和我一起读红宝书</category>
-        <category>和我一起做总结</category>
         <category>手写原理</category>
+        <category>和我一起做总结</category>
         <category>ES6</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>手写原理</tag>
         <tag>和我一起读红宝书</tag>
         <tag>ES6</tag>
         <tag>和我一起做总结</tag>
-        <tag>手写原理</tag>
         <tag>JavaScript数组</tag>
       </tags>
   </entry>
@@ -1645,14 +1904,45 @@
 ]]></content>
       <categories>
         <category>JavaScript</category>
+        <category>手写原理</category>
         <category>和我一起做总结</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>手写原理</tag>
+        <tag>和我一起做总结</tag>
+        <tag>JavaScript数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写原理 | Object.create</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/</url>
+    <content><![CDATA[<h3 id="mdn-文档"><a href="#MDN-文档" class="headerlink" title="MDN 文档"></a>MDN 文档</h3><blockquote>
+<p>Object.create()方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型。</p>
+</blockquote>
+<p><strong>语法如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.create(proto);</span><br><span class="line">Object.create(proto, propertiesObject);</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明：</strong></p>
+<p><code>proto</code>：新建对象的原型对象</p>
+<p><code>propertiesObject</code>（可选）：传入对象的可枚举属性将为新创建的对象添加指定的属性值和对应的属性描述符，这些属性对应于<code>Object.defineProperties()</code>的第二个参数</p>
+<p><strong>返回值：</strong></p>
+<p>一个新对象，带着指定的原型对象及其属性</p>
+<h3 id="手写objectcreate"><a href="#手写Object-create" class="headerlink" title="手写Object.create()"></a>手写Object.create()</h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCreate</span> = <span class="keyword">function</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">   	<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span> = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
+]]></content>
+      <categories>
         <category>手写原理</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>和我一起做总结</tag>
         <tag>手写原理</tag>
-        <tag>JavaScript数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1708,69 +1998,79 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络 | AJAX</title>
-    <url>/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/</url>
-    <content><![CDATA[<h2 id="ajax概述"><a href="#AJAX概述" class="headerlink" title="AJAX概述"></a>AJAX概述</h2><p>Ajax &#x3D; Asynchronous JavaScript + XML </p>
-<p>Ajax主要依赖于XMLHttpRequest（<strong>XHR</strong>）对象，XHR为发送服务器请求和获取响应提供了合理的接口。这个接口可以实现异步从服务器获取额外数据，意味着用户点击不用页面刷新也可以获取数据。通过XHR对象获取数据后，可以使用DOM方法把数据插入网页。</p>
-<h2 id="ajax优点"><a href="#AJAX优点" class="headerlink" title="AJAX优点"></a>AJAX优点</h2><p>W3school里面是这么说的</p>
-<img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E4%BC%98%E7%82%B9.png" class title="AJAX优点">
-
-<p>言简意赅就是在说AJAX可以不刷新页面更新数据，AJAX可以实现与服务器的通信</p>
-<h3 id="1-无刷新更新数据"><a href="#1-无刷新更新数据" class="headerlink" title="1. 无刷新更新数据"></a>1. 无刷新更新数据</h3><p>这是AJAX最大的优点：不用刷新整个页面的前提下与服务器通信维护数据，有利于Web应用程序更为迅速地响应用户交互，避免了在网络上发送没有改变的信息，减少用户等待时间，带来了较好的用户体验。</p>
-<h3 id="2-异步与服务器通信"><a href="#2-异步与服务器通信" class="headerlink" title="2. 异步与服务器通信"></a>2. 异步与服务器通信</h3><p>AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间以及降低网络上的数据流量。</p>
-<h3 id="3-前端和后端负载平衡"><a href="#3-前端和后端负载平衡" class="headerlink" title="3. 前端和后端负载平衡"></a>3. 前端和后端负载平衡</h3><p>AJAX可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。AJAX的原则是”按需获取数据“，可以最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
-<h3 id="4-基于标准化被广泛支持"><a href="#4-基于标准化被广泛支持" class="headerlink" title="4. 基于标准化被广泛支持"></a>4. 基于标准化被广泛支持</h3><p>AJAX基于标准化的并被广泛支持的技术，不需要下载浏览器插件或者小程序，但需要客户允许在JavaScript浏览器上执行，随着AJAX的成熟，一些简化AJAX的使用方法的程序库也相继问世。</p>
-<h3 id="5-界面与页面分离"><a href="#5-界面与页面分离" class="headerlink" title="5. 界面与页面分离"></a>5. 界面与页面分离</h3><p>AJAX是的Web中的界面与应用分离，有利于分工合作、减少非技术任意对页面的修改造成的web应用程序错误、提高效率，更加适用于现在的发布系统。</p>
-<h3 id="ajax缺点"><a href="#AJAX缺点" class="headerlink" title="AJAX缺点"></a>AJAX缺点</h3><h3 id="1-ajax破坏了浏览器机制"><a href="#1-AJAX破坏了浏览器机制" class="headerlink" title="1. AJAX破坏了浏览器机制"></a>1. AJAX破坏了浏览器机制</h3><p>因为AJAX是动态更新局部页面的，所以用户无法回到前一个页面状态，因为一般来说，浏览器可以通过back和history的功能回到历史记录中的静态页面，但是在AJAX中这是无法实现的。</p>
-<h3 id="2-ajax的安全问题"><a href="#2-AJAX的安全问题" class="headerlink" title="2. AJAX的安全问题"></a>2. AJAX的安全问题</h3><p>AJAX暴露了浏览器与服务器交互的细节。</p>
-<h3 id="3-ajax不能很好地兼容移动设备"><a href="#3-AJAX不能很好地兼容移动设备" class="headerlink" title="3. AJAX不能很好地兼容移动设备"></a>3. AJAX不能很好地兼容移动设备</h3><p>一些手持设备比如手机，PAD等，现在还不能很好地支持AJAX。</p>
-<h2 id="ajax工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h2><img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class title="AJAX工作原理">
-
-<p>基于AJAX的介绍和工作原理，AJAX请求可以分为以下几个步骤：</p>
-<ol>
-<li>新建XHR对象, <code>let xhr = new XMLHttpRequest()</code>；</li>
-<li>打开链接 <code>open()</code>，传入三个参数：请求类型，Url，请求是否异步（布尔值）</li>
-<li>发送 <code>send()</code>，接收一个参数，作为请求体发出的数据，如果不需要，则必须传<code>null</code></li>
-<li>当XHR对象当完成第四步（<code>onreadystatechange</code>）数据接收完成，判断http响应状态（<code>status</code>）200-300之间或者304（缓存）执行回调函数</li>
-</ol>
-<h3 id="1-请求类型说明"><a href="#1-请求类型说明" class="headerlink" title="1. 请求类型说明"></a>1. 请求类型说明</h3><p><a href="https://superkatrina123.github.io/2022/07/07/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91_HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/">计网 | HTTP请求方法</a></p>
-<h3 id="2-状态码说明"><a href="#2-状态码说明" class="headerlink" title="2. 状态码说明"></a>2. 状态码说明</h3><p><a href="https://superkatrina123.github.io/2022/07/07/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91_HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">计网 | HTTP状态码</a></p>
-<p>所以，一般来说，HTTP状态码为2xx表示成功，或者是HTTP状态码为304，表示资源未修改过，使用浏览器的缓存中拿取的，也意味着响应有效。</p>
-<h3 id="3-readystate说明"><a href="#3-readyState说明" class="headerlink" title="3. readyState说明"></a>3. readyState说明</h3><ul>
-<li><strong>0</strong>：未初始化（Uninitialized）。尚未调用open()方法。</li>
-<li><strong>1</strong>：已发送（open）。已调用open()方法，但尚未调用send()方法。</li>
-<li><strong>2</strong>：已发送（Sent）。已调用send()方法，尚未收到响应。</li>
-<li><strong>3</strong>：接受中（Receiving）。已经收到部分响应。</li>
-<li><strong>4</strong>：完成（Complete）。已经收到所有响应，可以使用了。</li>
-</ul>
-<blockquote>
-<p>每次readyState的值发生改变的时候，都会触发readystatechange</p>
+    <title>手写原理 | instanceof</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/</url>
+    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
+<p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
 </blockquote>
-<h3 id="4-xhr对象属性说明"><a href="#4-xhr对象属性说明" class="headerlink" title="4. xhr对象属性说明"></a>4. xhr对象属性说明</h3><blockquote>
-<p>收到响应后，xhr对象的以下属性会被填充上数据</p>
-</blockquote>
-<ul>
-<li><code>responseText</code>：作为响应体返回的文本</li>
-<li><code>responseXML</code>：如果响应的内容类型是<code>text/xml</code> 或者 <code>application/xml</code>，那就是包含响应数据的XML DOM文件</li>
-<li><code>status</code>：响应的HTTP状态</li>
-<li><code>statusText</code>：响应的HTTP状态描述</li>
-</ul>
-<h2 id="ajax代码实现"><a href="#AJAX代码实现" class="headerlink" title="AJAX代码实现"></a>AJAX代码实现</h2><h3 id="1-ajax手写"><a href="#1-AJAX手写" class="headerlink" title="1. AJAX手写"></a>1. AJAX手写</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Step1: 新建XHR对象</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step4: 监听</span></span><br><span class="line">xhr.<span class="property">onreadstatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (readyState === <span class="number">4</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> ((xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) || xhr.<span class="property">status</span> === <span class="number">304</span>) &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="title function_">alert</span>(<span class="string">&#x27;Request was unsucessful!&#x27;</span> + xhr.<span class="property">status</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step2: 建立连接</span></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, url, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step3: 发送</span></span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">object instancof constructor</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-promise封装ajax"><a href="#2-Promise封装AJAX" class="headerlink" title="2. Promise封装AJAX"></a>2. Promise封装AJAX</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myAjax</span>(<span class="params">method=<span class="string">&#x27;GET&#x27;</span>, url, isAsync=<span class="literal">false</span>, data=<span class="literal">null</span></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        xhr.<span class="property">onreadstatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (readyState !== <span class="number">4</span>) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span> ((xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) || xhr.<span class="property">status</span> === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="title function_">resolve</span>(xhr.<span class="property">responseText</span>);   <span class="comment">// 响应体返回的文本</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="title function_">reject</span>(xhr.<span class="property">statusText</span>);   <span class="comment">// 响应的HTTP状态描述</span></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.<span class="title function_">open</span>(method, url, isAsync);</span><br><span class="line">        xhr.<span class="title function_">send</span>(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数</strong></p>
+<p><code>object</code>：某个实例对象</p>
+<p><code>constructor</code>：某个构造函数</p>
+<p><strong>返回值</strong></p>
+<p>布尔值</p>
+<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
+<p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.w3schools.com/xml/ajax_intro.asp">https://www.w3schools.com/xml/ajax_intro.asp</a></p>
-<p><a href="https://juejin.cn/post/6844903713102888973">https://juejin.cn/post/6844903713102888973</a></p>
-<p><a href="https://segmentfault.com/a/1190000039416782">https://segmentfault.com/a/1190000039416782</a></p>
+<p><strong>测试</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;KK&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Person</span>));   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Object</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
 ]]></content>
       <categories>
         <category>手写原理</category>
-        <category>计算机网络</category>
       </categories>
       <tags>
+        <tag>JavaScript</tag>
         <tag>手写原理</tag>
-        <tag>计算机网络</tag>
-        <tag>网络请求</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写原理 | new操作符</title>
+    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/</url>
+    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
+<p>new运算符创建一个用户定义的对象类型的实例或者具有构造函数的内置对象的实例</p>
+</blockquote>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> constructor[([<span class="variable language_">arguments</span>])]</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<p><code>constructor</code>：一个指定对象实例的类型的类或函数</p>
+<p><code>arguments</code>：一个用于被<code>constructor</code>调用的参数列表</p>
+<h3 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h3><p><strong>new关键字会进行如下操作</strong></p>
+<ol>
+<li>创建一个空对象</li>
+<li>为空对象添加<code>__proto__</code>，指向构造函数的<code>prototype</code>对象</li>
+<li>将新对象作为<code>this</code>的上下文</li>
+<li>如果该函数没有返回对象，则返回<code>this</code></li>
+</ol>
+<p><strong>对于返回值的说明</strong></p>
+<ul>
+<li>如果构造函数有返回值且是对象，则返回这个对象</li>
+<li>如果构造函数有返回值且不是对象，则返回创建的空对象</li>
+<li>如果构造函数没有返回值，返回创建的空对象</li>
+</ul>
+<p><strong>手写new</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myNew</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> newObj = &#123;&#125;;</span><br><span class="line">	<span class="keyword">let</span> constr = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">shift</span>.<span class="title function_">call</span>([...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">let</span> proto = constr.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    newObj = <span class="title class_">Object</span>.<span class="title function_">create</span>(proto);</span><br><span class="line">    <span class="keyword">let</span> res = constr.<span class="title function_">apply</span>(newObj, [...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> res === <span class="string">&#x27;object&#x27;</span> ? res : newObj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);   <span class="comment">// &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person <span class="keyword">instanceof</span> <span class="title class_">Person</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
+]]></content>
+      <categories>
+        <category>手写原理</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>手写原理</tag>
       </tags>
   </entry>
   <entry>
@@ -1860,6 +2160,72 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机网络 | AJAX</title>
+    <url>/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/</url>
+    <content><![CDATA[<h2 id="ajax概述"><a href="#AJAX概述" class="headerlink" title="AJAX概述"></a>AJAX概述</h2><p>Ajax &#x3D; Asynchronous JavaScript + XML </p>
+<p>Ajax主要依赖于XMLHttpRequest（<strong>XHR</strong>）对象，XHR为发送服务器请求和获取响应提供了合理的接口。这个接口可以实现异步从服务器获取额外数据，意味着用户点击不用页面刷新也可以获取数据。通过XHR对象获取数据后，可以使用DOM方法把数据插入网页。</p>
+<h2 id="ajax优点"><a href="#AJAX优点" class="headerlink" title="AJAX优点"></a>AJAX优点</h2><p>W3school里面是这么说的</p>
+<img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E4%BC%98%E7%82%B9.png" class title="AJAX优点">
+
+<p>言简意赅就是在说AJAX可以不刷新页面更新数据，AJAX可以实现与服务器的通信</p>
+<h3 id="1-无刷新更新数据"><a href="#1-无刷新更新数据" class="headerlink" title="1. 无刷新更新数据"></a>1. 无刷新更新数据</h3><p>这是AJAX最大的优点：不用刷新整个页面的前提下与服务器通信维护数据，有利于Web应用程序更为迅速地响应用户交互，避免了在网络上发送没有改变的信息，减少用户等待时间，带来了较好的用户体验。</p>
+<h3 id="2-异步与服务器通信"><a href="#2-异步与服务器通信" class="headerlink" title="2. 异步与服务器通信"></a>2. 异步与服务器通信</h3><p>AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间以及降低网络上的数据流量。</p>
+<h3 id="3-前端和后端负载平衡"><a href="#3-前端和后端负载平衡" class="headerlink" title="3. 前端和后端负载平衡"></a>3. 前端和后端负载平衡</h3><p>AJAX可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。AJAX的原则是”按需获取数据“，可以最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
+<h3 id="4-基于标准化被广泛支持"><a href="#4-基于标准化被广泛支持" class="headerlink" title="4. 基于标准化被广泛支持"></a>4. 基于标准化被广泛支持</h3><p>AJAX基于标准化的并被广泛支持的技术，不需要下载浏览器插件或者小程序，但需要客户允许在JavaScript浏览器上执行，随着AJAX的成熟，一些简化AJAX的使用方法的程序库也相继问世。</p>
+<h3 id="5-界面与页面分离"><a href="#5-界面与页面分离" class="headerlink" title="5. 界面与页面分离"></a>5. 界面与页面分离</h3><p>AJAX是的Web中的界面与应用分离，有利于分工合作、减少非技术任意对页面的修改造成的web应用程序错误、提高效率，更加适用于现在的发布系统。</p>
+<h3 id="ajax缺点"><a href="#AJAX缺点" class="headerlink" title="AJAX缺点"></a>AJAX缺点</h3><h3 id="1-ajax破坏了浏览器机制"><a href="#1-AJAX破坏了浏览器机制" class="headerlink" title="1. AJAX破坏了浏览器机制"></a>1. AJAX破坏了浏览器机制</h3><p>因为AJAX是动态更新局部页面的，所以用户无法回到前一个页面状态，因为一般来说，浏览器可以通过back和history的功能回到历史记录中的静态页面，但是在AJAX中这是无法实现的。</p>
+<h3 id="2-ajax的安全问题"><a href="#2-AJAX的安全问题" class="headerlink" title="2. AJAX的安全问题"></a>2. AJAX的安全问题</h3><p>AJAX暴露了浏览器与服务器交互的细节。</p>
+<h3 id="3-ajax不能很好地兼容移动设备"><a href="#3-AJAX不能很好地兼容移动设备" class="headerlink" title="3. AJAX不能很好地兼容移动设备"></a>3. AJAX不能很好地兼容移动设备</h3><p>一些手持设备比如手机，PAD等，现在还不能很好地支持AJAX。</p>
+<h2 id="ajax工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h2><img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class title="AJAX工作原理">
+
+<p>基于AJAX的介绍和工作原理，AJAX请求可以分为以下几个步骤：</p>
+<ol>
+<li>新建XHR对象, <code>let xhr = new XMLHttpRequest()</code>；</li>
+<li>打开链接 <code>open()</code>，传入三个参数：请求类型，Url，请求是否异步（布尔值）</li>
+<li>发送 <code>send()</code>，接收一个参数，作为请求体发出的数据，如果不需要，则必须传<code>null</code></li>
+<li>当XHR对象当完成第四步（<code>onreadystatechange</code>）数据接收完成，判断http响应状态（<code>status</code>）200-300之间或者304（缓存）执行回调函数</li>
+</ol>
+<h3 id="1-请求类型说明"><a href="#1-请求类型说明" class="headerlink" title="1. 请求类型说明"></a>1. 请求类型说明</h3><p><a href="https://superkatrina123.github.io/2022/07/07/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91_HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/">计网 | HTTP请求方法</a></p>
+<h3 id="2-状态码说明"><a href="#2-状态码说明" class="headerlink" title="2. 状态码说明"></a>2. 状态码说明</h3><p><a href="https://superkatrina123.github.io/2022/07/07/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91_HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">计网 | HTTP状态码</a></p>
+<p>所以，一般来说，HTTP状态码为2xx表示成功，或者是HTTP状态码为304，表示资源未修改过，使用浏览器的缓存中拿取的，也意味着响应有效。</p>
+<h3 id="3-readystate说明"><a href="#3-readyState说明" class="headerlink" title="3. readyState说明"></a>3. readyState说明</h3><ul>
+<li><strong>0</strong>：未初始化（Uninitialized）。尚未调用open()方法。</li>
+<li><strong>1</strong>：已发送（open）。已调用open()方法，但尚未调用send()方法。</li>
+<li><strong>2</strong>：已发送（Sent）。已调用send()方法，尚未收到响应。</li>
+<li><strong>3</strong>：接受中（Receiving）。已经收到部分响应。</li>
+<li><strong>4</strong>：完成（Complete）。已经收到所有响应，可以使用了。</li>
+</ul>
+<blockquote>
+<p>每次readyState的值发生改变的时候，都会触发readystatechange</p>
+</blockquote>
+<h3 id="4-xhr对象属性说明"><a href="#4-xhr对象属性说明" class="headerlink" title="4. xhr对象属性说明"></a>4. xhr对象属性说明</h3><blockquote>
+<p>收到响应后，xhr对象的以下属性会被填充上数据</p>
+</blockquote>
+<ul>
+<li><code>responseText</code>：作为响应体返回的文本</li>
+<li><code>responseXML</code>：如果响应的内容类型是<code>text/xml</code> 或者 <code>application/xml</code>，那就是包含响应数据的XML DOM文件</li>
+<li><code>status</code>：响应的HTTP状态</li>
+<li><code>statusText</code>：响应的HTTP状态描述</li>
+</ul>
+<h2 id="ajax代码实现"><a href="#AJAX代码实现" class="headerlink" title="AJAX代码实现"></a>AJAX代码实现</h2><h3 id="1-ajax手写"><a href="#1-AJAX手写" class="headerlink" title="1. AJAX手写"></a>1. AJAX手写</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Step1: 新建XHR对象</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step4: 监听</span></span><br><span class="line">xhr.<span class="property">onreadstatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (readyState === <span class="number">4</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> ((xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) || xhr.<span class="property">status</span> === <span class="number">304</span>) &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="title function_">alert</span>(<span class="string">&#x27;Request was unsucessful!&#x27;</span> + xhr.<span class="property">status</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step2: 建立连接</span></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, url, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step3: 发送</span></span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-promise封装ajax"><a href="#2-Promise封装AJAX" class="headerlink" title="2. Promise封装AJAX"></a>2. Promise封装AJAX</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myAjax</span>(<span class="params">method=<span class="string">&#x27;GET&#x27;</span>, url, isAsync=<span class="literal">false</span>, data=<span class="literal">null</span></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        xhr.<span class="property">onreadstatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (readyState !== <span class="number">4</span>) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span> ((xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) || xhr.<span class="property">status</span> === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="title function_">resolve</span>(xhr.<span class="property">responseText</span>);   <span class="comment">// 响应体返回的文本</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="title function_">reject</span>(xhr.<span class="property">statusText</span>);   <span class="comment">// 响应的HTTP状态描述</span></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.<span class="title function_">open</span>(method, url, isAsync);</span><br><span class="line">        xhr.<span class="title function_">send</span>(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.w3schools.com/xml/ajax_intro.asp">https://www.w3schools.com/xml/ajax_intro.asp</a></p>
+<p><a href="https://juejin.cn/post/6844903713102888973">https://juejin.cn/post/6844903713102888973</a></p>
+<p><a href="https://segmentfault.com/a/1190000039416782">https://segmentfault.com/a/1190000039416782</a></p>
+]]></content>
+      <categories>
+        <category>手写原理</category>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>手写原理</tag>
+        <tag>计算机网络</tag>
+        <tag>网络请求</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络 | HTTP请求方法</title>
     <url>/2022/07/07/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<table>
@@ -1918,113 +2284,6 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>HTTP请求</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | Object.create</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/</url>
-    <content><![CDATA[<h3 id="mdn-文档"><a href="#MDN-文档" class="headerlink" title="MDN 文档"></a>MDN 文档</h3><blockquote>
-<p>Object.create()方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型。</p>
-</blockquote>
-<p><strong>语法如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.create(proto);</span><br><span class="line">Object.create(proto, propertiesObject);</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数说明：</strong></p>
-<p><code>proto</code>：新建对象的原型对象</p>
-<p><code>propertiesObject</code>（可选）：传入对象的可枚举属性将为新创建的对象添加指定的属性值和对应的属性描述符，这些属性对应于<code>Object.defineProperties()</code>的第二个参数</p>
-<p><strong>返回值：</strong></p>
-<p>一个新对象，带着指定的原型对象及其属性</p>
-<h3 id="手写objectcreate"><a href="#手写Object-create" class="headerlink" title="手写Object.create()"></a>手写Object.create()</h3><p><strong>实现思路：</strong>定义一个空的构造函数，把构造函数的原型指定为传入的对象，利用<code>new</code>构造函数，返回构造函数的实例，达到创建空对象的目的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCreate</span> = <span class="keyword">function</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">   	<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span> = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.create()</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Object</span>.<span class="title function_">create</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.myCreate();</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Object</span>.<span class="title function_">myCreate</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">__proto__</span> === obj);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2 <span class="keyword">instanceof</span> obj.<span class="property">constructor</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | instanceof</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/</url>
-    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
-<p>instanceof 运算符用于检测构造函数的prototype属性是否出现在实例对象的原型链上</p>
-</blockquote>
-<p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">object instancof constructor</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<p><code>object</code>：某个实例对象</p>
-<p><code>constructor</code>：某个构造函数</p>
-<p><strong>返回值</strong></p>
-<p>布尔值</p>
-<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><p><strong>实现思路</strong>：根据原型链的思想，判断实例对象的<code>__proto__</code>是否指向构造函数的原型，一级一级向上判断，直至<code>null</code></p>
-<p><strong>注意</strong>：instanceof只能用于判断引用数据类型，不能判断基本数据类型，直接返回<code>false</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myInstanceOf</span>(<span class="params">object, constructor</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span> || object === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = object.<span class="property">__proto__</span>;</span><br><span class="line">	<span class="keyword">let</span> right = constructor.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">// 终止条件1：找到原型了</span></span><br><span class="line">        <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 终止条件2：遍历到了尽头也没找到</span></span><br><span class="line">        <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 还没找到：继续找呗！</span></span><br><span class="line">        left = left.<span class="property">__proto__</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;KK&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Person</span>));   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myInstanceOf</span>(p, <span class="title class_">Object</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/">手写new</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写原理 | new操作符</title>
-    <url>/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_new/</url>
-    <content><![CDATA[<h3 id="mdn"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><blockquote>
-<p>new运算符创建一个用户定义的对象类型的实例或者具有构造函数的内置对象的实例</p>
-</blockquote>
-<p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> constructor[([<span class="variable language_">arguments</span>])]</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<p><code>constructor</code>：一个指定对象实例的类型的类或函数</p>
-<p><code>arguments</code>：一个用于被<code>constructor</code>调用的参数列表</p>
-<h3 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h3><p><strong>new关键字会进行如下操作</strong></p>
-<ol>
-<li>创建一个空对象</li>
-<li>为空对象添加<code>__proto__</code>，指向构造函数的<code>prototype</code>对象</li>
-<li>将新对象作为<code>this</code>的上下文</li>
-<li>如果该函数没有返回对象，则返回<code>this</code></li>
-</ol>
-<p><strong>对于返回值的说明</strong></p>
-<ul>
-<li>如果构造函数有返回值且是对象，则返回这个对象</li>
-<li>如果构造函数有返回值且不是对象，则返回创建的空对象</li>
-<li>如果构造函数没有返回值，返回创建的空对象</li>
-</ul>
-<p><strong>手写new</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myNew</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> newObj = &#123;&#125;;</span><br><span class="line">	<span class="keyword">let</span> constr = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">shift</span>.<span class="title function_">call</span>([...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">let</span> proto = constr.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    newObj = <span class="title class_">Object</span>.<span class="title function_">create</span>(proto);</span><br><span class="line">    <span class="keyword">let</span> res = constr.<span class="title function_">apply</span>(newObj, [...<span class="variable language_">arguments</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> res === <span class="string">&#x27;object&#x27;</span> ? res : newObj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person);   <span class="comment">// &#123;name: &#x27;Katrina&#x27;, age: 18&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person <span class="keyword">instanceof</span> <span class="title class_">Person</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_instanceof/">手写instanceof</a></p>
-<p><a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写Object.create</a></p>
-]]></content>
-      <categories>
-        <category>手写原理</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>手写原理</tag>
       </tags>
   </entry>
 </search>
