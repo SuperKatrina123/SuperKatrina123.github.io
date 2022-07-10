@@ -20,20 +20,23 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="执行上下文：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为 执行上下文可以分为：  全局执行上下文：只有一个，程序首次运行时创建，它会在浏览器中创建一个全局对象（window对象），使this指向这个全局对象 函数执行上下文：函数被调用时创建，每次调用都会为该函数创建一个新的执行上下文 Eval 函数执行上下文：运行eval函数中的代码时创建的执行上下文，少用">
+    <meta name="description" content="执行上下文  执行上下文：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为  执行上下文可以分为：  全局执行上下文：只有一个，程序首次运行时创建，它会在浏览器中创建一个全局对象（window对象），使this指向这个全局对象 函数执行上下文：函数被调用时创建，每次调用都会为该函数创建一个新的执行上下文 Eval 函数执行上下文：运行eval函数中的代码时创建的执">
 <meta property="og:type" content="article">
 <meta property="og:title" content="作用域 | 执行上下文与作用域">
 <meta property="og:url" content="https://superkatrina123.github.io/2022/07/10/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F_%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/index.html">
 <meta property="og:site_name" content="耿直咸鱼">
-<meta property="og:description" content="执行上下文：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为 执行上下文可以分为：  全局执行上下文：只有一个，程序首次运行时创建，它会在浏览器中创建一个全局对象（window对象），使this指向这个全局对象 函数执行上下文：函数被调用时创建，每次调用都会为该函数创建一个新的执行上下文 Eval 函数执行上下文：运行eval函数中的代码时创建的执行上下文，少用">
+<meta property="og:description" content="执行上下文  执行上下文：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为  执行上下文可以分为：  全局执行上下文：只有一个，程序首次运行时创建，它会在浏览器中创建一个全局对象（window对象），使this指向这个全局对象 函数执行上下文：函数被调用时创建，每次调用都会为该函数创建一个新的执行上下文 Eval 函数执行上下文：运行eval函数中的代码时创建的执">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77d205c65fa2457ba02efd5b5871cc31~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/97d8c1d1571f4a69a57cb37939073a75~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp">
 <meta property="article:published_time" content="2022-07-10T05:00:47.000Z">
-<meta property="article:modified_time" content="2022-07-10T07:52:49.238Z">
+<meta property="article:modified_time" content="2022-07-10T13:25:09.791Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="作用域">
 <meta property="article:tag" content="和我一起读红宝书">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77d205c65fa2457ba02efd5b5871cc31~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp">
 
 
 <link rel="canonical" href="https://superkatrina123.github.io/2022/07/10/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F_%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/">
@@ -124,7 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">执行上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88"><span class="nav-number">2.</span> <span class="nav-text">执行上下文栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">变量对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.1.</span> <span class="nav-text">全局作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.2.</span> <span class="nav-text">函数作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.3.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.4.</span> <span class="nav-text">词法作用域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="nav-number">5.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">6.</span> <span class="nav-text">作用域与执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E9%98%B6%E6%AE%B5"><span class="nav-number">6.1.</span> <span class="nav-text">解释阶段：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">6.2.</span> <span class="nav-text">执行阶段：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -233,7 +236,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-07-10 13:00:47 / Modified: 15:52:49" itemprop="dateCreated datePublished" datetime="2022-07-10T13:00:47+08:00">2022-07-10</time>
+      <time title="Created: 2022-07-10 13:00:47 / Modified: 21:25:09" itemprop="dateCreated datePublished" datetime="2022-07-10T13:00:47+08:00">2022-07-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -256,14 +259,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>213</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -274,16 +277,91 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <blockquote>
-<p><strong>执行上下文</strong>：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为</p>
+        <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><blockquote>
+<p> <strong>执行上下文</strong>：当前代码的执行环境，变量或者函数的上下文决定了它们可以访问哪些数据，以及它们的行为</p>
+</blockquote>
 <p>执行上下文可以分为：</p>
 <ul>
 <li>全局执行上下文：只有一个，程序首次运行时创建，它会在浏览器中创建一个全局对象（<code>window</code>对象），使<code>this</code>指向这个全局对象</li>
 <li>函数执行上下文：函数被调用时创建，每次调用都会为该函数创建一个新的执行上下文</li>
 <li>Eval 函数执行上下文：运行<code>eval</code>函数中的代码时创建的执行上下文，少用且不建议使用</li>
 </ul>
+<p>执行上下文会在其所有代码执行完毕后被销毁，包括定义在它上面的所有变量和函数</p>
+<h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><blockquote>
+<p>执行上下文栈是一种拥有后进先出的数据解构，用于存储代码执行时创建的执行上下文</p>
 </blockquote>
+<p><strong>代码实例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="string">&#x27;blue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">changeColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> anotherColor = <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">swapColors</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempColor = anotherColor;</span><br><span class="line">    anotherColor = color;</span><br><span class="line">    color = tempColor;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">swapColors</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">changeColor</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(color); <span class="comment">// red</span></span><br></pre></td></tr></table></figure>
+
+<p>执行过程可以在 <code>devTool</code> 的 <code>call stack</code> 中看到，其中 <code>anonyomus</code> 为全局上下文栈；其余为函数上下文栈</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77d205c65fa2457ba02efd5b5871cc31~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="img"></p>
+<p>图解： <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/97d8c1d1571f4a69a57cb37939073a75~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="img"></p>
+<p>执行过程：</p>
+<ol>
+<li>首先创建了<code>全局执行上下文</code>，压入执行栈，其中的可执行代码开始执行。</li>
+<li>然后调用 <code>changeColor</code> 函数，JS引擎停止执行全局执行上下文，激活函数 <code>changeColor</code> 创建它自己的执行上下文，且把该函数上下文放入执行上下文栈顶，其中的可执行代码开始执行。</li>
+<li><code>changeColor</code> 调用了 <code>swapColors</code> 函数，此时暂停了 <code>changeColor</code> 的执行上下文，创建了 <code>swapColors</code> 函数的新执行上下文，且把该函数执行上下文放入执行上下文栈顶。</li>
+<li>当 <code>swapColors</code> 函数执行完后，其执行上下文从栈顶出栈，回到了 <code>changeColor</code> 执行上下文中继续执行。</li>
+<li><code>changeColor</code> 没有可执行代码，也没有再遇到其他执行上下文了，将其执行上下文从栈顶出栈，回到了 <code>全局执行上下文</code> 中继续执行。</li>
+<li>一旦所有代码执行完毕，JS引擎将从当前栈中移除 <code>全局执行上下文</code>。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意：函数中，遇到return能直接终止可执行代码的执行，因此会直接将当前上下文弹出栈。</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h3><p>每个执行上下文都有一个关联的<strong>变量对象（variable object）</strong>，这个执行上下文中定义的所有变量和函数都存在于这个变量上</p>
+<p>如果执行上下文是函数，则其<strong>活动对象（activation object）</strong>作为变量对象，活动对象最初只有一个定义变量<code>arguments</code></p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
+<p>作用域由函数或代码块创建，变量只能在定义它的函数或代码块内使用，超出范围则不可访问，作用域决定了代码区块中变量和其他资源的可见性</p>
+</blockquote>
+<p>作用域可分为：</p>
+<ul>
+<li>全局作用域：</li>
+<li>函数作用域</li>
+<li>块级作用域</li>
+</ul>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><blockquote>
+<p>在代码中任何地方都能访问到的对象拥有全局作用域</p>
+</blockquote>
+<ul>
+<li>最外层函数 和 在最外层函数外面 定义的变量拥有全局作用域</li>
+<li>所有未定义直接复制的变量自动声明为拥有全局作用域</li>
+<li>所有 window 对象的属性拥有全局作用域</li>
+</ul>
+<h4 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h4><blockquote>
+<p>函数作用域顾名思义就是指声明在函数内部的变量，函数作用域一般只在固定的代码片段内可以访问到</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayName</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> name = <span class="string">&#x27;Katrina&#x27;</span>;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">innerSay</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">innerSay</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sayName</span>();   <span class="comment">// Katrina</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// name is not defined</span></span><br><span class="line"><span class="title function_">innerSay</span>();   <span class="comment">// innerSay is not defined</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><blockquote>
+<p>块级作用域可以通过let和const声明，所声明的变量在指定块级作用域外无法被访问，会将变量的作用域限制在当前代码块中</p>
+</blockquote>
+<p>块级作用域的特点详见：<a href="https://superkatrina123.github.io/2022/07/05/JavaScript/%E5%8F%98%E9%87%8F_var%20let%20const%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%BA%94%E7%94%A8/">变量 | var let const区别及应用</a></p>
+<h4 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h4><blockquote>
+<p>词法作用域是定义表达式并能被访问到的区间，即一个声明的词法作用域就是它被<strong>定义</strong>时所在的作用域</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个全局作用域变量</span></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;Katrina&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在函数体内调用name变量</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayName</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayName</span>());   <span class="comment">// Katrina</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	name的词法作用域是全局作用域，因为name是在全局环境定义的，词法作用域正是取决于变量定义时的作用域而不是调用时的作用域</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><blockquote>
+<p>在当前作用域没有找到所需变量，就去父级寻找，父级没有找到再一层层向上找，直到全局作用域还没找到就放弃，这种一层层的关系就是作用域链</p>
+</blockquote>
+<h3 id="作用域与执行上下文"><a href="#作用域与执行上下文" class="headerlink" title="作用域与执行上下文"></a>作用域与执行上下文</h3><p>JavaScript 属于解释型语言，JavaScript 的执行分为：<strong>解释</strong>和<strong>执行</strong>两个阶段,这两个阶段所做的事并不一样：</p>
+<h4 id="解释阶段"><a href="#解释阶段：" class="headerlink" title="解释阶段："></a>解释阶段：</h4><ul>
+<li>词法分析</li>
+<li>语法分析</li>
+<li>作用域规则确定</li>
+</ul>
+<h4 id="执行阶段"><a href="#执行阶段：" class="headerlink" title="执行阶段："></a>执行阶段：</h4><ul>
+<li>创建执行上下文</li>
+<li>执行函数代码</li>
+<li>垃圾回收</li>
+</ul>
+<p>JavaScript 解释阶段便会确定作用域规则，因此作用域在函数定义时就已经确定了，而不是在函数调用时确定，但是执行上下文是函数执行之前创建的</p>
+<p>执行上下文最明显的就是 this 的指向是执行时确定的，而作用域访问的变量是编写代码的结构确定的</p>
+<p>作用域和执行上下文之间最大的区别是：<br><strong>执行上下文在运行时确定，随时可能改变；作用域在定义时就确定，并且不会改变</strong></p>
+<p>一个作用域下可能包含若干个上下文环境，有可能从来没有过上下文环境（函数从来就没有被调用过）；有可能有过，现在函数被调用完毕后，上下文环境被销毁了；有可能同时存在一个或多个（闭包）</p>
+<p><strong>同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值</strong> </p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6945240902625394718">你真的了解执行上下文吗？</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6874829017006997511#heading-1">掌握JavaScript面试：什么是闭包？</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.fundebug.com/2019/03/15/understand-javascript-scope/">深入理解 JavaScript 作用域和作用域链</a></p>
 
     </div>
 
@@ -341,13 +419,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">102k</span>
+    <span title="Symbols count total">106k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:32</span>
+    <span title="Reading time total">1:36</span>
   </span>
 </div>
 <div class="busuanzi-count">
