@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="继承基础 使用extends关键字就可以继承任何拥有[[Construct]]和原型的对象   不仅可以继承一个类，也可以继承普通的构造函数（保持向后兼容）【任何可以解析为一个类或者一个构造函数的表达式都是有效的】  1234567891011121314151617class Person &amp;#123;&amp;#125;&#x2F;&#x2F; 继承类class Women extends Person &amp;#123;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类 | 类继承">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/11/JavaScript/%E7%B1%BB_%E7%B1%BB%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="继承基础 使用extends关键字就可以继承任何拥有[[Construct]]和原型的对象   不仅可以继承一个类，也可以继承普通的构造函数（保持向后兼容）【任何可以解析为一个类或者一个构造函数的表达式都是有效的】  1234567891011121314151617class Person &amp;#123;&amp;#125;&#x2F;&#x2F; 继承类class Women extends Person &amp;#123;&amp;#">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-11T15:13:22.000Z">
+<meta property="article:modified_time" content="2022-07-12T08:16:57.104Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="和我一起读红宝书">
+<meta property="article:tag" content="继承">
+<meta property="article:tag" content="JavaScript类">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/11/JavaScript/%E7%B1%BB_%E7%B1%BB%E7%BB%A7%E6%89%BF/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/11/JavaScript/%E7%B1%BB_%E7%B1%BB%E7%BB%A7%E6%89%BF/","path":"2022/07/11/JavaScript/类_类继承/","title":"类 | 类继承"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>类 | 类继承 | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">11</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">50</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">继承基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-homeobject%E5%92%8Csuper"><span class="nav-number">2.</span> <span class="nav-text">构造函数、HomeObject和super()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8super%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">使用super时要注意的几个问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%9F%BA%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">抽象基类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">基础内置类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%B7%B7%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">类混入</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/11/JavaScript/%E7%B1%BB_%E7%B1%BB%E7%BB%A7%E6%89%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="类 | 类继承 | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          类 | 类继承
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-11 23:13:22" itemprop="dateCreated datePublished" datetime="2022-07-11T23:13:22+08:00">2022-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-12 16:16:57" itemprop="dateModified" datetime="2022-07-12T16:16:57+08:00">2022-07-12</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="继承基础"><a href="#继承基础" class="headerlink" title="继承基础"></a>继承基础</h3><blockquote>
+<p>使用<code>extends</code>关键字就可以继承任何拥有<code>[[Construct]]</code>和原型的对象</p>
+</blockquote>
+<ul>
+<li>不仅可以继承一个类，也可以继承普通的构造函数（保持向后兼容）【任何可以解析为一个类或者一个构造函数的表达式都是有效的】</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Women</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> w = <span class="keyword">new</span> <span class="title class_">Women</span>();    <span class="comment">// 新建实例</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(w <span class="keyword">instanceof</span> <span class="title class_">Women</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(w <span class="keyword">instanceof</span> <span class="title class_">Person</span>);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承普通的构造函数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Men</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> <span class="title class_">Men</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m <span class="keyword">instanceof</span> <span class="title class_">Men</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m <span class="keyword">instanceof</span> <span class="title class_">Person</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>派生类可以通过原型链访问到类上的方法和原型上定义的方法，this的值会反映调用相应方法的类或者实例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">sayHelloPorototype</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;name&#125;</span> say hello, <span class="subst">$&#123;<span class="variable language_">this</span>&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">sayHelloClass</span>(<span class="params">name</span>) &#123;</span><br><span class="line">     	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;name&#125;</span> say hello, <span class="subst">$&#123;<span class="variable language_">this</span>&#125;</span>`</span>);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Women</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"><span class="keyword">let</span> w1 = <span class="keyword">new</span> <span class="title class_">Women</span>();</span><br><span class="line"></span><br><span class="line">p1.<span class="title function_">sayHelloPorototype</span>(<span class="string">&#x27;Katrina&#x27;</span>);   <span class="comment">// Katrina say hello, Person&#123;&#125;</span></span><br><span class="line">w1.<span class="title function_">sayHelloPorototype</span>(<span class="string">&#x27;Jack&#x27;</span>);      <span class="comment">// Jack say hello, Women&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="title function_">sayHelloClass</span>(<span class="string">&#x27;Katrina1&#x27;</span>);   <span class="comment">// Katrina1 say hello, class Person &#123;&#125;</span></span><br><span class="line"><span class="title class_">Women</span>.<span class="title function_">sayHelloClass</span>(<span class="string">&#x27;Jack1&#x27;</span>);       <span class="comment">// Jack1 say hello, class Women extends Person&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>extends</code>也可以在类表达式中使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">sayHelloPorototype</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;name&#125;</span> say hello, <span class="subst">$&#123;<span class="variable language_">this</span>&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">sayHelloClass</span>(<span class="params">name</span>) &#123;</span><br><span class="line">     	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;name&#125;</span> say hello, <span class="subst">$&#123;<span class="variable language_">this</span>&#125;</span>`</span>);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title class_">Women</span> = <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Person</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="构造函数-homeobject和super"><a href="#构造函数、HomeObject和super" class="headerlink" title="构造函数、HomeObject和super()"></a>构造函数、HomeObject和super()</h3><blockquote>
+<p>派生类可以通过<code>super</code>关键字引用它们的原型</p>
+</blockquote>
+<ul>
+<li><strong>构造函数：</strong>在类构造函数中使用<code>super</code>可以调用父类构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">hasEngie</span> = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();  <span class="comment">// 相当于super.constructor()</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 注意：千万不要在调用super()之前引用this,否则会抛出ReferenceError</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Vehicle</span>);   <span class="comment">// true</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);   <span class="comment">// Bus &#123;hasEngie: true&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>静态方法：</strong>在静态方法中可以通过super 调用继承的类上定义的静态方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">identify</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;vehicle&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">identify</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">identify</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Bus</span>.<span class="title function_">identify</span>();   <span class="comment">// &#x27;vehicle&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用super时要注意的几个问题"><a href="#使用super时要注意的几个问题" class="headerlink" title="使用super时要注意的几个问题"></a>使用super时要注意的几个问题</h4><ul>
+<li>super只能在派生类的构造函数和静态方法中使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">super</span>();</span><br><span class="line">		<span class="comment">// SyntaxError: &#x27;super&#x27; keyword unexpected</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不能单独调用super关键词，要么用它调用构造函数，要么用它引用静态方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;&#125;</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">		<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>);</span><br><span class="line">	<span class="comment">// SyntaxError: &#x27;super&#x27; keyword unexpected here</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>调用super()会调用父类构造函数，并将返回的实例赋值给this（也就是this指向实例）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();    <span class="comment">// 调用父类构造函数</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Vehicle</span>);   <span class="comment">// true</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);   <span class="comment">// Bus&#123;&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>super()的行为如同调用构造函数，如果需要给父类构造函数传参，则需要手动传入</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">id</span> = id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Bus</span>(<span class="number">1234</span>).<span class="property">id</span>);   <span class="comment">// 1234</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果没有定义派生类构造函数，在实例化派生类时会调用super()，而且会传入所有传给派生类的参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">id</span> = id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Bus</span>(<span class="number">1234</span>).<span class="property">id</span>);   <span class="comment">// 1234</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在类构造函数中，不能在调用super()之前引用this</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br><span class="line"><span class="comment">// ReferenceError: Must call super constructor in derived class</span></span><br><span class="line"><span class="comment">// before accessing &#x27;this&#x27; or returning from derived constructor</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果在派生类中显式定义了构造函数，则要么必须在其中调用super()，要么必须在其中返回一个对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">super</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Van</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Jeep</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Car</span>()); <span class="comment">// Car &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Bus</span>()); <span class="comment">// Bus &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Van</span>()); <span class="comment">// &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Jeep</span>());   <span class="comment">// Uncaught ReferenceError: Must call super constructor in derived class before accessing &#x27;this&#x27; or returning from derived constructor</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="抽象基类"><a href="#抽象基类" class="headerlink" title="抽象基类"></a>抽象基类</h3><blockquote>
+<p>抽象基类：可以供其他类继承，但是本身不会实例化</p>
+<p>可以通过判断new.target来阻止实例化</p>
+<p>补课：<a href="https://superkatrina123.github.io/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/">new.target</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象基类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">new</span>.<span class="property">target</span> === <span class="title class_">Vehicle</span>) &#123;   <span class="comment">// 就说明抽象基类被用new实例化了</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Vehicle cannot be directly instantiated&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 派生类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span>&#123;&#125;   <span class="comment">// 抽象基类是可以被继承的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Bus</span>();         <span class="comment">// class Bus &#123;&#125;</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vehicle</span>();		<span class="comment">// class Vehicle &#123;&#125;</span></span><br><span class="line">   </span><br><span class="line"><span class="comment">// Uncaught Error: Vehicle cannot be directly instantiated</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过在抽象基类构造函数中进行检查，可以要求派生类必须定义某个方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象基类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">new</span>.<span class="property">target</span> === <span class="title class_">Vehicle</span>) &#123;   <span class="comment">// 就说明抽象基类被用new实例化了</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Vehicle cannot be directly instantiated&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">foo</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Inheriting class must define foo()&#x27;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;success&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 派生类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;</span><br><span class="line">    <span class="title function_">foo</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Van</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vehicle</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Bus</span>();	  <span class="comment">// success</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Van</span>();   <span class="comment">// Inheriting class must define foo()</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基础内置类型"><a href="#基础内置类型" class="headerlink" title="基础内置类型"></a>基础内置类型</h3><blockquote>
+<p>类继承内置引用类型方便扩展内置类型</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SuperArray</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Array</span> &#123;   <span class="comment">// 注意：之前提到过extends不仅可以继承一个类，也可以继承普通的构造函数</span></span><br><span class="line">    <span class="title function_">shuffle</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 洗牌算法</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">const</span> j = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (i+<span class="number">1</span>));</span><br><span class="line">            [<span class="variable language_">this</span>[i], <span class="variable language_">this</span>[j]] = [<span class="variable language_">this</span>[j], <span class="variable language_">this</span>[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">SuperArray</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a <span class="keyword">instanceof</span> <span class="title class_">SuperArray</span>);  <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a <span class="keyword">instanceof</span> <span class="title class_">Array</span>);       <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);    <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line">a.<span class="title function_">shuffle</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);    <span class="comment">// [3, 1, 2, 5, 4]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>有些内置类型的方法会返回新实例，默认情况下，返回实例的类型与原始实例的类型是一致的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SuperArray</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Array</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a1 = <span class="keyword">new</span> <span class="title class_">SuperArray</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">let</span> a2 = a1.<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> !!(x%<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a2); <span class="comment">// [1, 3, 5]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1 <span class="keyword">instanceof</span> <span class="title class_">SuperArray</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a2 <span class="keyword">instanceof</span> <span class="title class_">SuperArray</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果想覆盖这个默认行为，则可以覆盖<code>Symbol.species</code>访问器，这个访问器决定在创建返回的实例时使用的类</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SuperArray</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Array</span> &#123;</span><br><span class="line">	<span class="keyword">static</span> get [<span class="title class_">Symbol</span>.<span class="property">species</span>]() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="title class_">Array</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a1 = <span class="keyword">new</span> <span class="title class_">SuperArray</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">let</span> a2 = a1.<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> !!(x%<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a2); <span class="comment">// [1, 3, 5]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1 <span class="keyword">instanceof</span> <span class="title class_">SuperArray</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a2 <span class="keyword">instanceof</span> <span class="title class_">SuperArray</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="类混入"><a href="#类混入" class="headerlink" title="类混入"></a>类混入</h3><blockquote>
+<p>类混入：把不同类的行为集中到一个类</p>
+<p>混入模式可以通过在一个表达式中连缀多个混入元素来实现，这个表达式最终会解析为一个可以被继承的类</p>
+</blockquote>
+<p>假设现在有一个需求：如果<code>Person</code>类需要组合<code>A</code>、<code>B</code>、<code>C</code>，则需要某种机制实现<code>B </code>继承<code>A</code>，<code>C </code>继承<code>B</code>，而<code>Person</code>再继承<code>C</code>，从而把<code>A</code>、<code>B</code>、&#96;C 组合到这个超类中</p>
+<p>实现策略：定义一组“可嵌套”的函数，每个函数分别接收一个超类作为参数，而将混入类定义为这个参数的子类，并返回这个类，这些组合函数可以连缀调用，最终组合成超类表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">FooMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">BarMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">BazMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">baz</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;baz&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">FooMixin</span>(<span class="title class_">BarMixin</span>(<span class="title class_">BazMixin</span>(<span class="title class_">Vehicle</span>))) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br><span class="line">b.<span class="title function_">foo</span>(); <span class="comment">// foo</span></span><br><span class="line">b.<span class="title function_">bar</span>(); <span class="comment">// bar</span></span><br><span class="line">b.<span class="title function_">baz</span>(); <span class="comment">// baz</span></span><br></pre></td></tr></table></figure>
+
+<p>通过写一个辅助函数，可以把嵌套展开</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">FooMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">BarMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">BazMixin</span> = (<span class="params">Superclass</span>) =&gt; <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">Superclass</span> &#123;</span><br><span class="line">	<span class="title function_">baz</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;baz&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">mix</span>(<span class="params">BassClass, ...Minins</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Minins</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> <span class="title function_">curr</span>(prev), <span class="title class_">BassClass</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_ inherited__">mix</span>(<span class="title class_">Vehicle</span>, <span class="title class_">FooMixin</span>, <span class="title class_">BarMixin</span>, <span class="title class_">BazMixin</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br><span class="line">b.<span class="title function_">foo</span>(); <span class="comment">// foo</span></span><br><span class="line">b.<span class="title function_">bar</span>(); <span class="comment">// bar</span></span><br><span class="line">b.<span class="title function_">baz</span>(); <span class="comment">// baz</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" rel="tag"><i class="fa fa-tag"></i> 和我一起读红宝书</a>
+              <a href="/tags/%E7%BB%A7%E6%89%BF/" rel="tag"><i class="fa fa-tag"></i> 继承</a>
+              <a href="/tags/JavaScript%E7%B1%BB/" rel="tag"><i class="fa fa-tag"></i> JavaScript类</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/11/JavaScript/%E7%B1%BB_%E7%B1%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E5%92%8C%E7%B1%BB%E6%88%90%E5%91%98/" rel="prev" title="类 | 类构造函数、实例、原型和类成员">
+                  <i class="fa fa-chevron-left"></i> 类 | 类构造函数、实例、原型和类成员
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/12/JavaScript/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8_%E8%BF%AD%E4%BB%A3%E5%99%A8/" rel="next" title="迭代器和生成器 | 迭代器（含手写迭代器）">
+                  迭代器和生成器 | 迭代器（含手写迭代器） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">158k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:23</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
