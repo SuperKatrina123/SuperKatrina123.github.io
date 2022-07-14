@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://superkatrina123.github.io/2022/07/11/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8F%8AJS%E5%AE%9E%E7%8E%B0/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif">
 <meta property="og:image" content="https://superkatrina123.github.io/2022/07/11/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8F%8AJS%E5%AE%9E%E7%8E%B0/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif">
 <meta property="article:published_time" content="2022-07-11T06:00:47.000Z">
-<meta property="article:modified_time" content="2022-07-11T08:47:21.595Z">
+<meta property="article:modified_time" content="2022-07-14T10:24:10.882Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="排序算法">
@@ -263,9 +263,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-07-11 14:00:47 / Modified: 16:47:21" itemprop="dateCreated datePublished" datetime="2022-07-11T14:00:47+08:00">2022-07-11</time>
+      <time title="Created: 2022-07-11 14:00:47" itemprop="dateCreated datePublished" datetime="2022-07-11T14:00:47+08:00">2022-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-14 18:24:10" itemprop="dateModified" datetime="2022-07-14T18:24:10+08:00">2022-07-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -288,14 +294,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>5.5k</span>
+      <span>6.3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -338,6 +344,12 @@
 </ul>
 <p><strong>算法实现</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;   <span class="comment">// i表示排序数组的末尾索引</span></span><br><span class="line">        <span class="keyword">let</span> minValue = arr[i], minIndex = i;   <span class="comment">// 用于记录未排序数组的最小元素和对应的索引</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = i+<span class="number">1</span>; j &lt; arr.<span class="property">length</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; minValue) &#123;   <span class="comment">// 通过遍历的方式查找</span></span><br><span class="line">                minValue = arr[j];</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];   <span class="comment">// 找到后把排序数组的末尾索引元素和未排序数组中最小的元素进行交换</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="title function_">selectSort</span>(arr);   <span class="comment">// [1, 2, 2, 3, 3, 4, 5, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	复杂度分析：</span></span><br><span class="line"><span class="comment">		时间复杂度： O(n^2)</span></span><br><span class="line"><span class="comment">		空间复杂度： O(1)</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">	稳定性分析：选择排序在找到后把排序数组的末尾索引元素和未排序数组中最小的元素进行交换这个过程就破坏了元素的相对位置</span></span><br><span class="line"><span class="comment">		不稳定</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>代码优化</strong></p>
+<ul>
+<li>优化：一次就选出最大最小的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectSortA</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> left = <span class="number">0</span>, right = arr.<span class="property">length</span> - <span class="number">1</span>; left &lt; right; left++, right--) &#123;</span><br><span class="line">        <span class="comment">// 用于记录最大值和最小值的索引</span></span><br><span class="line">        <span class="keyword">let</span> minIndex = left, maxIndex = right;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 找到每次遍历的最大值和最小值的索引</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> index = left; index &lt;= right; index++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[index] &lt; arr[minIndex]) minIndex = index;</span><br><span class="line">            <span class="keyword">if</span> (arr[index] &gt; arr[maxIndex]) maxIndex = index;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 交换</span></span><br><span class="line">        [arr[left], arr[minIndex]] = [arr[minIndex], arr[left]];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//此处是先排最小值的位置，所以得考虑最大值（arr[maxIndex]）在最小位置（left）的情况</span></span><br><span class="line">        <span class="comment">// 如果不考虑这里的话，因为前面已经交换过了，所以会导致无效交换，反而把最大值的value交换回来了</span></span><br><span class="line">        <span class="keyword">if</span> (left === maxIndex) &#123;</span><br><span class="line">            maxIndex = minIndex;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 交换</span></span><br><span class="line">        [arr[right], arr[maxIndex]] = [arr[maxIndex], arr[right]];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">selectSortA</span>(arr));   <span class="comment">// [1, 2, 2, 3, 3, 4, 5, 7, 8, 9, 10]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入</p>
 <img src="/2022/07/11/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8F%8AJS%E5%AE%9E%E7%8E%B0/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif" class title="插入排序">
@@ -436,13 +448,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">196k</span>
+    <span title="Symbols count total">197k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:59</span>
   </span>
 </div>
 <div class="busuanzi-count">
