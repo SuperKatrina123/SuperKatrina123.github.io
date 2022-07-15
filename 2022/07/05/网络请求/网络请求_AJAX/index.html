@@ -22,31 +22,30 @@
 
     <meta name="description" content="AJAX概述Ajax &#x3D; Asynchronous JavaScript + XML  Ajax主要依赖于XMLHttpRequest（XHR）对象，XHR为发送服务器请求和获取响应提供了合理的接口。这个接口可以实现异步从服务器获取额外数据，意味着用户点击不用页面刷新也可以获取数据。通过XHR对象获取数据后，可以使用DOM方法把数据插入网页。 AJAX优点W3school里面是这么说的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络 | AJAX">
-<meta property="og:url" content="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/index.html">
+<meta property="og:title" content="网络请求 | AJAX">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/index.html">
 <meta property="og:site_name" content="耿直咸鱼">
 <meta property="og:description" content="AJAX概述Ajax &#x3D; Asynchronous JavaScript + XML  Ajax主要依赖于XMLHttpRequest（XHR）对象，XHR为发送服务器请求和获取响应提供了合理的接口。这个接口可以实现异步从服务器获取额外数据，意味着用户点击不用页面刷新也可以获取数据。通过XHR对象获取数据后，可以使用DOM方法把数据插入网页。 AJAX优点W3school里面是这么说的">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E4%BC%98%E7%82%B9.png">
-<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/AJAX%E4%BC%98%E7%82%B9.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
 <meta property="article:published_time" content="2022-07-05T13:41:33.000Z">
-<meta property="article:modified_time" content="2022-07-07T13:43:28.303Z">
+<meta property="article:modified_time" content="2022-07-15T05:16:33.966Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="手写原理">
 <meta property="article:tag" content="网络请求">
-<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E4%BC%98%E7%82%B9.png">
+<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/AJAX%E4%BC%98%E7%82%B9.png">
 
 
-<link rel="canonical" href="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/">
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/","path":"2022/07/05/计网/计算机网络_AJAX/","title":"计算机网络 | AJAX"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/","path":"2022/07/05/网络请求/网络请求_AJAX/","title":"网络请求 | AJAX"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>计算机网络 | AJAX | 耿直咸鱼</title>
+<title>网络请求 | AJAX | 耿直咸鱼</title>
   
 
 
@@ -97,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">56</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">57</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -169,13 +168,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -233,7 +232,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -246,12 +245,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="计算机网络 | AJAX | 耿直咸鱼">
+      <meta itemprop="name" content="网络请求 | AJAX | 耿直咸鱼">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          计算机网络 | AJAX
+          网络请求 | AJAX
         </h1>
 
         <div class="post-meta-container">
@@ -269,7 +268,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-07 21:43:28" itemprop="dateModified" datetime="2022-07-07T21:43:28+08:00">2022-07-07</time>
+      <time title="Modified: 2022-07-15 13:16:33" itemprop="dateModified" datetime="2022-07-15T13:16:33+08:00">2022-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,7 +280,7 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" itemprop="url" rel="index"><span itemprop="name">网络请求</span></a>
         </span>
     </span>
 
@@ -313,7 +312,7 @@
         <h2 id="ajax概述"><a href="#AJAX概述" class="headerlink" title="AJAX概述"></a>AJAX概述</h2><p>Ajax &#x3D; Asynchronous JavaScript + XML </p>
 <p>Ajax主要依赖于XMLHttpRequest（<strong>XHR</strong>）对象，XHR为发送服务器请求和获取响应提供了合理的接口。这个接口可以实现异步从服务器获取额外数据，意味着用户点击不用页面刷新也可以获取数据。通过XHR对象获取数据后，可以使用DOM方法把数据插入网页。</p>
 <h2 id="ajax优点"><a href="#AJAX优点" class="headerlink" title="AJAX优点"></a>AJAX优点</h2><p>W3school里面是这么说的</p>
-<img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E4%BC%98%E7%82%B9.png" class title="AJAX优点">
+<img src="/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/AJAX%E4%BC%98%E7%82%B9.png" class title="AJAX优点">
 
 <p>言简意赅就是在说AJAX可以不刷新页面更新数据，AJAX可以实现与服务器的通信</p>
 <h3 id="1-无刷新更新数据"><a href="#1-无刷新更新数据" class="headerlink" title="1. 无刷新更新数据"></a>1. 无刷新更新数据</h3><p>这是AJAX最大的优点：不用刷新整个页面的前提下与服务器通信维护数据，有利于Web应用程序更为迅速地响应用户交互，避免了在网络上发送没有改变的信息，减少用户等待时间，带来了较好的用户体验。</p>
@@ -324,7 +323,7 @@
 <h3 id="ajax缺点"><a href="#AJAX缺点" class="headerlink" title="AJAX缺点"></a>AJAX缺点</h3><h3 id="1-ajax破坏了浏览器机制"><a href="#1-AJAX破坏了浏览器机制" class="headerlink" title="1. AJAX破坏了浏览器机制"></a>1. AJAX破坏了浏览器机制</h3><p>因为AJAX是动态更新局部页面的，所以用户无法回到前一个页面状态，因为一般来说，浏览器可以通过back和history的功能回到历史记录中的静态页面，但是在AJAX中这是无法实现的。</p>
 <h3 id="2-ajax的安全问题"><a href="#2-AJAX的安全问题" class="headerlink" title="2. AJAX的安全问题"></a>2. AJAX的安全问题</h3><p>AJAX暴露了浏览器与服务器交互的细节。</p>
 <h3 id="3-ajax不能很好地兼容移动设备"><a href="#3-AJAX不能很好地兼容移动设备" class="headerlink" title="3. AJAX不能很好地兼容移动设备"></a>3. AJAX不能很好地兼容移动设备</h3><p>一些手持设备比如手机，PAD等，现在还不能很好地支持AJAX。</p>
-<h2 id="ajax工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h2><img src="/2022/07/05/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class title="AJAX工作原理">
+<h2 id="ajax工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h2><img src="/2022/07/05/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_AJAX/AJAX%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class title="AJAX工作原理">
 
 <p>基于AJAX的介绍和工作原理，AJAX请求可以分为以下几个步骤：</p>
 <ol>
@@ -373,7 +372,6 @@
           <div class="post-tags">
               <a href="/tags/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 手写原理</a>
               <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" rel="tag"><i class="fa fa-tag"></i> 网络请求</a>
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
           </div>
 
         
@@ -419,13 +417,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">198k</span>
+    <span title="Symbols count total">200k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:01</span>
+    <span title="Reading time total">3:02</span>
   </span>
 </div>
 <div class="busuanzi-count">
