@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="&lt;script&gt;元素 将JavaScript插入到HTML中主要依赖的是&lt;script&gt;元素  &lt;script&gt;特性 async（可选）：表示应该立即开始下载脚本，但不能阻止其他页面动作，比如下载资源或等待其他脚本加载【只对外部脚本文件有效】 charset（可选）：使用src属性指定的代码字符集【这个属性很少使用，因为大多数浏览器不在乎它的值】 crossor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="标签 | script元素及加载方式">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/15/JavaScript/%E6%A0%87%E7%AD%BE_script%E5%85%83%E7%B4%A0%E5%8F%8A%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="&lt;script&gt;元素 将JavaScript插入到HTML中主要依赖的是&lt;script&gt;元素  &lt;script&gt;特性 async（可选）：表示应该立即开始下载脚本，但不能阻止其他页面动作，比如下载资源或等待其他脚本加载【只对外部脚本文件有效】 charset（可选）：使用src属性指定的代码字符集【这个属性很少使用，因为大多数浏览器不在乎它的值】 crossor">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-15T03:24:38.000Z">
+<meta property="article:modified_time" content="2022-07-15T04:26:44.191Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="和我一起读红宝书">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/15/JavaScript/%E6%A0%87%E7%AD%BE_script%E5%85%83%E7%B4%A0%E5%8F%8A%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/15/JavaScript/%E6%A0%87%E7%AD%BE_script%E5%85%83%E7%B4%A0%E5%8F%8A%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/","path":"2022/07/15/JavaScript/标签_script元素及加载方式/","title":"标签 | script元素及加载方式"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>标签 | script元素及加载方式 | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">56</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ltscriptgt%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">&lt;script&gt;元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ltscriptgt%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">&lt;script&gt;特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ltscriptgt%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">使用&lt;script&gt;的元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ltscriptgt%E5%85%83%E7%B4%A0%E4%BD%8D%E7%BD%AE%E5%8F%8A%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">&lt;script&gt;元素位置及加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%8Ascript%E5%85%83%E7%B4%A0%E6%94%BE%E5%9C%A8body%E5%BA%95%E9%83%A8"><span class="nav-number">2.1.</span> <span class="nav-text">把script元素放在body底部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%E8%84%9A%E6%9C%AC"><span class="nav-number">2.2.</span> <span class="nav-text">延迟加载脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-number">2.3.</span> <span class="nav-text">异步执行脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%84%9A%E6%9C%AC"><span class="nav-number">2.4.</span> <span class="nav-text">动态加载脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E5%B1%95ltnoscriptgt%E5%85%83%E7%B4%A0"><span class="nav-number">3.</span> <span class="nav-text">拓展：&lt;noscript&gt;元素</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/15/JavaScript/%E6%A0%87%E7%AD%BE_script%E5%85%83%E7%B4%A0%E5%8F%8A%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="标签 | script元素及加载方式 | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          标签 | script元素及加载方式
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-15 11:24:38 / Modified: 12:26:44" itemprop="dateCreated datePublished" datetime="2022-07-15T11:24:38+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>4.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="ltscriptgt元素"><a href="#lt-script-gt-元素" class="headerlink" title="&lt;script&gt;元素"></a><code>&lt;script&gt;</code>元素</h3><blockquote>
+<p>将JavaScript插入到HTML中主要依赖的是<code>&lt;script&gt;</code>元素</p>
+</blockquote>
+<h4 id="ltscriptgt特性"><a href="#lt-script-gt-特性" class="headerlink" title="&lt;script&gt;特性"></a><code>&lt;script&gt;</code>特性</h4><ul>
+<li><code>async</code>（可选）：表示应该立即开始下载脚本，但不能阻止其他页面动作，比如下载资源或等待其他脚本加载【只对外部脚本文件有效】</li>
+<li><code>charset</code>（可选）：使用<code>src</code>属性指定的代码字符集【这个属性很少使用，因为大多数浏览器不在乎它的值】</li>
+<li><code>crossorigin</code>（可选）：配置相关请求的<code>CORS</code>（跨源资源共享）设置【默认不使用CORS】<ul>
+<li><code>crossorigin=&quot;anonymous&quot;</code>配置文件请求不必设置凭据标志</li>
+<li><code>crossorigin=&quot;use-credentials&quot;</code>设置凭据标志，意味着出站请求会包含凭据</li>
+</ul>
+</li>
+<li><code>defer</code>（可选）：表示脚本立即下载，但是可以延迟到文档完全被解析和显示之后再执行【只对外部脚本文件有效】</li>
+<li><code>integrity</code>（可选）：允许比对接收到的资源和指定的加密签名以验证子资源完整性（<code>SRI，Subresource Integrity</code>）<ul>
+<li>如果接收到的资源的签名与这个属性指定的签名不匹配，则页面会报错，脚本不会执行</li>
+<li>这个属性可以用于确保内容分发网络（<code>CDN，Content Delivery Network</code>）不会提供恶意内容</li>
+</ul>
+</li>
+<li><code>language</code>（废弃）：最初用于表示代码块中的脚本语言（如<code>&quot;JavaScript&quot;</code>、<code>&quot;JavaScript 1.2&quot;</code>或<code>&quot;VBScript&quot;</code>）【大多数浏览器都会忽略这个属性，不应该再使用它】</li>
+<li><code>src</code>（可选）：表示包含要执行的代码的外部文件</li>
+<li><code>type</code>（可选）：代替language，表示代码块中脚本语言的内容类型（也称MIME 类型）<ul>
+<li>按照惯例，这个值始终都是<code>&quot;text/javascript&quot;</code>，尽管<code>&quot;text/javascript&quot;</code>和<code>&quot;text/ecmascript&quot;</code>都已经废弃了</li>
+<li><code>JavaScript</code> 文件的<code>MIME</code> 类型通常是<code>&quot;application/x-javascript&quot;</code>，不过给<code>type</code> 属性这个值有可能导致脚本被忽略</li>
+<li>在非<code>IE</code> 的浏览器中有效的其他值还有<code>&quot;application/javascript&quot;</code>和<code>&quot;application/ecmascript&quot;</code></li>
+<li>如果这个值是<code>module</code>，则代码会被当成<code>ES6 </code>模块，而且只有这时候代码中才能出现<code>import</code> 和<code>export </code>关键字</li>
+</ul>
+</li>
+</ul>
+<h4 id="使用ltscriptgt的元素"><a href="#使用-lt-script-gt-的元素" class="headerlink" title="使用&lt;script&gt;的元素"></a>使用<code>&lt;script&gt;</code>的元素</h4><ol>
+<li>在HTML中嵌入代码</li>
+<li>通过<code>&lt;script&gt;</code>标签引入外部JavaScript代码</li>
+</ol>
+<blockquote>
+<p>一般更加推荐把JavaScript代码放到外部文件中</p>
+<p>理由如下：</p>
+<ul>
+<li><strong>可维护性</strong>：JavaScript 代码如果分散到很多HTML 页面，会导致维护困难，而用一个目录保存所有JavaScript 文件，则更容易维护，这样开发者就可以独立于使用它们的HTML 页面来编辑代码</li>
+<li><strong>缓存</strong>：浏览器会根据特定的设置缓存所有外部链接的JavaScript 文件，这意味着如果两个页面都用到同一个文件，则该文件只需下载一次，这最终意味着页面加载更快</li>
+<li><strong>适应未来</strong>：通过把JavaScript 放到外部文件中，就不必考虑用<code>XHTML</code>或注释黑科技。包含外部JavaScript 文件的语法在<code>HTML</code>和<code>XHTML</code>中是一样的</li>
+</ul>
+</blockquote>
+<p>注意：</p>
+<ul>
+<li><p>使用了<code>src</code> 属性的<code>&lt;script&gt;</code>元素不应该再在<code>&lt;script&gt;</code>和<code>&lt;script&gt;</code>签中再包含其他JavaScript 代码</p>
+<ul>
+<li>如果两者都提供的话，则浏览器只会下载并执行脚本文件，从而忽略行内代码。</li>
+</ul>
+</li>
+<li><p>【JSONP跨域原理】<code>&lt;script&gt;</code>元素一个最为强大、同时也备受争议的特性是，它可以包含来自外部域的JavaScript，跟<code>&lt;img&gt;</code>元素很像，<code>&lt;script&gt;</code>元素的<code>src</code> 属性可以是一个完整的URL，而且这个URL 指向的资源可以跟包含它的HTML 页面不在同一个域中文件</p>
+</li>
+<li><p>【XSS攻击】来自外部域的代码会被当成加载它的页面的一部分来加载和解释。这个能力可以让我们通过不同的域分发JavaScript，不过，引用了放在别人服务器上的JavaScript 文件时要格外小心，因为恶意的程序员随时可能替换这个文件。在包含外部域的JavaScript 文件时，要确保该域是自己所有的，或者该域是一个可信的来源，<code>&lt;script&gt;</code>标签的integrity 属性是防范这种问题的一个武器，但这个属性也不是所有浏览器都支持</p>
+</li>
+<li><p>【顺序加载】在没有使用<code>defer</code>或者<code>async</code>的情况下，浏览器都会按照<code>&lt;script&gt;</code>在页面中出现的顺序依次解释它们</p>
+</li>
+</ul>
+<h3 id="ltscriptgt元素位置及加载"><a href="#lt-script-gt-元素位置及加载" class="headerlink" title="&lt;script&gt;元素位置及加载"></a><code>&lt;script&gt;</code>元素位置及加载</h3><p>我们知道，浏览器解析HTML的时候是从上到下依次解析的，如果把<code>&lt;script&gt;</code>标签都放在<code>&lt;head&gt;</code>标签里面，那么这就意味着必须把所有JavaScript代码都下载、解析和解释完成后，才能开始渲染页面（因为页面在浏览器解析到<code>&lt;body&gt;</code>的起始标签时才开始渲染），这也就是【JavaScript会阻塞浏览器解析HTML文件】，这样导致的后果就是<strong>页面渲染会明显延迟，期间浏览器窗口完全空白，给用户带来不好的体验</strong></p>
+<p>为了解决这个问题，可以采用如下方法：</p>
+<h4 id="把script元素放在body底部"><a href="#把script元素放在body底部" class="headerlink" title="把script元素放在body底部"></a>把script元素放在body底部</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Example HTML Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 这里是页面内容 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;example1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;example2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样，页面会在处理JavaScript之前进行渲染</p>
+<h4 id="延迟加载脚本"><a href="#延迟加载脚本" class="headerlink" title="延迟加载脚本"></a>延迟加载脚本</h4><blockquote>
+<p>HTML4.01中引入defer属性，表示脚本可以立即下载但是延迟到文档完全被解析和显示之后再执行【对外部脚本文件才有效】</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Example HTML Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;example1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;example2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 这里是页面内容 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="异步执行脚本"><a href="#异步执行脚本" class="headerlink" title="异步执行脚本"></a>异步执行脚本</h4><blockquote>
+<p>HTML5中引入async属性，表示应该立即开始下载脚本，但不能阻止其他页面动作，比如下载资源或等待其他脚本加载【只对外部脚本文件有效】</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Example HTML Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;example1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;example2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 这里是页面内容 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>defer和async的区别：</p>
+<p>defer可以保证脚本顺序执行，但是async不能保证，因为<strong>给脚本添加async 属性的目的是告诉浏览器，不必等脚本下载和执行完后再加载页面，同样也不必等到该异步脚本下载和执行后再加载其他脚本</strong></p>
+</blockquote>
+<h4 id="动态加载脚本"><a href="#动态加载脚本" class="headerlink" title="动态加载脚本"></a>动态加载脚本</h4><blockquote>
+<p>除了通过<code>&lt;script&gt;</code>元素加载脚本，还可以通过JavaScript使用DOM API的方式向DOM中动态添加script元素加载指定的脚本</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">script.<span class="property">src</span> = <span class="string">&#x27;gibberish.js&#x27;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(script);</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，以这种方式创建的<code>&lt;script&gt;</code>元素是以异步方式加载的，相当于添加了<code>async</code>属性</p>
+<p><strong>存在问题</strong>：</p>
+<ol>
+<li>并不是所有浏览器都支持<code>async</code>属性</li>
+<li>以这种方式获取的资源对浏览器预加载器是不可见的，这会严重影响它们在资源获取队列中的优先级，进而影响性能</li>
+</ol>
+<p><strong>解决方式</strong>：</p>
+<ol>
+<li><p>如果要统一动态脚本的加载行为，可以明确将其设置为同步加载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">script.<span class="property">src</span> = <span class="string">&#x27;gibberish.js&#x27;</span>;</span><br><span class="line">script.<span class="property">async</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(script);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>要想让预加载器知道这些动态请求文件的存在，可以在文档头部显式声明它们</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;gibberish.js&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="拓展ltnoscriptgt元素"><a href="#拓展：-lt-noscript-gt-元素" class="headerlink" title="拓展：&lt;noscript&gt;元素"></a>拓展：<code>&lt;noscript&gt;</code>元素</h3><blockquote>
+<p><code>&lt;noscript&gt;</code>元素给不支持JavaScript的浏览器提供替代内容</p>
+</blockquote>
+<p><code>&lt;noscript&gt;</code>元素可以包含任何可以出现在<code>&lt;body&gt;</code>中的HTML 元素，<code>&lt;script&gt;</code>除外</p>
+<p>在下列两种情况下，浏览器将显示包含在<noscript>中的内容：</noscript></p>
+<ul>
+<li>浏览器不支持脚本</li>
+<li>浏览器对脚本的支持被关闭</li>
+</ul>
+<p>任何一个条件被满足，包含在<code>&lt;noscript&gt;</code>中的内容就会被渲染，否则，浏览器不会渲染<code>&lt;noscript&gt;</code>中的内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Example HTML Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span>=<span class="string">&quot;defer&quot;</span> <span class="attr">src</span>=<span class="string">&quot;example1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span>=<span class="string">&quot;defer&quot;</span> <span class="attr">src</span>=<span class="string">&quot;example2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This page requires a JavaScript-enabled browser.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子是在脚本不可用时让浏览器显示一段话，如果浏览器支持脚本，则用户永远不会看到它</p>
+<p><noscript>元素可以包含任何可以出现在<body>中的HTML 元素，<script>除外。在下列两种<br>情况下，浏览器将显示包含在<noscript>中的内容：</p>
+</script></body></noscript></p>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" rel="tag"><i class="fa fa-tag"></i> 和我一起读红宝书</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/14/JavaScript/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B_async%20await/" rel="prev" title="异步编程 | async/await">
+                  <i class="fa fa-chevron-left"></i> 异步编程 | async/await
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">198k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:01</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
