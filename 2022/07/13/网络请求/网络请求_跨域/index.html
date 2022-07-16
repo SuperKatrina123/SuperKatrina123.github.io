@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="跨域问题很常见，同时也是面试常问的题目之一，出现的机率super plus【自创词~就是超级多次啦】  跨域问题主要是浏览器的同源策略造成的 因此，本文结构如下：  什么是同源策略（别说你还不知道URL的组成！） 如何解决跨域问题？  同源策略url主要由协议、域名、端口三部分组成【端口一般是隐藏的~】    同源指的是：协议 域名 端口号 必须一致，其中任意一个不一致就会引起跨域  同源策略限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络请求 | 跨域（待补充）">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="跨域问题很常见，同时也是面试常问的题目之一，出现的机率super plus【自创词~就是超级多次啦】  跨域问题主要是浏览器的同源策略造成的 因此，本文结构如下：  什么是同源策略（别说你还不知道URL的组成！） 如何解决跨域问题？  同源策略url主要由协议、域名、端口三部分组成【端口一般是隐藏的~】    同源指的是：协议 域名 端口号 必须一致，其中任意一个不一致就会引起跨域  同源策略限">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/url%E7%BB%84%E6%88%90.png">
+<meta property="article:published_time" content="2022-07-13T15:07:04.000Z">
+<meta property="article:modified_time" content="2022-07-16T12:29:58.879Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="网络请求">
+<meta property="article:tag" content="跨域">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/url%E7%BB%84%E6%88%90.png">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/","path":"2022/07/13/网络请求/网络请求_跨域/","title":"网络请求 | 跨域（待补充）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>网络请求 | 跨域（待补充） | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">71</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="nav-number">1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">如何解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-jsonp"><span class="nav-number">2.1.</span> <span class="nav-text">1. JSONP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-cors"><span class="nav-number">2.2.</span> <span class="nav-text">2. CORS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="网络请求 | 跨域（待补充） | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络请求 | 跨域（待补充）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-13 23:07:04" itemprop="dateCreated datePublished" datetime="2022-07-13T23:07:04+08:00">2022-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-16 20:29:58" itemprop="dateModified" datetime="2022-07-16T20:29:58+08:00">2022-07-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" itemprop="url" rel="index"><span itemprop="name">网络请求</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>2.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>跨域问题很常见，同时也是面试常问的题目之一，出现的机率super plus【自创词~就是超级多次啦】</p>
+</blockquote>
+<p>跨域问题主要是浏览器的同源策略造成的</p>
+<p>因此，本文结构如下：</p>
+<ol>
+<li>什么是同源策略（别说你还不知道URL的组成！）</li>
+<li>如何解决跨域问题？</li>
+</ol>
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p><code>url</code>主要由<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>三部分组成【端口一般是隐藏的~】</p>
+<img src="/2022/07/13/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82_%E8%B7%A8%E5%9F%9F/url%E7%BB%84%E6%88%90.png" class title="url组成">
+
+<blockquote>
+<p>同源指的是：协议 域名 端口号 必须一致，其中任意一个不一致就会引起跨域</p>
+</blockquote>
+<p>同源策略限制了从一个源加载的文档或脚本如何与另一个文档进行交互</p>
+<ul>
+<li>当前域下的<code>js</code>脚本不能够访问其他域下的<code>cookie</code> <code>localStorage</code> <code>indexDB</code></li>
+<li>当前域下的<code>js</code>脚本不能够操作访问其他域下的DOM</li>
+<li>当前域下<code>ajax</code>无法发送跨域请求</li>
+</ul>
+<p>同源政策的目的主要是为了保证用户的信息安全，它只是对 js 脚本的一种限制，并不是对浏览器的限制，对于一般的 <code>img</code>、或者<code>script</code> 脚本请求都不会有跨域的限制，这是因为这些操作都不会通过响应结果来进行可能出现安全问题的操作</p>
+<h3 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题"></a>如何解决跨域问题</h3><p>解决跨域问题主要有如下几种方式：</p>
+<ul>
+<li><p><code>JSONP</code>：通过动态创建<code>&lt;script&gt;</code>元素并为<code>src</code>属性执行跨域URL实现的【<code>&lt;script&gt;</code>与<code>&lt;img&gt;</code>类似，能够不受限制地从其他域加载资源】</p>
+</li>
+<li><p><code>CORS</code>：<code>Cross-Origin Resource Sharing</code>跨站资源共享，使用自定义的HTTP 头部允许浏览器和服务器相互了解，以确实请求或响应<br>应该成功还是失败</p>
+</li>
+</ul>
+<h4 id="1-jsonp"><a href="#1-JSONP" class="headerlink" title="1. JSONP"></a>1. JSONP</h4><blockquote>
+<p><code>jsonp</code>的<strong>原理</strong>就是利用<code>&lt;script&gt;</code>标签没有跨域限制，通过<code>&lt;script&gt;</code>标签<code>src</code>属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据</p>
+</blockquote>
+<p><strong>JSONP介绍</strong></p>
+<ul>
+<li><p>JSONP</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">callback</span>(&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Katrina&#x27;</span>&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JSONP格式包含两部分：回调和数据</p>
+<ul>
+<li>回调是在页面接收到响应之后应该调用的函数，通常回调函数的名称是通过请求来动态指定的</li>
+<li>而数据就是作为参数传给回调函数的JSON 数据</li>
+</ul>
+</li>
+<li><p>典型的JSONP请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;http://freegeoip.net/json/?callback=handleResponse&#x27;</span>   <span class="comment">// handleResponse 回调函数的名称</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>JSONP实现</strong></p>
+<ul>
+<li><p>实现步骤</p>
+<ul>
+<li>准备一个回调函数，用于接收JSON数据</li>
+<li>动态创建script标签</li>
+<li>给创建的script添加src</li>
+<li>把创建好的script添加到head中</li>
+</ul>
+</li>
+<li><p>原生JS实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 准备一个回调函数，用于接收JSON数据</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleResponse</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态创建script标签</span></span><br><span class="line"><span class="keyword">let</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line"><span class="comment">// 给创建的script添加src</span></span><br><span class="line">script.<span class="property">src</span> = <span class="string">&#x27;http://www.domain.com:8080/login?username=admin&amp;callback=handleResponse&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 把创建好的script添加到head中</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(script);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>JSONP优缺点</strong></p>
+<ul>
+<li>优点：<ul>
+<li>简单易用</li>
+<li>使用JSONP可以直接访问响应，实现浏览器与服务器的双向通信</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>不安全，JSONP 是从不同的域拉取可执行代码，如果这个域并不可信，则可能在响应中加入恶意内容【XSS攻击】</li>
+<li>不好缺点JSONP请求是否失败</li>
+<li>具有局限性， 仅支持get方法</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-cors"><a href="#2-CORS" class="headerlink" title="2. CORS"></a>2. CORS</h4><p>跨站资源共享（Cross Origin Resource Sharing）使用额外的 HTTP 头来告诉浏览器 ：</p>
+<ul>
+<li>让运行在一个 origin (domain)上的Web应用被准许访问来自不同源服务器上的指定的资源</li>
+<li>当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域HTTP 请求</li>
+</ul>
+<p>因此，<code>CORS</code>需要浏览器和服务器同时支持，<strong>实现<code>CORS</code>的关键就是服务器，只要服务器实现了<code>CORS</code>请求，就可以跨源通信</strong></p>
+<p><strong>请求头头部配置</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Origin</span>: url;   <span class="comment">// url:浏览器url</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>服务器配置</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Access</span>-<span class="title class_">Control</span>-<span class="title class_">Allow</span>-<span class="title class_">Origin</span>: url;  <span class="comment">// 允许这个url跨域</span></span><br><span class="line"><span class="comment">// 如果资源公开：</span></span><br><span class="line"><span class="title class_">Access</span>-<span class="title class_">Control</span>-<span class="title class_">Allow</span>-<span class="title class_">Origin</span>: *;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果没有这个头部或者有源但不匹配，则表明不会响应浏览器请求，否则，服务器就会处理这个请求</li>
+</ul>
+<blockquote>
+<p>注意：无论请求还是响应都不会包含cookie信息</p>
+<p>在CORS请求中，如果想要传递Cookie，就要满足以下三个条件：</p>
+<ul>
+<li>在请求中设置 <code>withCredentials</code></li>
+</ul>
+<p>默认情况下在跨域请求，浏览器是不带 cookie 的，但是我们可以通过设置<code>withCredentials</code>来进行传递 cookie.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原生 xml 的设置方式</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">xhr.<span class="property">withCredentials</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// axios 设置方式</span></span><br><span class="line">axios.<span class="property">defaults</span>.<span class="property">withCredentials</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Access-Control-Allow-Credentials 设置为 <code>true</code></li>
+<li>Access-Control-Allow-Origin 设置为 <code>false</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>跨域<code>XHR</code> 对象允许访问<code>status</code> 和<code>statusText </code>属性，也允许同步请求</li>
+<li>出于安全考虑，跨域XHR对象也施加了一些额外限制<ul>
+<li>不能使用<code>setRequestHeader()</code>设置自定义头部</li>
+<li>不能发送和接收<code>cookie</code></li>
+<li><code>getAllResponseHeaders()</code>方法始终返回空字符串</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://icode.best/i/56511245950109">URL的概念与组成</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" rel="tag"><i class="fa fa-tag"></i> 网络请求</a>
+              <a href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag"><i class="fa fa-tag"></i> 跨域</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/13/JavaScript/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0_Promise%E5%80%BC%E7%A9%BF%E9%80%8F/" rel="prev" title="异步函数 | Promise值穿透">
+                  <i class="fa fa-chevron-left"></i> 异步函数 | Promise值穿透
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/14/JavaScript/%E7%B1%BB_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3super/" rel="next" title="类 | 深刻理解super">
+                  类 | 深刻理解super <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">230k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:29</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
