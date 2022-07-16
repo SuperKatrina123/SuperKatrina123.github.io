@@ -349,6 +349,121 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/14/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86_%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/14/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86_%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/" class="post-title-link" itemprop="url">数据处理 | 数组扁平化（3种）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-14 19:55:36" itemprop="dateCreated datePublished" datetime="2022-07-14T19:55:36+08:00">2022-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-15 20:54:22" itemprop="dateModified" datetime="2022-07-15T20:54:22+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">数据处理</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="灵魂拷问数组扁平化的方式你知道多少呢"><a href="#灵魂拷问：数组扁平化的方式你知道多少呢？" class="headerlink" title="灵魂拷问：数组扁平化的方式你知道多少呢？"></a>灵魂拷问：数组扁平化的方式你知道多少呢？</h3><h4 id="方式1arrayprototypeflat"><a href="#方式1：Array-prototype-flat" class="headerlink" title="方式1：Array.prototype.flat"></a>方式1：<code>Array.prototype.flat</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">flat</span>(depth);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr, <span class="number">2</span>))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, [8, 9], 10]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方式2reduce"><a href="#方式2：reduce" class="headerlink" title="方式2：reduce"></a>方式2：<code>reduce</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (depth &lt; <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(cur)) &#123;</span><br><span class="line">            <span class="keyword">return</span> acc.<span class="title function_">concat</span>(cur);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> acc.<span class="title function_">concat</span>(<span class="title function_">flatten</span>(cur, depth-<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, [])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改进</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (depth &lt; <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="title function_">isArray</span>(cur) ? acc.<span class="title function_">concat</span>(<span class="title function_">flatten</span>(cur, depth-<span class="number">1</span>)) : acc.<span class="title function_">concat</span>(cur);</span><br><span class="line">    &#125; ,[])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr, <span class="number">2</span>))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, [8, 9], 10]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方式3-手写递归"><a href="#方式3：-手写递归" class="headerlink" title="方式3： 手写递归"></a>方式3： 手写递归</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(item)) &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(item)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(...<span class="title function_">flatten</span>(item))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/14/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86_%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -464,121 +579,6 @@
 <h4 id="方式13-递归去重"><a href="#方式13：-递归去重" class="headerlink" title="方式13： 递归去重"></a>方式13： 递归去重</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a- b);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params">index</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[index] === arr[index-<span class="number">1</span>]) &#123;</span><br><span class="line">                arr.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="title function_">bar</span>(index-<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">bar</span>(arr.<span class="property">length</span>-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test </span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">6</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn</span>(arr));   <span class="comment">// [1, 2, 3, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
 
 
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/14/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86_%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/14/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86_%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/" class="post-title-link" itemprop="url">数据处理 | 数组扁平化（3种）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-14 19:55:36" itemprop="dateCreated datePublished" datetime="2022-07-14T19:55:36+08:00">2022-07-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-15 20:54:22" itemprop="dateModified" datetime="2022-07-15T20:54:22+08:00">2022-07-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">数据处理</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="灵魂拷问数组扁平化的方式你知道多少呢"><a href="#灵魂拷问：数组扁平化的方式你知道多少呢？" class="headerlink" title="灵魂拷问：数组扁平化的方式你知道多少呢？"></a>灵魂拷问：数组扁平化的方式你知道多少呢？</h3><h4 id="方式1arrayprototypeflat"><a href="#方式1：Array-prototype-flat" class="headerlink" title="方式1：Array.prototype.flat"></a>方式1：<code>Array.prototype.flat</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">flat</span>(depth);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr, <span class="number">2</span>))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, [8, 9], 10]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="方式2reduce"><a href="#方式2：reduce" class="headerlink" title="方式2：reduce"></a>方式2：<code>reduce</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (depth &lt; <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(cur)) &#123;</span><br><span class="line">            <span class="keyword">return</span> acc.<span class="title function_">concat</span>(cur);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> acc.<span class="title function_">concat</span>(<span class="title function_">flatten</span>(cur, depth-<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, [])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改进</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr, depth</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (depth &lt; <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="title function_">isArray</span>(cur) ? acc.<span class="title function_">concat</span>(<span class="title function_">flatten</span>(cur, depth-<span class="number">1</span>)) : acc.<span class="title function_">concat</span>(cur);</span><br><span class="line">    &#125; ,[])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr, <span class="number">2</span>))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, [8, 9], 10]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="方式3-手写递归"><a href="#方式3：-手写递归" class="headerlink" title="方式3： 手写递归"></a>方式3： 手写递归</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flatten</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(item)) &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(item)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(...<span class="title function_">flatten</span>(item))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, [<span class="number">4</span>,<span class="number">5</span>], [[<span class="number">6</span>]], [[<span class="number">7</span>, [<span class="number">8</span>, <span class="number">9</span>]]], <span class="number">10</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">flatten</span>(arr))   <span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br></pre></td></tr></table></figure>
 
 
 
