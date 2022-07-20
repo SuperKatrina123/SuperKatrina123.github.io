@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="哈希表基础知识哈希表，又叫散列表（HashTable或者HashMap），是根据键直接访问记录在存储位置的数据结构，通过哈希函数根据计算出在哈希表中的内存地址 作用是尽可能快地在数据结构中找到一个值   实现哈希表实现方法 get(val) put(key, val) remove(key)  手写实现123456789101112131415161718192021222324252627282">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构 | 哈希表">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="哈希表基础知识哈希表，又叫散列表（HashTable或者HashMap），是根据键直接访问记录在存储位置的数据结构，通过哈希函数根据计算出在哈希表中的内存地址 作用是尽可能快地在数据结构中找到一个值   实现哈希表实现方法 get(val) put(key, val) remove(key)  手写实现123456789101112131415161718192021222324252627282">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E5%93%88%E5%B8%8C%E8%A1%A8.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E5%88%86%E7%A6%BB%E9%93%BE%E6%8E%A5.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%9F%A5.png">
+<meta property="article:published_time" content="2022-07-20T07:24:33.000Z">
+<meta property="article:modified_time" content="2022-07-20T08:16:11.123Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="手写原理">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="哈希表">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E5%93%88%E5%B8%8C%E8%A1%A8.png">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/","path":"2022/07/20/数据结构与算法/数据结构/数据结构_哈希表/","title":"数据结构 | 哈希表"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据结构 | 哈希表 | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">83</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">哈希表基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">实现哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">手写实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%92%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">哈希表和哈希集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%93%88%E5%B8%8C%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%86%B2%E7%AA%81"><span class="nav-number">3.1.</span> <span class="nav-text">处理哈希表中的冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%88%86%E7%A6%BB%E9%93%BE%E6%8E%A5"><span class="nav-number">3.1.1.</span> <span class="nav-text">1. 分离链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%9F%A5"><span class="nav-number">3.1.2.</span> <span class="nav-text">2. 线性探查</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%8F%8C%E6%95%A3%E5%88%97%E6%B3%95"><span class="nav-number">3.1.3.</span> <span class="nav-text">3. 双散列法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据结构 | 哈希表 | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构 | 哈希表
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-20 15:24:33 / Modified: 16:16:11" itemprop="dateCreated datePublished" datetime="2022-07-20T15:24:33+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%93%88%E5%B8%8C%E8%A1%A8/" itemprop="url" rel="index"><span itemprop="name">哈希表</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="哈希表基础知识"><a href="#哈希表基础知识" class="headerlink" title="哈希表基础知识"></a>哈希表基础知识</h3><p>哈希表，又叫散列表（HashTable或者HashMap），是根据键直接访问记录在存储位置的数据结构，通过哈希函数根据计算出在哈希表中的内存地址</p>
+<p>作用是尽可能快地在数据结构中找到一个值</p>
+<img src="/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E5%93%88%E5%B8%8C%E8%A1%A8.png" class title="哈希表">
+
+<h3 id="实现哈希表"><a href="#实现哈希表" class="headerlink" title="实现哈希表"></a>实现哈希表</h3><h4 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h4><ul>
+<li>get(val)</li>
+<li>put(key, val)</li>
+<li>remove(key)</li>
+</ul>
+<h4 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ValuePair</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">key, val</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">key</span> = key;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">val</span> = val;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`[<span class="subst">$&#123;<span class="variable language_">this</span>.key&#125;</span>:<span class="subst">$&#123;<span class="variable language_">this</span>.val&#125;</span>]`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HashTable</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">toStrFn</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">table</span> = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 1. 创建哈希函数: 传入key -&gt; 获取内存地址</span></span><br><span class="line">    <span class="title function_">loseloseHashTable</span>(<span class="params">key</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> key === <span class="string">&#x27;number&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> key;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> tablekey = <span class="title class_">String</span>(key);</span><br><span class="line">        <span class="keyword">let</span> hash = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; tableKey.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            hash += tablekey.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> hash % <span class="number">37</span>;  <span class="comment">// 获取hash值</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">hashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">loseloseHashTable</span>(key);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// hashTable添加键值对</span></span><br><span class="line">    <span class="title function_">put</span>(<span class="params">key, val</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (key !== <span class="literal">null</span> &amp;&amp; val !== <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> position = <span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);   <span class="comment">// position是内存地址</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">table</span>[position] = <span class="keyword">new</span> <span class="title class_">ValuePair</span>(key, val);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// hashTable中获取val</span></span><br><span class="line">    <span class="title function_">get</span>(<span class="params">key</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> valuePair = <span class="variable language_">this</span>.<span class="property">table</span>[<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key)];</span><br><span class="line">        <span class="keyword">return</span> valuePair = valuePair ? valuePair.<span class="property">val</span> : <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// hashTable删除值</span></span><br><span class="line">    <span class="title function_">remove</span>(<span class="params">key</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> hash = <span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">        <span class="keyword">const</span> valuePair = <span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">        <span class="keyword">if</span> (valuePair) &#123;</span><br><span class="line">            <span class="comment">// 使用delete或者设置null或者undefined是一样的</span></span><br><span class="line">            <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试一下子~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hash = <span class="keyword">new</span> <span class="title class_">HashTable</span>();</span><br><span class="line"></span><br><span class="line">hash.<span class="title function_">put</span>(<span class="string">&#x27;Katrina&#x27;</span>, <span class="string">&#x27;111.com&#x27;</span>);</span><br><span class="line">hash.<span class="title function_">put</span>(<span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;222.com&#x27;</span>);</span><br><span class="line">hash.<span class="title function_">puth</span>(<span class="string">&#x27;Kate&#x27;</span>, <span class="string">&#x27;333.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">hashCode</span>(<span class="string">&#x27;Katrina&#x27;</span>) + <span class="string">&#x27;-Katrina&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">hashCode</span>(<span class="string">&#x27;Jenny&#x27;</span>) + <span class="string">&#x27;-Jenny&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">hashCode</span>(<span class="string">&#x27;Kate&#x27;</span>) + <span class="string">&#x27;-Kate&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	11-Katrina</span></span><br><span class="line"><span class="comment">	35-Jenny</span></span><br><span class="line"><span class="comment">	19-Kate</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">get</span>(<span class="string">&#x27;Katrina&#x27;</span>));   <span class="comment">// 111.com</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">get</span>(<span class="string">&#x27;Lisa&#x27;</span>));    <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">hash.<span class="title function_">remove</span>(<span class="string">&#x27;Kate&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">get</span>(<span class="string">&#x27;Kate&#x27;</span>));   <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希表和哈希集合"><a href="#哈希表和哈希集合" class="headerlink" title="哈希表和哈希集合"></a>哈希表和哈希集合</h3><h4 id="处理哈希表中的冲突"><a href="#处理哈希表中的冲突" class="headerlink" title="处理哈希表中的冲突"></a>处理哈希表中的冲突</h4><p>一些键会有相同的hash值，比如<code>hash.hashCode(&#39;Jenny&#39;)</code>和<code>hash.hashCode(&#39;Jisoo&#39;)</code>都是35，一般来说，具有相同hash值的数据在hash表中值会被替换</p>
+<p>看下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hash = <span class="keyword">new</span> <span class="title class_">HashTable</span>();</span><br><span class="line"></span><br><span class="line">hash.<span class="title function_">put</span>(<span class="string">&#x27;Jisoo&#x27;</span>, <span class="string">&#x27;111.com&#x27;</span>);</span><br><span class="line">hash.<span class="title function_">put</span>(<span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;222.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">hashCode</span>(<span class="string">&#x27;Jisoo&#x27;</span>) + <span class="string">&#x27;-Jisoo&#x27;</span>);   <span class="comment">// 35-Jisoo</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">hashCode</span>(<span class="string">&#x27;Jenny&#x27;</span>) + <span class="string">&#x27;-Jenny&#x27;</span>);   <span class="comment">// 35-Jenny</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hash.<span class="title function_">get</span>(<span class="string">&#x27;Jisoo&#x27;</span>));   <span class="comment">// 222.com  显然已经被替换</span></span><br></pre></td></tr></table></figure>
+
+<p>处理冲突的方法有：分离链接、线性探查、双散列法</p>
+<h5 id="1-分离链接"><a href="#1-分离链接" class="headerlink" title="1. 分离链接"></a>1. 分离链接</h5><p>分离链接指的是为哈希表的每一个位置创建一个链表并且要将元素存储在里面</p>
+<img src="/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E5%88%86%E7%A6%BB%E9%93%BE%E6%8E%A5.png" class title="分离链接">
+
+<ul>
+<li><p>重写put方法</p>
+<p>重写思路：验证要加入的新元素的位置是否已经被占据，如果已经占据，会创建一个NodeList实例，将ValuePair加入到这个实例</p>
+</li>
+<li><p>重写get</p>
+<p>重写思路：验证能否在特定位置找到该元素，定位后，通过遍历ListNode得到元素，没有找到就返回undefined</p>
+</li>
+<li><p>重写remove</p>
+<p>重写思路：类似于定位后找到链表，然后去删除链表中的节点</p>
+</li>
+</ul>
+<h5 id="2-线性探查"><a href="#2-线性探查" class="headerlink" title="2. 线性探查"></a>2. 线性探查</h5><p>将元素直接存到表中，而不是在单独的数据结构中</p>
+<img src="/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%9F%A5.png" class title="线性探查">
+
+<ul>
+<li><p>重写put</p>
+<p>重写思路：当向hash表存放元素的时候，若发现position已经被占据了，就存放在position+1中，如果position+1也被占据了，则存放在position+2中，以此类推…</p>
+</li>
+<li><p>重写get</p>
+<p>重写思路：查找键，不存在一定是undefined，如果存在就要检查我们要找的值是不是在这个原始位置上，如果不是，就继续找，完整迭代后还是找不到返回undefined</p>
+</li>
+<li><p>重写remove</p>
+</li>
+</ul>
+<p>​		重写思路和put基本相同，不再赘述</p>
+<h5 id="3-双散列法"><a href="#3-双散列法" class="headerlink" title="3. 双散列法"></a>3. 双散列法</h5><p>创建更好地散列函数：1. 插入和检索元素的时间；2. 较低的冲突可能性</p>
+<p>比lose lose哈希函数更好的函数是djb2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">djb2HashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> tableKey = <span class="title class_">String</span>(key);</span><br><span class="line">   	<span class="keyword">let</span> hash = <span class="number">5381</span>;  <span class="comment">// 初始化一个hash变量并且赋值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; table.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        hash = (hash * <span class="number">33</span>) + tableKey.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hash % <span class="number">1013</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://programmercarl.com/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">代码随想录_哈希表</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 手写原理</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+              <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 哈希表</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E9%93%BE%E8%A1%A8/" rel="prev" title="数据结构 | 链表">
+                  <i class="fa fa-chevron-left"></i> 数据结构 | 链表
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/20/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_IndexDB/" rel="next" title="客户端存储 | IndexedDB">
+                  客户端存储 | IndexedDB <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">279k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:14</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
