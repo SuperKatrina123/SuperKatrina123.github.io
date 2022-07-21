@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">83</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">84</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -160,13 +160,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -214,6 +214,126 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.assign/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.assign/" class="post-title-link" itemprop="url">手写原理 | Object.assign</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-10 13:27:52 / Modified: 14:05:09" itemprop="dateCreated datePublished" datetime="2022-07-10T13:27:52+08:00">2022-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>885</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><code>Object.assign</code>方法将所有可枚举和自有属性从一个或多个源对象复制到目标对象，返回修改后的对象</p>
+<p><strong>语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(target, ...sources)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<ul>
+<li><code>target</code>：目标对象</li>
+<li><code>sources</code>：源对象</li>
+</ul>
+<p><strong>注意</strong></p>
+<ol>
+<li>源对象可以有N个</li>
+<li>相同属性，后面的会覆盖前面的</li>
+<li>Symbol类型的属性会被拷贝，而且不会跳过那些值为null和undefined的源对象</li>
+</ol>
+<p><strong>实现思路</strong></p>
+<ol>
+<li>判断目标对象是否为正确，不能为null或者defined</li>
+<li>使用for…in…循环遍历出所有可枚举属性（可以使用hasOwnProperty判断）并且复制给目标对象</li>
+</ol>
+<p><strong>手写实现</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myObjectAssign</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> target = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">shift</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (target == <span class="literal">null</span>) &#123;   <span class="comment">// undefined == null 为true</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Cannot convert null or undefined to object.&#x27;</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Object装箱</span></span><br><span class="line">    <span class="keyword">const</span> obj = <span class="title class_">Object</span>(target);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> source = <span class="variable language_">arguments</span>[i];</span><br><span class="line">        <span class="keyword">if</span> (source != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">                <span class="comment">// 注意for in会遍历原型链上的属性</span></span><br><span class="line">                <span class="keyword">if</span> (source.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">                    obj[key] = source[key];</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> copy = <span class="title function_">myObjectAssign</span>(&#123;&#125;, obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123; a: 1 &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -719,11 +839,11 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" itemprop="url" rel="index"><span itemprop="name">常见方法对比</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+          <a href="/categories/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" itemprop="url" rel="index"><span itemprop="name">常见方法对比</span></a>
         </span>
     </span>
 
@@ -980,6 +1100,111 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">函数 | new.target属性</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-09 09:00:47 / Modified: 18:38:30" itemprop="dateCreated datePublished" datetime="2022-07-09T09:00:47+08:00">2022-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B0%8F%E4%BC%97%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url" rel="index"><span itemprop="name">小众知识点</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>414</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>new.target属性是ES6中新增的函数属性，new.target用于<strong>检测函数是否使用new关键字调用</strong></p>
+</blockquote>
+<p>如果函数是正常调用的，new.target的值为undefined；如果是使用new关键字调用的，则new.target将引用被调用的构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">King</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">new</span>.<span class="property">target</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&#x27;King must be instantiated unsing &quot;new&quot;!&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;King instantiated unsing &quot;new&quot;!&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">King</span>();  <span class="comment">// King instantiated unsing &quot;new&quot;!</span></span><br><span class="line"><span class="title class_">King</span>();  <span class="comment">// Error: King instantiated unsing &quot;new&quot;!</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_callee%E5%B1%9E%E6%80%A7%E5%92%8Ccaller%E5%B1%9E%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1080,111 +1305,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">inner</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>.<span class="property">callee</span>.<span class="property">caller</span>);   <span class="comment">// arguments.callee指向inner函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在严格模式下访问<code>arguments.callee</code>会报错，在ES5中也定义了<code>arguments.caller</code>，严格模式下访问会报错，非严格模式下为<code>undefined</code>，在严格模式下，不能给函数的<code>caller</code>属性赋值</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/09/JavaScript/%E5%87%BD%E6%95%B0_new.targer%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">函数 | new.target属性</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-07-09 09:00:47 / Modified: 18:38:30" itemprop="dateCreated datePublished" datetime="2022-07-09T09:00:47+08:00">2022-07-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B0%8F%E4%BC%97%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url" rel="index"><span itemprop="name">小众知识点</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>414</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>new.target属性是ES6中新增的函数属性，new.target用于<strong>检测函数是否使用new关键字调用</strong></p>
-</blockquote>
-<p>如果函数是正常调用的，new.target的值为undefined；如果是使用new关键字调用的，则new.target将引用被调用的构造函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">King</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">new</span>.<span class="property">target</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&#x27;King must be instantiated unsing &quot;new&quot;!&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;King instantiated unsing &quot;new&quot;!&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">King</span>();  <span class="comment">// King instantiated unsing &quot;new&quot;!</span></span><br><span class="line"><span class="title class_">King</span>();  <span class="comment">// Error: King instantiated unsing &quot;new&quot;!</span></span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -1463,173 +1583,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/07/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/07/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" class="post-title-link" itemprop="url">计算机网络 | HTTP状态码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-07-07 20:07:21 / Modified: 21:56:20" itemprop="dateCreated datePublished" datetime="2022-07-07T20:07:21+08:00">2022-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>HTTP状态码是非常重要的一个知识点，尤其是对于前端工作者来说，我们在发送网络请求获取资源的时候，经常返回不同的状态码，那么各种状态码都代表什么含义呢~让我们一探究竟吧！</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">类别</th>
-<th align="center">含义</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1xx</td>
-<td align="center">Informational (信息性状态码)</td>
-<td align="center">接收的请求正在处理</td>
-</tr>
-<tr>
-<td align="center">2xx</td>
-<td align="center">Success（成功状态码）</td>
-<td align="center">请求正常处理完毕</td>
-</tr>
-<tr>
-<td align="center">3xx</td>
-<td align="center">Redirection（重定向状态码）</td>
-<td align="center">需要进行附加操作继而完成请求</td>
-</tr>
-<tr>
-<td align="center">4xx</td>
-<td align="center">Client Error（客户端错误状态码）</td>
-<td align="center">服务器无法处理请求</td>
-</tr>
-<tr>
-<td align="center">5xx</td>
-<td align="center">Server Error（服务器错误状态码）</td>
-<td align="center">服务器请求错误</td>
-</tr>
-</tbody></table>
-<h2 id="2xxsucess成功状态码"><a href="#2XX（Sucess成功状态码）" class="headerlink" title="2XX（Sucess成功状态码）"></a>2XX（Sucess成功状态码）</h2><ul>
-<li>200 OK：客户端发来的请求被服务端正常处理了</li>
-<li>204 No Content：客户端发送的请求已经在服务端正常处理了，但是没有返回的内容，响应报文中不包含实体的主体部分（一般在只需要从客户端往服务端发送信息，而服务器端不需要往客户端发送内容时使用）</li>
-<li>206 Partial Conent：客户端进行了范围请求，而服务器端执行了这部分GET请求，响应报文中包含由Content-Range指定范围的实体内容</li>
-</ul>
-<h2 id="3xxredirection重定向状态码"><a href="#3XX（Redirection重定向状态码）" class="headerlink" title="3XX（Redirection重定向状态码）"></a>3XX（Redirection重定向状态码）</h2><p>3xx响应结果表明浏览器需要执行某些特殊的处理以正确处理请求</p>
-<ul>
-<li><p>301 Moved Permanently（永久重定向）：请求的资源已经被分配到新的URL，以后应使用资源指定的URL</p>
-</li>
-<li><p>302 Found（临时重定向）：请求的资源被分配到新的URL，希望用户（本次）能够使用新的URL访问资源</p>
-<ul>
-<li>登录首页自动重定向到活动页面</li>
-<li>未登录用户访问用户中心重定向到登录页面</li>
-<li>访问404后重定向到首页</li>
-</ul>
-</li>
-<li><p>303 See Other：由于请求对应的资源存在着另一个URL，应使用GET方法重定向获取请求资源，和302类似，但是303状态码明确表示客户端应当采用GET获取资源（消息确认页面或者上传进度页面）</p>
-</li>
-<li><p>304 Not Modified（浏览器缓存相关）：客户端发送附带条件的请求时，服务器端允许请求访问资源，但未满足条件的情况，304状态码返回时，不包含任何响应的主体部分</p>
-</li>
-<li><p>307 Temporary Redirect（临时重定向）：和302类似</p>
-</li>
-</ul>
-<h2 id="4xxclient-error客户端错误状态码"><a href="#4XX（Client-Error客户端错误状态码）" class="headerlink" title="4XX（Client Error客户端错误状态码）"></a>4XX（Client Error客户端错误状态码）</h2><p>4xx响应结果表示客户端是错误所在</p>
-<ul>
-<li>400 Bad Request：请求报文中存在语法错误，当错误发生时，需修改请求的内容后，再次发送请求</li>
-<li>401 Unauthorized：发送的请求需要由通过HTTP认证的认证信息，若之前已进行过一次请求，则表示用户认证失败</li>
-<li>403 Forbidden：请求资源的访问被服务器拒绝</li>
-<li>404 Not Found：没有在服务器找到资源</li>
-<li>405 Method Not Allowed：客户端请求的方法虽然能被服务器识别，但是服务器禁止使用该方法</li>
-</ul>
-<h2 id="5xxserver-error服务器错误状态码"><a href="#5XX（Server-Error服务器错误状态码）" class="headerlink" title="5XX（Server Error服务器错误状态码）"></a>5XX（Server Error服务器错误状态码）</h2><ul>
-<li>500 Internal Server Error：服务器端在执行请求时发生了错误</li>
-<li>502 Bad Gateway：扮演网关或代理角色的服务器，从上游服务器中接收到的响应是无效的</li>
-<li>503 Service Unavailable：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求</li>
-<li>504 Gateway Timeout：网关或者代理的服务器无法在规定的时间内获得想要的响应</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1654,13 +1607,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">279k</span>
+    <span title="Symbols count total">282k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:14</span>
+    <span title="Reading time total">4:16</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Cookiecookie用于客户端存储会话信息服务器在响应HTTP请求时，通过发送Set-Cookie HTTP头部包含会话信息，value和name在发送时都会经过URL编码 1234HTTP&#x2F;1.1 2.0 OKContent-type: text&#x2F;htmlSet-Cookie: name&#x3D;valueOther-header: other-hander-value  浏览器会存储这些会话信息，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="客户端存储 | cookie &amp;&amp; WebStorage">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="Cookiecookie用于客户端存储会话信息服务器在响应HTTP请求时，通过发送Set-Cookie HTTP头部包含会话信息，value和name在发送时都会经过URL编码 1234HTTP&#x2F;1.1 2.0 OKContent-type: text&#x2F;htmlSet-Cookie: name&#x3D;valueOther-header: other-hander-value  浏览器会存储这些会话信息，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/cookie%E6%9E%84%E6%88%90.png">
+<meta property="article:published_time" content="2022-07-21T05:36:47.000Z">
+<meta property="article:modified_time" content="2022-07-21T07:57:57.864Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="和我一起读红宝书">
+<meta property="article:tag" content="常见方法对比">
+<meta property="article:tag" content="客户端存储">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/cookie%E6%9E%84%E6%88%90.png">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/","path":"2022/07/21/计网&&浏览器原理/客户端存储_cookie/","title":"客户端存储 | cookie && WebStorage"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>客户端存储 | cookie && WebStorage | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">84</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%94%A8%E4%BA%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8%E4%BC%9A%E8%AF%9D%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">cookie用于客户端存储会话信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">cookie的构成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-storage"><span class="nav-number">2.</span> <span class="nav-text">Web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#storage%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">Storage类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionstorage%E5%AF%B9%E8%B1%A1%E8%B7%A8%E4%BC%9A%E8%AF%9D%E5%AD%98%E5%82%A8"><span class="nav-number">2.2.</span> <span class="nav-text">sessionStorage对象（跨会话存储）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localstorage%E5%AF%B9%E8%B1%A1%E6%B0%B8%E4%B9%85%E5%AD%98%E5%82%A8"><span class="nav-number">2.3.</span> <span class="nav-text">localStorage对象（永久存储）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">存储事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%80%85%E5%8C%BA%E5%88%AB"><span class="nav-number">3.1.</span> <span class="nav-text">三者区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">3.1.1.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B0%8F"><span class="nav-number">3.1.2.</span> <span class="nav-text">存放数据大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http%E8%AF%B7%E6%B1%82"><span class="nav-number">3.1.3.</span> <span class="nav-text">http请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%93%E7%94%A8%E6%80%A7"><span class="nav-number">3.1.4.</span> <span class="nav-text">易用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.2.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="客户端存储 | cookie && WebStorage | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          客户端存储 | cookie && WebStorage
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-21 13:36:47 / Modified: 15:57:57" itemprop="dateCreated datePublished" datetime="2022-07-21T13:36:47+08:00">2022-07-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" itemprop="url" rel="index"><span itemprop="name">常见方法对比</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="cookie用于客户端存储会话信息"><a href="#cookie用于客户端存储会话信息" class="headerlink" title="cookie用于客户端存储会话信息"></a><strong>cookie用于客户端存储会话信息</strong></h3><p>服务器在响应HTTP请求时，通过发送<code>Set-Cookie</code> HTTP头部包含会话信息，<strong>value和name在发送时都会经过URL编码</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">HTTP</span>/<span class="number">1.1</span> <span class="number">2.0</span> <span class="variable constant_">OK</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="attr">type</span>: text/html</span><br><span class="line"><span class="title class_">Set</span>-<span class="title class_">Cookie</span>: name=value</span><br><span class="line"><span class="title class_">Other</span>-<span class="attr">header</span>: other-hander-value</span><br></pre></td></tr></table></figure>
+
+<p>浏览器会存储这些会话信息，并在之后每一个请求中都会在HTTP请求头中包含cookie，将cooike信息发回服务器，这些信息可以作为<strong>唯一标识发送请求</strong>的服务器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">GET</span> /index.<span class="property">js</span> <span class="variable constant_">HTTP</span>/<span class="number">1.1</span></span><br><span class="line"><span class="title class_">Cookie</span>: name=value</span><br><span class="line"><span class="title class_">Other</span>-<span class="attr">header</span>: other-hander-value</span><br></pre></td></tr></table></figure>
+
+<h3 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h3><img src="/2022/07/21/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_cookie/cookie%E6%9E%84%E6%88%90.png" class title="cookie构成">
+
+<ul>
+<li><p><code>name</code>：唯一标识cookie 的名称，cookie 名不区分大小写，cookie 名必须经过URL 编码</p>
+</li>
+<li><p><code>value</code>：存储在cookie 里的字符串值，这个值必须经过URL 编码</p>
+</li>
+<li><p><code>domain</code>：cookie 有效的域，发送到这个域的所有请求都会包含对应的cookie，值默认包含子域</p>
+</li>
+<li><p><code>path</code>：请求URL 中包含这个路径才会把cookie 发送到服务器，默认包含子路径</p>
+</li>
+<li><p><code>expires/max-age</code>：表示何时删除cookie 的时间戳（即什么时间之后就不发送到服务器了），默认情况下，浏览器会话结束后会删除所有cookie，不过，也可以设置删除cookie 的时间。这个值是GMT 格式（Wdy, DD-Mon-YYYY HH:MM:SS GMT），用于指定删除cookie 的具体时间，这样即使关闭浏览器cookie 也会保留在用户机器上，把过期时间设置为过去的时间会立即删除cookie</p>
+</li>
+<li><p><code>size</code>：cookie大小</p>
+</li>
+<li><p><code>secure</code>：设置之后，只在使用SSL 安全连接的情况下才会把cookie 发送到服务器</p>
+</li>
+<li><p><code>HttpOnly</code>：HttpOnly值为 true 或 false，若设置为true，则不允许通过脚本document.cookie去更改这个值，同样这个值在document.cookie中也不可见，但在发送请求时依旧会携带此Cookie，可防止通过JavaScript访问cookie的值</p>
+</li>
+<li><p><code>SameSite</code>：用来限制第三方 Cookie，从而减少安全风险，它有3个属性，分别是：</p>
+<ul>
+<li><p>Strict：Scrict最为严格，完全禁止第三方Cookie，跨站点时，任何情况下都不会发送Cookie</p>
+</li>
+<li><p>Lax：Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。</p>
+</li>
+<li><p>None：网站可以选择显式关闭SameSite属性，将其设为None，不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效</p>
+</li>
+</ul>
+</li>
+<li><p><code>Priority</code>：优先级，定义了三种优先级，Low&#x2F;Medium&#x2F;High，当cookie数量超出时，低优先级的cookie会被优先清除</p>
+</li>
+</ul>
+<h2 id="web-storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h2><p>提出的目的是为了解决通过客户端存储<strong>不需要频繁发送回服务器</strong>的数据时使用cookie的问题</p>
+<p>基于cookie，Web Storage提出了两个目标：</p>
+<ul>
+<li>提供在cookie之外的存储会话数据的目标</li>
+<li>提供跨会话持久化存储大量数据的机制</li>
+</ul>
+<h3 id="storage类型"><a href="#Storage类型" class="headerlink" title="Storage类型"></a>Storage类型</h3><p>Storage类型用于保存名&#x2F;值对数据，直到存储空间上限（浏览器决定！）</p>
+<p>Storage在对象的基础上，增加如下方法：</p>
+<ul>
+<li><code>clear()</code>：删除所有值；不在Firefox 中实现</li>
+<li><code>getItem(name)</code>：取得给定name 的值</li>
+<li><code>key(index)</code>：取得给定数值位置的名称</li>
+<li><code>removeItem(name)</code>：删除给定name 的名&#x2F;值对</li>
+<li><code>setItem(name, value)</code>：设置给定name 的值</li>
+</ul>
+<h3 id="sessionstorage对象跨会话存储"><a href="#sessionStorage对象（跨会话存储）" class="headerlink" title="sessionStorage对象（跨会话存储）"></a><code>sessionStorage</code>对象（跨会话存储）</h3><ul>
+<li><p><code>sessionStorage</code>对象只存储<strong>会话数据</strong>，所以数据只会存储到<strong>浏览器关闭</strong></p>
+</li>
+<li><p>存储在<code>sessionStorage</code>中的数据不受页面刷新影响，可以在浏览器崩溃并重启后恢复</p>
+</li>
+<li><p>因为<code>sessionStorage</code>对象与服务器会话紧密相关，所以在运行本地文件时不能使用</p>
+</li>
+<li><p>存储在<code>sessionStorage</code>对象中的数据只能由最初存储数据的页面使用，在多页应用程序中的用处有限</p>
+</li>
+</ul>
+<h3 id="localstorage对象永久存储"><a href="#localStorage对象（永久存储）" class="headerlink" title="localStorage对象（永久存储）"></a><code>localStorage</code>对象（永久存储）</h3><ul>
+<li><code>localStorage</code>对象作为在客户端<strong>持久存储数据</strong>的机制</li>
+<li>要访问同一个<code>localStorage</code>对象，页面必须来自同一个域（子域不可以）、在相同的端口上使用相同的协议</li>
+</ul>
+<h3 id="存储事件"><a href="#存储事件" class="headerlink" title="存储事件"></a>存储事件</h3><p>每当Storage 对象发生变化时，都会在文档上触发<code>storage</code>事件。使用属性或<code>setItem()</code>设置值、使用<code>delete</code>或<code>removeItem()</code>删除值，以及每次调用<code>clear()</code>时都会触发这个事件</p>
+<p>这个事件的事件对象有如下4 个属性</p>
+<ul>
+<li><code>domain</code>：存储变化对应的域</li>
+<li><code>key</code>：被设置或删除的键</li>
+<li><code>newValue</code>：键被设置的新值，若键被删除则为null</li>
+<li><code>oldValue</code>：键变化之前的值</li>
+</ul>
+<p>可以使用如下代码监听<code>storage</code>事件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;storage&quot;</span>,</span><br><span class="line">	<span class="function">(<span class="params">event</span>) =&gt;</span> <span class="title function_">alert</span>(<span class="string">&#x27;Storage changed for $&#123;event.domain&#125;&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>对于<code>sessionStorage</code>和<code>localStorage</code>上的任何更改都会触发<code>storage</code>事件，但<code>storage</code>件不会区分这两者</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h3><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><ul>
+<li>cookie：可以通过设置<code>expires/max-age</code>来控制失效时间，没设置就默认关闭浏览器后失效</li>
+<li>sessionStorage：仅在当前网页会话下有效，关闭页面或者浏览器会被清除</li>
+<li>localStorage：永久保存，除非手动清除</li>
+</ul>
+<h4 id="存放数据大小"><a href="#存放数据大小" class="headerlink" title="存放数据大小"></a>存放数据大小</h4><ul>
+<li>cookie：4kb左右</li>
+<li>web Storage：5MB</li>
+</ul>
+<h4 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h4><ul>
+<li>cookie：每次发送请求的时候都会携带在http头中，如果cookie保存过多数据会带来性能问题</li>
+<li>web Storage：仅在客户端中保存，不参与和服务器的通信</li>
+</ul>
+<h4 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h4><ul>
+<li>cookie：需要自己封装，包含get set等方法，详情见红宝书第四版P754页</li>
+<li>web Storage：原生接口可以接受，也可以再次封装</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>从安全性来说，因为每次http请求都会携带cookie信息，这样无形中浪费了带宽，所以cookie应该尽可能少的使用，另外cookie还需要指定作用域，不可以跨域调用，限制比较多</p>
+<p>但是用来识别用户登录来说，cookie还是比stprage更好用的，其他情况下，可以使用storage，就用storage</p>
+<p>storage在存储数据的大小上面秒杀了cookie，现在基本上很少使用cookie了</p>
+<p>localStorage和sessionStorage唯一的差别一个是永久保存在浏览器里面，一个是关闭网页就清除了信息，localStorage可以用来夸页面传递参数，sessionStorage用来保存一些临时的数据，防止用户刷新页面之后丢失了一些参数</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" rel="tag"><i class="fa fa-tag"></i> 和我一起读红宝书</a>
+              <a href="/tags/%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94/" rel="tag"><i class="fa fa-tag"></i> 常见方法对比</a>
+              <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/" rel="tag"><i class="fa fa-tag"></i> 客户端存储</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/20/%E8%AE%A1%E7%BD%91&&%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8_IndexDB/" rel="prev" title="客户端存储 | IndexedDB">
+                  <i class="fa fa-chevron-left"></i> 客户端存储 | IndexedDB
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">282k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:16</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
