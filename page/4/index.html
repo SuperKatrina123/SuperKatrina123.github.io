@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">84</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">85</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -214,6 +214,132 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/14/JavaScript/%E7%B1%BB_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3super/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/14/JavaScript/%E7%B1%BB_%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3super/" class="post-title-link" itemprop="url">类 | 深刻理解super</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-14 12:23:17" itemprop="dateCreated datePublished" datetime="2022-07-14T12:23:17+08:00">2022-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-16 20:28:41" itemprop="dateModified" datetime="2022-07-16T20:28:41+08:00">2022-07-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>super这个关键词既可以当<strong>对象</strong>使用，也可以当<strong>函数</strong>使用</p>
+</blockquote>
+<h3 id="super作为函数使用"><a href="#super作为函数使用" class="headerlink" title="super作为函数使用"></a>super作为函数使用</h3><blockquote>
+<p>super作为函数使用时，只能在子类的构造函数中【目的是为了调用父类的构造函数】 &#x3D;&gt; super表示父类构造函数，但是this指向当前子类的构造函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>);  <span class="comment">// new.target 指向当前正在执行的函数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(name, age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Father</span>();   <span class="comment">// Father</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Son</span>();   <span class="comment">// Son</span></span><br></pre></td></tr></table></figure>
+
+<p>在子类的<code>constructor</code>中必须调用<code>super()</code>方法，因为子类没有自己的<code>this</code>对象，而是要继承父类的<code>this</code>对象，但是此时<code>this</code>指向的是子类的构造函数，此时<code>super</code>就表示了父类的构造函数，<code>super()</code>此时相当于<code>Father.prototype.constructor.call(this, props)</code></p>
+<h3 id="super作为对象使用"><a href="#super作为对象使用" class="headerlink" title="super作为对象使用"></a>super作为对象使用</h3><h4 id="super作为普通方法使用"><a href="#super作为普通方法使用" class="headerlink" title="super作为普通方法使用"></a>super作为普通方法使用</h4><h5 id="1super指向的是父类的原型对象"><a href="#（1）super指向的是父类的原型对象" class="headerlink" title="（1）super指向的是父类的原型对象"></a>（1）super指向的是父类的原型对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">c</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">c</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>.<span class="title function_">c</span>());   <span class="comment">// 11</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Son</span>();</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，子类中的<code>super.c()</code>，就是把<code>super</code>当作一个对象使用，对象里面有<code>c</code>方法，因此<code>super</code>在普通函数中指向，<code>Father.prototype</code>，也就是说<code>super.c()</code>相当于<code>Father.prototype.c()</code></p>
+<h5 id="2通过super调用父类方法时super内部的this指向子类的实例"><a href="#（2）通过super调用父类方法时，super内部的this指向子类的实例" class="headerlink" title="（2）通过super调用父类方法时，super内部的this指向子类的实例"></a>（2）通过super调用父类方法时，super内部的this指向子类的实例</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    x = <span class="number">7</span>;</span><br><span class="line">    <span class="title function_">fun</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">77</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    x = <span class="number">777</span>;</span><br><span class="line">    <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">fun</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">777</span>;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">print</span>();   <span class="comment">// 777</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Son</span>().<span class="title function_">fn</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	如果没有 this.x = 7777 则返回77</span></span><br><span class="line"><span class="comment">	如果没有 super.fun() 则返回 777</span></span><br><span class="line"><span class="comment">	如果没有 this.x = 777 则返回 7</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>此时的<code>super</code>可以替换<code>this</code>，与<code>this.print()</code>等价</p>
+<h5 id="3当通过super为子类属性赋值时super就是this"><a href="#（3）当通过super为子类属性赋值时，super就是this" class="headerlink" title="（3）当通过super为子类属性赋值时，super就是this"></a>（3）当通过super为子类属性赋值时，super就是this</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">c</span> = <span class="number">77</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="property">c</span> = <span class="number">7</span>;     <span class="comment">// 为子类赋值的情况下，super为this</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>.<span class="property">c</span>);   <span class="comment">// 7  super获取的是父类的原型</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">c</span>);   <span class="comment">// 7</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>赋值的情况下<code>super</code>就是<code>this</code></p>
+<h4 id="super作为静态方法使用"><a href="#super作为静态方法使用" class="headerlink" title="super作为静态方法使用"></a>super作为静态方法使用</h4><h5 id="1super指向的是父类"><a href="#（1）super指向的是父类" class="headerlink" title="（1）super指向的是父类"></a>（1）super指向的是父类</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">c</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="property">c</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;      <span class="comment">// 为子类赋值的情况下super为this</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>.<span class="title function_">c</span>());    <span class="comment">// 11    super为父类的prototype</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="title function_">c</span>());    <span class="comment">// 1      this指向子类构造函数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Son</span>().<span class="title function_">fn</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例2</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">c</span>(<span class="params"></span>) &#123;           <span class="comment">// 静态方法</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">c</span>(<span class="params"></span>) &#123;                  <span class="comment">// 原型对象中的方法</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">22</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">s</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">c</span>();          <span class="comment">// super指向父类 调用的是静态方法</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">s</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">c</span>();          <span class="comment">// super指向父类原型对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Son</span>.<span class="title function_">son</span>();       <span class="comment">// 2    调用的是Son的静态方法，指向父类静态方法</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Son</span>().<span class="title function_">c</span>();   <span class="comment">// 22   调用的是Son的原型方法，指向父类原型方法</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2在子类的静态方法中通过super调用父类方法是super内部的this指向子类"><a href="#（2）在子类的静态方法中通过super调用父类方法是，super内部的this指向子类" class="headerlink" title="（2）在子类的静态方法中通过super调用父类方法是，super内部的this指向子类"></a>（2）在子类的静态方法中通过super调用父类方法是，super内部的this指向子类</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> x = <span class="number">3</span>;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">2</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();               <span class="comment">// 构造函数内调用</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">4</span>;				<span class="comment">// this指向子类构造函数</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">5</span>;</span><br><span class="line">        <span class="comment">// 如果没有this.x = 5,则 Son.x 打印为1</span></span><br><span class="line">        <span class="comment">// 如果既没有this.x = 5，也没有Bar.x = 1，则打印3</span></span><br><span class="line">        <span class="comment">// 如果既没有this.x = 5，也没有Bar.x = 1 和 x =3，则打印undefined，不会输出构造函数中的2</span></span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">print</span>();         <span class="comment">// super</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Son</span>.<span class="property">x</span> = <span class="number">1</span>;</span><br><span class="line"><span class="title class_">Son</span>.<span class="title function_">fn</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>注意看注释~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    name = <span class="string">&#x27;Father&#x27;</span>;</span><br><span class="line">    age = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">getName</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">getAge</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">age</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Father</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();             <span class="comment">// 这里调用super()是为了调用父类的构造函数</span></span><br><span class="line">        <span class="comment">// console.log(this);    // this指向的是子类的构造函数  this 为 Son &#123;name:&#x27;Father&#x27;, age: 18&#125; </span></span><br><span class="line">    &#125;  </span><br><span class="line">    </span><br><span class="line">    <span class="title function_">getAge</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// console.log(this.getAge)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">getAge</span>() + <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">          </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Son</span>().<span class="title function_">getName</span>());                   <span class="comment">// Father</span></span><br><span class="line"><span class="comment">// console.log(new Son().getAge());                 // 报错 因为 new Son().getAge()调用的是子类构造函数的getAge函数，它一直在调用自身</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Son</span>().<span class="property">getAge</span>.<span class="title function_">call</span>(&#123;<span class="attr">age</span>:<span class="number">2</span>&#125;));        <span class="comment">// 报错 这里this是&#123;age:2&#125;, 此时this.getAge为undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903638674980872">理解 es6 class 中 constructor 方法 和 super 的作用</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.xiaohongshu.com/discovery/item/62cee8070000000001029e53?share_from_user_hidden=true&xhsshare=WeixinSession&appuid=59d31f36de5fb428650bfe9f&apptime=1657770326">前端面试之关于super的全方位解读</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2110,7 +2236,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-14 18:24:10" itemprop="dateModified" datetime="2022-07-14T18:24:10+08:00">2022-07-14</time>
+      <time title="Modified: 2022-07-22 13:17:42" itemprop="dateModified" datetime="2022-07-22T13:17:42+08:00">2022-07-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2133,14 +2259,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>6.3k</span>
+      <span>7.3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
+      <span>7 mins.</span>
     </span>
 </div>
 
@@ -2230,231 +2356,18 @@
 <p><strong>算法实现</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">quickSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="comment">// 设置递归终止条件 arr只有一个元素或者没有元素 直接返回arr</span></span><br><span class="line">    <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 找到基准点</span></span><br><span class="line">    <span class="keyword">let</span> mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span> - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> pivot = arr[mid];</span><br><span class="line">    arr.<span class="title function_">splice</span>(mid, <span class="number">1</span>);  <span class="comment">// 从数组中删除基准</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 分配空间用于存放比基准大和小的元素</span></span><br><span class="line">    <span class="keyword">let</span> left = [], right = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">            left.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 返回结果为 左 + 基准 + 右</span></span><br><span class="line">    <span class="comment">// 左和右还要递归</span></span><br><span class="line">    <span class="keyword">return</span> [...<span class="title function_">quickSort</span>(left), pivot, ...<span class="title function_">quickSort</span>(right)];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="title function_">mergeSort</span>(arr);   <span class="comment">// [1, 2, 2, 3, 3, 4, 5, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	复杂度分析：</span></span><br><span class="line"><span class="comment">		时间复杂度： O(nlogn)</span></span><br><span class="line"><span class="comment">		空间复杂度： O(logn)</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">	稳定性分析：快速排序一直在打乱相对位置</span></span><br><span class="line"><span class="comment">		不稳定</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><img src="/2022/07/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8F%8AJS%E5%AE%9E%E7%8E%B0/%E5%A0%86%E6%8E%92%E5%BA%8F.gif" class title="堆排序">
+
+<p><strong>算法思路</strong></p>
+<ul>
+<li>构造大顶堆，把堆顶元素和最后一个元素交换（相当于把最大的元素放在最后面了），堆大小减去1</li>
+<li>交换后，把剩余的元素继续构造大顶堆，即把剩余元素最大的元素选出来放在堆顶，重复步骤1</li>
+<li>继续重复步骤1和2，直至堆大小为1</li>
+</ul>
+<p><strong>算法实现</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实现最大堆的构建</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	注意最大堆的特点：所有节点都大于其子节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> len;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">buildMaxHeap</span>(<span class="params">array</span>) &#123;</span><br><span class="line">     len = array.<span class="property">length</span>;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="title class_">Math</span>.<span class="title function_">floor</span>(len / <span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">         <span class="title function_">heapify</span>(array, i);</span><br><span class="line">     &#125;;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapify</span>(<span class="params">arr, i</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">2</span> * i + <span class="number">1</span>,    <span class="comment">// 如果存在，左子节点index为2 * i + 1</span></span><br><span class="line">        right = <span class="number">2</span> * i + <span class="number">2</span>,   <span class="comment">// 如果存在，右子节点index为2 * i + 2</span></span><br><span class="line">        largest = i;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</span><br><span class="line">        largest = left;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</span><br><span class="line">        largest = right;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (largest !== i) &#123;</span><br><span class="line">        [arr[i], arr[largest]] = [arr[largest], arr[i]];</span><br><span class="line">        <span class="title function_">heapify</span>(arr, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="title function_">buildMaxHeap</span>(arr);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = arr.<span class="property">length</span>-<span class="number">1</span>; i&gt;<span class="number">0</span>; i--) &#123;</span><br><span class="line">        [arr[<span class="number">0</span>], arr[i]] = [arr[i], arr[<span class="number">0</span>]];</span><br><span class="line">        len--;</span><br><span class="line">        <span class="title function_">heapify</span>(arr, <span class="number">0</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="title function_">heapSort</span>(arr);   <span class="comment">// [1, 2, 2, 3, 3, 4, 5, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	复杂度分析</span></span><br><span class="line"><span class="comment">	时间复杂度： O(nlogn)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/ten-sorting-algorithm.html">十大经典排序算法</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">对象 | 继承（含图解、手写）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-10 20:00:47" itemprop="dateCreated datePublished" datetime="2022-07-10T20:00:47+08:00">2022-07-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-12 15:57:07" itemprop="dateModified" datetime="2022-07-12T15:57:07+08:00">2022-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E5%81%9A%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">和我一起做总结</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>5.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><blockquote>
-<p>基本思想：通过原型链继承多个引用类型的属性和方法</p>
-<p>我们知道，实例和原型是有直接联系的，实例可以通过<code>__proto__</code>访问原型，所以原型链继承即<strong>将父类的实例作为子类的原型</strong>，这样子类的原型就可以通过<code>__proto__</code>访问父类的原型了</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承Father</span></span><br><span class="line"><span class="title class_">Son</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Father</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Son</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">__proto__</span> === <span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF.png" class title="原型链继承">
-
-<p><strong>优点</strong></p>
-<ul>
-<li>父类的方法子类能够被子类复用，因为子类可以访问父类原型，原型存在着父类实例可以共享的方法和属性</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>更改一个子类的引用，其他子类也会受到影响</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">colors</span> = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="title class_">Son</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Father</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"></span><br><span class="line">p1.<span class="property">colors</span>[<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;pink&#x27;, &#x27;yellow&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;pink&#x27;, &#x27;yellow&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>子类在实例化的时候不能向父类传参</li>
-</ul>
-<h3 id="盗用构造函数继承"><a href="#盗用构造函数继承" class="headerlink" title="盗用构造函数继承"></a>盗用构造函数继承</h3><blockquote>
-<p>基本思想：在子类构造函数中调用父类构造函数，可以使用call或者apply的方法</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">colors</span> = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 继承Father</span></span><br><span class="line">    <span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>);   <span class="comment">// 通过此方法让子类继承父类中的方法和属性</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;black&#x27;, &#x27;yellow&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;black&#x27;, &#x27;yellow&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E7%9B%97%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF.png" class title="盗用构造函数继承">
-
-<p><strong>优点</strong></p>
-<ul>
-<li>可以在子类构造函数中向父类构造函数传参</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 继承Father</span></span><br><span class="line">    <span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, <span class="string">&#x27;Katrina&#x27;</span>);   <span class="comment">// 通过此方法让子类继承父类中的方法和属性</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">name</span>);   <span class="comment">// Katrina</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>父类的引用属性不会被共享</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">colors</span> = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 继承Father</span></span><br><span class="line">    <span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>);   <span class="comment">// 通过此方法让子类继承父类中的方法和属性</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"></span><br><span class="line">p1.<span class="property">colors</span>[<span class="number">1</span>] = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;pink&#x27;, &#x27;yellow&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">colors</span>);    <span class="comment">// [&#x27;red&#x27;, &#x27;black&#x27;, &#x27;yellow&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>缺点</strong></p>
-<ul>
-<li>必须在构造函数中定义方法，函数不能复用，每次创建都会初始化</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params">name</span>) &#123;</span><br><span class="line"> 	<span class="variable language_">this</span>.<span class="property">colors</span> = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sayHello</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> say hello!`</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>每一次调用<code>new Father</code>，就会在实例内部定义一次这个<code>sayHello</code>方法，也就是<code>new Function(console.log($&#123;this.name&#125; say hello!))</code>，其实是更推荐把方法定义在<code>Father.prototype</code>上的，这样每个实例构造出来就自动继承这个方法，不需要在构造函数里面一次次地写</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params">name</span>) &#123;</span><br><span class="line"> 	<span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, name);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">colors</span> = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;yellow&#x27;</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sayHello</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> say hello!`</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>也就是说在构造函数继承的时候也在一次次调用<code>sayHello</code>这个方法</p>
-<ul>
-<li>（上个问题的延申）子类不能访问父类原型上的方法【<code>instanceOf</code>会失效】，所有方法都只能定义在父类构造函数中</li>
-</ul>
-<h3 id="组合式继承"><a href="#组合式继承" class="headerlink" title="组合式继承"></a>组合式继承</h3><blockquote>
-<p>基本思想：使用原型链继承原型上的属性和方法，而通过盗用构造函数继承实例属性</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">friends</span> = [<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;Lucy&#x27;</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="comment">// 构造函数继承</span></span><br><span class="line">    <span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, name, age);                 <span class="comment">// 调用两次</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型链继承</span></span><br><span class="line"><span class="title class_">Son</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Father</span>();                     <span class="comment">// 调用一次</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Son</span>(<span class="string">&#x27;Katrina&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Son</span>(<span class="string">&#x27;Kate&#x27;</span>, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">p1.<span class="title function_">sayName</span>();   <span class="comment">// &#x27;Katrina&#x27;</span></span><br><span class="line">p2.<span class="title function_">sayName</span>();   <span class="comment">// &#x27;Kate&#x27;</span></span><br><span class="line"></span><br><span class="line">p1.<span class="property">friends</span>.<span class="title function_">push</span>(<span class="string">&#x27;Bob&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">friends</span>);    <span class="comment">// [&#x27;Jack&#x27;, &#x27;Jenny&#x27;, &#x27;Lucy&#x27;, &#x27;Bob&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2.<span class="property">friends</span>);    <span class="comment">// [&#x27;Jack&#x27;, &#x27;Jenny&#x27;, &#x27;Lucy&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E7%BB%84%E5%90%88%E5%BC%8F%E7%BB%A7%E6%89%BF.png" class title="组合式继承">
-
-<p><strong>优点</strong></p>
-<ul>
-<li>父类的方法子类能够被子类复用</li>
-<li>父类的引用属性不会被共享</li>
-<li>子类可以访问父类原型上的方法</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>效率问题：父类构造函数始终会被调用两次<ul>
-<li>创建子类原型时调用</li>
-<li>在子类构造函数中调用</li>
-</ul>
-</li>
-</ul>
-<h3 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h3><blockquote>
-<p>基本思想：把现有的对象指定为构造函数的原型对象，并返回以这个对象为原型的构造函数的实例</p>
-<p>适用于：你有一个对象，你想在这个对象的基础上再创建一个对象 以及 不需要单独创建构造函数，但仍需要在对象间共享信息的场合</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">object</span>(<span class="params">o</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">F</span>(<span class="params"></span>)&#123;&#125;;     <span class="comment">// 临时构建构造函数</span></span><br><span class="line">    F.<span class="property"><span class="keyword">prototype</span></span> = o;    <span class="comment">// 把传入的对象指定为</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title function_">F</span>();     <span class="comment">// 返回临时类型的实例</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 本质上，object是吧传入的o进行了一次浅复制</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">gender</span>: <span class="string">&#x27;female&#x27;</span>,</span><br><span class="line">    <span class="attr">friends</span>: [<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;Lucy&#x27;</span>],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> anotherPerson = <span class="title function_">object</span>(person);</span><br><span class="line">anotherPerson.<span class="property">name</span>;   <span class="comment">// &#x27;Katrina&#x27;;</span></span><br><span class="line">anotherPerson.<span class="property">friends</span>.<span class="title function_">push</span>(<span class="string">&#x27;Kate&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> yetAnotherPerson = <span class="title function_">object</span>(person);</span><br><span class="line">yetAnotherPerson.<span class="property">name</span>;   <span class="comment">// &#x27;Katrina&#x27;;</span></span><br><span class="line">yetAnotherPerson.<span class="property">friends</span>.<span class="title function_">push</span>(<span class="string">&#x27;Bob&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">friends</span>);   <span class="comment">// [&#x27;Jack&#x27;, &#x27;Jenny&#x27;, &#x27;Lucy&#x27;, &#x27;Kate&#x27;, &#x27;Bob&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<p>ES5中新增的<code>Object.create()</code>只传一个参数时就是运用的这种思想：<a href="https://superkatrina123.github.io/2022/07/06/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Object.create/">手写原理 | Object.create</a></p>
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E5%BC%8F%E7%BB%A7%E6%89%BF.png" class title="原型式继承">
-
-<p><strong>优点</strong></p>
-<ul>
-<li>父类方法可以复用</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>更改一个子类的引用，其他子类也会受到影响</li>
-<li>子类在实例化的时候不能向父类传参</li>
-</ul>
-<h3 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h3><blockquote>
-<p>基本思想：创建一个实现继承的函数，以某种方式<strong>增强</strong>对象，然后返回这个对象</p>
-<p>适用于：主要关注对象，而不在乎类型和构造函数的场景</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">object</span>(<span class="params">o</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">F</span>(<span class="params"></span>)&#123;&#125;;     <span class="comment">// 临时构建构造函数</span></span><br><span class="line">    F.<span class="property"><span class="keyword">prototype</span></span> = o;    <span class="comment">// 把传入的对象指定为</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title function_">F</span>();     <span class="comment">// 返回临时类型的实例</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createAnotherPerson</span>(<span class="params">original</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> clone = <span class="title function_">object</span>(original);    <span class="comment">// 创建一个新对象，它的构造函数的原型是original</span></span><br><span class="line">    clone.<span class="property">sayHi</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;      <span class="comment">// 给对象添加一个sayHi的方法</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi&#x27;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> clone;       <span class="comment">// 返回这个对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Katrina&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">gender</span>: <span class="string">&#x27;female&#x27;</span>,</span><br><span class="line">    <span class="attr">friends</span>: [<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;Lucy&#x27;</span>],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> anotherPerson = <span class="title function_">createAnotherPerson</span>(person);</span><br><span class="line">anotherPerson.<span class="title function_">sayHi</span>();        <span class="comment">// Hi</span></span><br></pre></td></tr></table></figure>
-
-<p><code>object()</code>函数不是寄生式继承所必需的，任何返回新对象的函数都可以在这里使用</p>
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E5%AF%84%E7%94%9F%E5%BC%8F%E7%BB%A7%E6%89%BF.png" class title="寄生继承">
-
-<h3 id="寄生式组合继承"><a href="#寄生式组合继承" class="headerlink" title="寄生式组合继承"></a>寄生式组合继承</h3><blockquote>
-<p>寄生式组合继承主要是为了解决组合继承的效率问题</p>
-<p>基本思想：不通过调用父类构造函数给子类原型赋值，而是取得父类函数的一个副本，即使用寄生式继承来继承父类原型，然后将返回的新对象赋值给子类原型</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">object</span>(<span class="params">o</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">F</span>(<span class="params"></span>)&#123;&#125;;     <span class="comment">// 临时构建构造函数</span></span><br><span class="line">    F.<span class="property"><span class="keyword">prototype</span></span> = o;    <span class="comment">// 把传入的对象指定为</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title function_">F</span>();     <span class="comment">// 返回临时类型的实例</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">inheritPrototype</span>(<span class="params">Son, Father</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> prototype = <span class="title function_">object</span>(<span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>);    <span class="comment">// 创建对象</span></span><br><span class="line">    prototype.<span class="property">constructor</span> = <span class="title class_">Son</span>;                 <span class="comment">// 增强对象</span></span><br><span class="line">    <span class="title class_">Son</span>.<span class="property"><span class="keyword">prototype</span></span> = prototype;                   <span class="comment">// 赋值对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Father</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">friends</span> = [<span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;Jenny&#x27;</span>, <span class="string">&#x27;Lucy&#x27;</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Father</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="comment">// 构造函数继承</span></span><br><span class="line">    <span class="title class_">Father</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, name, age);                  <span class="comment">// 调用一次   </span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">inheritPrototype</span>(<span class="title class_">Father</span>, <span class="title class_">Son</span>);</span><br></pre></td></tr></table></figure>
-
-<p><code>instanceof </code>和<code> isPrototypeof</code>方法正常有效</p>
-<img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E5%AF%84%E7%94%9F%E5%BC%8F%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF.png" class title="寄生式组合继承">
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><img src="/2022/07/10/JavaScript/%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E5%88%86%E7%B1%BB.png" class title="继承分类">
-
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000004846488">关于构造函数继承的缺点的一个疑问</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/672933#slide-8">一篇文章理解JS继承——原型链&#x2F;构造函数&#x2F;组合&#x2F;原型式&#x2F;寄生式&#x2F;寄生组合&#x2F;Class extends</a></p>
 
       
     </div>
@@ -2497,13 +2410,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">282k</span>
+    <span title="Symbols count total">286k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:16</span>
+    <span title="Reading time total">4:20</span>
   </span>
 </div>
 <div class="busuanzi-count">
