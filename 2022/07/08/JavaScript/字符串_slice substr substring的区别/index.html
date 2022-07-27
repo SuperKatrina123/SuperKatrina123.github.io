@@ -28,7 +28,7 @@
 <meta property="og:description" content="三个方法都是用来从字符串中提取子字符串的，因为是提取，三个方法都不改变原字符串  slice语法 1str.slice(startIndex, [endIndex])  参数  startIndex：从该索引开始 endIndex（可选）：在该索引处结束提取字符串（不含），默认为字符串长度  返回值 返回提取出来的子字符串 substring语法 1str.substring(startInde">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-08T10:08:30.000Z">
-<meta property="article:modified_time" content="2022-07-09T05:10:38.464Z">
+<meta property="article:modified_time" content="2022-07-27T05:27:10.056Z">
 <meta property="article:author" content="Katrina">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="常见方法对比">
@@ -265,7 +265,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-09 13:10:38" itemprop="dateModified" datetime="2022-07-09T13:10:38+08:00">2022-07-09</time>
+      <time title="Modified: 2022-07-27 13:27:10" itemprop="dateModified" datetime="2022-07-27T13:27:10+08:00">2022-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -288,7 +288,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>469</span>
+      <span>480</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -330,13 +330,14 @@
 <p><strong>返回值</strong></p>
 <p>返回提取出来的子字符串</p>
 <h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><p><strong>语法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="title function_">substring</span>(startIndex, [length])</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="title function_">substr</span>(startIndex, [length])</span><br></pre></td></tr></table></figure>
 
 <p><strong>参数</strong></p>
 <ul>
 <li><code>startIndex</code>：从该索引开始</li>
 <li><code>length</code>（可选）：提取的字符数</li>
 </ul>
+<p><strong>返回值</strong><br>返回提取出来的子字符串</p>
 <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>三者的主要区别在于面对0参数的处理上</p>
 <ul>
 <li><code>slice</code>方法会将所有负值参数都使用<code>负值+length</code>的方法进行处理</li>
