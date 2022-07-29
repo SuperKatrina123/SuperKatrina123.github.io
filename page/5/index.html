@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">51</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">89</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">55</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">91</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -160,18 +160,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -223,6 +223,578 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/12/JavaScript/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0_Promise%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/12/JavaScript/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0_Promise%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">异步函数 | Promise基础和实例方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-12 23:06:42" itemprop="dateCreated datePublished" datetime="2022-07-12T23:06:42+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-13 22:00:53" itemprop="dateModified" datetime="2022-07-13T22:00:53+08:00">2022-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">异步编程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>13k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>12 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>ES6增加了对Promise&#x2F;A+规范的完善支持，即Promise实例</p>
+</blockquote>
+<h2 id="promise基础"><a href="#Promise基础" class="headerlink" title="Promise基础"></a>Promise基础</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(executor)</span><br></pre></td></tr></table></figure>
+
+<p>Promise可以通过new操作符来实例化，创建新Promise的时候需要传入执行器（executor）函数作为参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;);   <span class="comment">// 这里使用一个空函数进行模拟</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p)      <span class="comment">// Promise &lt;pending&gt; </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="promise状态"><a href="#Promise状态" class="headerlink" title="Promise状态"></a>Promise状态</h3><ul>
+<li><p>Promise是一个有状态的对象，Promise可能处于如下状态</p>
+<ul>
+<li>待定（pending）</li>
+<li>兑现（fulfilled或者rosolved）</li>
+<li>拒绝（rejected）</li>
+</ul>
+</li>
+<li><p>Promise的初始状态是Pending，在Pending状态下，Promise的状态可变为fulfilled或者rejected</p>
+</li>
+<li><p><strong>Promise的状态一经改变不可逆！！！</strong></p>
+</li>
+<li><p>Promise的状态是私有的，是不能直接通过JavaScript检测到的（这主要是为了避免根据读取到的Promise状态，以同步方式处理Promise对象）</p>
+</li>
+<li><p>Promise的也不能为外部JavaScript代码修改（Promise故意将异步行为封装起来，从而隔离外部的同步代码）</p>
+</li>
+</ul>
+<h3 id="promise用途"><a href="#Promise用途" class="headerlink" title="Promise用途"></a>Promise用途</h3><h4 id="1改变状态"><a href="#（1）改变状态" class="headerlink" title="（1）改变状态"></a>（1）改变状态</h4><p>Promise可以用于抽象地表示一个异步操作，Promise的状态可以表示Promise是否完成，Promise的状态一经改变不可撤销和逆转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">resolve</span>();</span><br><span class="line">    <span class="title function_">rejece</span>();    <span class="comment">// 没有效果</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p);  <span class="comment">// Promise &#123;&lt;fulfilled&gt;: undefined&#125; </span></span><br></pre></td></tr></table></figure>
+
+<p>为了避免Promise卡在某个状态，可以添加一个定时器退出功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>();</span><br><span class="line">    &#125;, <span class="number">10000</span>);    <span class="comment">// 10秒后调用reject()</span></span><br><span class="line">    <span class="comment">// 执行函数的逻辑</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p), <span class="number">0</span>);    <span class="comment">// Promise &#123;&lt;pending&gt;&#125;</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p), <span class="number">11000</span>);  </span><br><span class="line"><span class="comment">// 10秒后输出 Uncaught (in promise) </span></span><br><span class="line"><span class="comment">// 11秒后输出 Promise &#123;&lt;rejected&gt;: undefined&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>因为期约的状态只能改变一次，所以这里的超时拒绝逻辑中可以放心地设置让期约处于待定状态的最长时间</p>
+<p>如果执行器中的代码在超时之前已经解决或拒绝，那么超时回调再尝试拒绝也会静默失败（Nice！）</p>
+<h4 id="2回调处理"><a href="#（2）回调处理" class="headerlink" title="（2）回调处理"></a>（2）回调处理</h4><p>Promise封装的异步操作会实际生成某个值，而程序期待Promise状态改变时可以访问这个值，相应地，如果Promise被拒绝，程序就会期待Promise状态改变时可以拿到拒绝的理由</p>
+<blockquote>
+<p>每个Promise只要状态改变为fulfilled，就会有一个私有的内部<strong>值</strong>（value）</p>
+<p>每个Promise只要状态改变为rejected，就会有一个私有的内部<strong>理由</strong>（reason）</p>
+</blockquote>
+<p>无论是值还是理由，都是包含原始值或对象的不可修改的引用，二者都是可选的，而且默认值为<strong>undefined</strong></p>
+<p>在Promise到达某个落定状态时执行的异步代码始终会收到这个值或理由</p>
+<h3 id="通过执行函数控制promise状态"><a href="#通过执行函数控制Promise状态" class="headerlink" title="通过执行函数控制Promise状态"></a>通过执行函数控制Promise状态</h3><p>因为Promise的状态是私有的，所以只能在内部进行操作， 内部操作在Promise的执行器函数中完成</p>
+<p>执行器函数主要有两大职责：</p>
+<ul>
+<li>初始化Promise的异步行为</li>
+<li>控制状态的最终转换【<strong>调用resolve()和reject()实现</strong>】</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">resolve</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);     <span class="comment">// Promise &#123;&lt;fulfilled&gt;: undefined&#125;   因为resolve并没有传入值，所以为undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2);     <span class="comment">// Promise &#123;&lt;rejected&gt;: undefined&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>执行器函数是同步执行的，因为执行器函数是Promise的初始化状态</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;executor&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;promise initialized&#x27;</span>), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	如果Promise是同步执行的，打印结果为：</span></span><br><span class="line"><span class="comment">	executor</span></span><br><span class="line"><span class="comment">	promise initialized</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	如果Promise是异步执行的，打印结果为：</span></span><br><span class="line"><span class="comment">	promise initialized</span></span><br><span class="line"><span class="comment">	executor</span></span><br><span class="line"><span class="comment">*/</span>     </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	实际打印结果为：</span></span><br><span class="line"><span class="comment">	executor</span></span><br><span class="line"><span class="comment">	promise initialized</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加setTimeout可以推迟切换状态</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">1000</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="promise静态方法"><a href="#Promise静态方法" class="headerlink" title="Promise静态方法"></a>Promise静态方法</h3><h4 id="1promiseresolve"><a href="#（1）Promise-resolve" class="headerlink" title="（1）Promise.resolve()"></a>（1）Promise.resolve()</h4><blockquote>
+<p>Promise.resolve()可以实例化一个解决的Promise</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// p1 和 p2 是等价的</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">resolve</span>());</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Promise.resolve()的参数对应着解决的Promise的值，Promise.resolve()可以把任何值都转换为一个Promise，传入的参数可能会有如下情况</p>
+<ul>
+<li><strong>定值 &#x3D;&gt; 解析或者包装后的Promise对象</strong></li>
+<li><strong>Promise对象 &#x3D;&gt; Promise对象本身（相当于一个空包装）</strong>【幂等】</li>
+<li><strong>thenable &#x3D;&gt; 返回的Promise会跟随着thenable对象，采用它的最终状态</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定值</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);         <span class="comment">// Promise &#123;&lt;fulfilled&gt;: 2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多余的参数会忽略</span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">4</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2);         <span class="comment">// Promise &#123;&lt;fulfilled&gt;: 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 空包装</span></span><br><span class="line"><span class="keyword">let</span> p3 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p2);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p3 === p2);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise.resolve()可以包装任何非Promise的值，包括错误对象，并将其转换为解决的Promise</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可能会导致不符合预期的行为</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p);   <span class="comment">// Promise &#123;&lt;fulfilled&gt;: Error: foo</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Promise.resolve()是一个幂等方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p);</span><br><span class="line"><span class="keyword">let</span> p3 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p === p2);   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p === p3);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2promisereject"><a href="#（2）Promise-reject" class="headerlink" title="（2）Promise.reject()"></a>（2）Promise.reject()</h4><blockquote>
+<p>Promise.reject()可以实例化一个拒绝的Promise并抛出一个异步错误（这个错误不能通过try&#x2F;catch捕获，而只能通过拒绝处理程序捕获）</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面两个实例等价</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>());</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Promise.reject()的参数对应着拒绝的Promise的理由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">rereject</span>(<span class="number">3</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);         <span class="comment">// Promise &#123;&lt;rejected&gt;: 3&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise.reject()不是一个幂等方法，如果给它传一个Promise，这个Promise会成为拒绝的理由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(p1);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2);   <span class="comment">// Uncaught (in promise) Promise &#123;&lt;fulfilled&gt;: 3&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="promise同步-异步执行的二元性"><a href="#Promise同步、异步执行的二元性" class="headerlink" title="Promise同步、异步执行的二元性"></a>Promise同步、异步执行的二元性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e);   <span class="comment">// Error:foo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;bar&#x27;</span>))</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e);     <span class="comment">// Uncaught (in promise) Error: bar</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二个try&#x2F;catch没有捕获到错误是因为它没有通过<strong>异步模式</strong>捕获错误，这是什么意思呢？前面说过：<strong>Promise的状态是私有的，是不能直接通过JavaScript检测到的（这主要是为了避免根据读取到的Promise状态，以同步方式处理Promise对象）</strong>，拒绝Promise的错误并没有抛出到同步代码的线程里，所以try&#x2F;catch没有捕获到错误，准确地说，要捕获错误就需要用Promise的方法【下面就开始介绍Promise的方法】</p>
+<h2 id="promise的实例方法"><a href="#Promise的实例方法" class="headerlink" title="Promise的实例方法"></a>Promise的实例方法</h2><h3 id="实现thenable接口"><a href="#实现Thenable接口" class="headerlink" title="实现Thenable接口"></a>实现Thenable接口</h3><blockquote>
+<p>在ECMAScript 暴露的异步结构中，任何对象都有一个then()方法，这个方法被认为实现了Thenable 接口</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyThenable</span> &#123;</span><br><span class="line">    <span class="title function_">then</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="promiseprototypethen"><a href="#Promise-prototype-then" class="headerlink" title="Promise.prototype.then()"></a>Promise.prototype.then()</h3><blockquote>
+<p>Promise.then()返回一个新的Promise实例</p>
+<p>Promise.then()最多接收两个参数（可选）：<strong>onResloved处理程序</strong> 和 <strong>onRejected处理程序</strong>，分别在Promise进入“兑现”和“拒绝”状态时执行</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">onResolved</span>(<span class="params">id</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;resolve&#x27;</span>, id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onRejceted</span>(<span class="params">id</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;reject&#x27;</span>, id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(<span class="title function_">resolve</span>(), <span class="number">3000</span>))</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(<span class="title function_">reject</span>(), <span class="number">3000</span>))</span><br><span class="line"></span><br><span class="line">p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title function_">onResolved</span>(<span class="string">&#x27;p1&#x27;</span>), </span><br><span class="line">       <span class="title function_">onRejceted</span>(<span class="string">&#x27;p1&#x27;</span>))</span><br><span class="line"></span><br><span class="line">p2.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title function_">onResolved</span>(<span class="string">&#x27;p2&#x27;</span>), </span><br><span class="line">       <span class="title function_">onRejceted</span>(<span class="string">&#x27;p2&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3秒后</span></span><br><span class="line"><span class="comment">// resolve p1</span></span><br><span class="line"><span class="comment">// reject p2</span></span><br></pre></td></tr></table></figure>
+
+<p>因为Promise的状态不可撤销，所以这两个方法一定是<strong>互斥</strong>的</p>
+<ul>
+<li>传给then()的任何非函数类型的参数都会被忽略</li>
+<li>如果只想提供onRejected参数，那么就要在onResolved的位置写上null或者undefined</li>
+</ul>
+<h4 id="1onresolve处理程序"><a href="#（1）onResolve处理程序" class="headerlink" title="（1）onResolve处理程序"></a>（1）onResolve处理程序</h4><ol>
+<li><p>Promise.then()返回一个新的Promise实例，这个新Promise的实例是基于onResolved处理程序的返回值构建的，也就是说，该处理程序的返回值会通过Promise.resolve()去包装来生成新的Promise实例</p>
+</li>
+<li><p>那么onResolve()处理程序在不同情况下，Promise新实例的情况也不同，主要分为以下几种情况：</p>
+<ul>
+<li><p>没有提供onResolve处理程序 &#x3D;&gt; 会沿用上一个Promise</p>
+</li>
+<li><p>提供onResolved处理程序但是没有显式的返回语句 &#x3D;&gt; Promise.resolve()会包装默认返回值为undefined</p>
+</li>
+<li><p>提供onResolved处理程序且有有显式的返回语句 &#x3D;&gt; Promise.resolve()会包装这个<strong>值</strong>【根据不同值的情况，具体之前讲过了，可以看Promise.resolve()那块】</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);    <span class="comment">// 此时p1 为  Promise: &#123;&lt;fulfilled&gt;: 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有onResolved处理程序</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个打印p2，必须套上setTimeout，不知道为啥的请自觉补课Even loop</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p2);</span><br><span class="line">&#125;)    <span class="comment">// 会沿用上一个Promise p2 为  Promise: &#123;&lt;fulfilled&gt;: 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供onResolved处理程序但是没有显式的返回语句 ，Promise.resolve()会包装默认返回值为undefined</span></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="comment">// 没有return</span></span><br><span class="line">&#125;, <span class="literal">null</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p3);</span><br><span class="line">&#125;)   <span class="comment">// 值为undefined  p3 为  Promise: &#123;&lt;fulfilled&gt;: undefined&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供onResolved处理程序且有有显式的返回语句，  Promise.resolve()会包装这个值</span></span><br><span class="line"><span class="keyword">let</span> p4 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="number">4</span>, <span class="literal">null</span>); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p4);</span><br><span class="line">&#125;) <span class="comment">// 值为4  p4 为  Promise: &#123;&lt;fulfilled&gt;: 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p5 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title class_">Promose</span>.<span class="title function_">resolve</span>(<span class="number">5</span>), <span class="literal">null</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p5);</span><br><span class="line">&#125;)<span class="comment">// 值为5  p5 为  Promise: &#123;&lt;fulfilled&gt;: 5&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p><code>onResolved</code>处理程序遇到错误，分为两种情况</p>
+<ul>
+<li><p>抛出异常 &#x3D;&gt; 返回拒绝的<code>Promise</code></p>
+</li>
+<li><p>返回错误值 &#x3D;&gt; 不会拒绝而是会把错误值包装成一个解决的<code>Promise</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="number">2</span>)&#125;);   <span class="comment">// Uncaught (in promise) Error: 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="number">3</span>));      <span class="comment">// p3是一个新的Promise Promise &#123;&lt;fulfilled&gt;: new Error(3)&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2onreject处理程序"><a href="#（2）onReject处理程序" class="headerlink" title="（2）onReject处理程序"></a>（2）onReject处理程序</h4><ol>
+<li><code>onRejected</code>处理程序返回的值也会被<code>Promise.resolve()</code>包装，在捕获错误后不抛出异常，而是返回一个解决的<code>Promise</code></li>
+<li><code>onRejeced</code>处理程序在不同情况下，<code>Promise</code>新实例的情况也不同，主要分为以下几种情况：<ul>
+<li>没有提供onRejected处理程序 &#x3D;&gt; 会沿用上一个Promise</li>
+<li>提供onRejected处理程序但是没有显式的返回语句 &#x3D;&gt; Promise.resolve()会包装默认返回值为undefined</li>
+<li>提供onRejected处理程序且有有显式的返回语句 &#x3D;&gt;Promise.resolve()会包装这个<strong>原因</strong></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="number">3</span>);    <span class="comment">// 此时p1 为  Promise: &#123;&lt;rejected&gt;: 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有onRejected处理程序</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p2);</span><br><span class="line">&#125;)    <span class="comment">// 会沿用上一个Promise p2 为  Promise: &#123;&lt;rejected&gt;: 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供onRejected处理程序但是没有显式的返回语句 ， Promise.resolve()会包装默认返回值为undefined</span></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="comment">// 没有return</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p3);</span><br><span class="line">&#125;)   <span class="comment">// 原因为undefined  p3 为  Promise: &#123;&lt;fulfilled&gt;: undefined&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供onRejected处理程序且有有显式的返回语句，  Promise.resolve()会包装这个原因</span></span><br><span class="line"><span class="keyword">let</span> p4 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="number">4</span>); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p4);</span><br><span class="line">&#125;) <span class="comment">// 原因为4  p4 为  Promise: &#123;&lt;fulfilled&gt;: 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p5 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title class_">Error</span>(<span class="number">5</span>));</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p5);</span><br><span class="line">&#125;)<span class="comment">// 原因为5  p5 为  Promise: &#123;&lt;fulfilled&gt;: Error(5)&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>补课：<a href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.then/">手写原理 | Promise.then</a></p>
+<h3 id="promiseprototypecatch"><a href="#Promise-prototype-catch" class="headerlink" title="Promise.prototype.catch()"></a>Promise.prototype.catch()</h3><p><code>Promise.prototype.catch()</code>方法用于给期约添加拒绝处理程序</p>
+<p>这个方法只接收一个参数：<code>onRejected</code> 处理程序</p>
+<p>事实上，这个方法就是一个语法糖，调用它就相当于调用<code>Promise.prototype.then(null, onRejected)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>();</span><br><span class="line"><span class="keyword">let</span> onRejected = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;rejected&#x27;</span>), <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面两者处理是一样的</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, onRejected);   <span class="comment">// rejected</span></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">catch</span>(onRejected);        <span class="comment">// rejected</span></span><br></pre></td></tr></table></figure>
+
+<p>Promise.catch()返回一个新的Promise实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;);</span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">catch</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p1)    <span class="comment">// Promise &#123;&lt;pending&gt;&#125;</span></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p2)    <span class="comment">// Promise &#123;&lt;pending&gt;&#125;</span></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 === p2);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>在返回新期约实例方面，<code>Promise.prototype.catch()</code>的行为与<code>Promise.prototype.then()</code>的<code>onRejected</code> 处理程序是一样的</p>
+<h3 id="promiseprototypefinally"><a href="#Promise-prototype-finally" class="headerlink" title="Promise.prototype.finally()"></a>Promise.prototype.finally()</h3><blockquote>
+<p>Promise.prototype.finally()方法用于给期约添加onFinally 处理程序，这个处理程序在期约转换为解决或拒绝状态时都会执行</p>
+</blockquote>
+<ol>
+<li>onFinally 处理程序无法知道Promise的状态是fulfilled还是rejected，所以这个方法主要用于清理代码</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> onFinally = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Finally&#x27;</span>)</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p1.<span class="title function_">finally</span>(onFinally);   <span class="comment">// &#x27;Finally&#x27;</span></span><br><span class="line">p2.<span class="title function_">finally</span>(onFinally);   <span class="comment">// &#x27;Finally&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Promise.prototype.finally()返回一个新的Promise实例</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">finally</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1 === p2);   <span class="comment">// false;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>onFinally 处理程序和 onResolved和onRejected不同，因为onFinally被设计为一个<strong>状态无关</strong>的方法，所以在大多数情况下它将表现为父Promise的传递</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下的情况都会往后面传</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">finally</span>();</span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> &#123;&#125;);</span><br><span class="line"><span class="keyword">let</span> p4 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="literal">undefined</span>);</span><br><span class="line"><span class="keyword">let</span> p5 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>());</span><br><span class="line"><span class="keyword">let</span> p6 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> p7 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;bar&#x27;</span>));</span><br><span class="line"><span class="keyword">let</span> p8 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="title class_">Error</span>(<span class="string">&#x27;qux&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p2), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p3), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p4), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo  </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p5), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p6), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p7), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p8), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(p9), <span class="number">0</span>);  <span class="comment">// Promise &lt;resolved&gt;: foo</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>如果返回的是一个待定的<code>Promise</code>，或者<code>onFinally</code>处理程序抛出了错误（显式抛出或返回了一个拒绝期约），则会返回相应的期约（待定或拒绝）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Promise.resolve()保留返回的期约</span></span><br><span class="line"><span class="keyword">let</span> p9 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;));</span><br><span class="line"><span class="keyword">let</span> p10 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>());</span><br><span class="line"><span class="comment">// Uncaught (in promise): undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p9); <span class="comment">// Promise &lt;pending&gt;</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p10); <span class="comment">// Promise &lt;rejected&gt;: undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p11 = p1.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> &#123; <span class="keyword">throw</span> <span class="string">&#x27;baz&#x27;</span>; &#125;);</span><br><span class="line"><span class="comment">// Uncaught (in promise) baz</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p11); <span class="comment">// Promise &lt;rejected&gt;: baz</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="非重入promise方法"><a href="#非重入Promise方法" class="headerlink" title="非重入Promise方法"></a>非重入Promise方法</h3><blockquote>
+<p>当期约进入落定状态时，与该状态相关的处理程序仅仅会被排期，而非立即执行</p>
+<p>跟在添加这个处理程序的代码之后的同步代码一定会在处理程序之前先执行</p>
+<p>即使期约一开始就是与附加处理程序关联的状态，执行顺序也是这样的</p>
+<p>这个特性由JavaScript 运行时保证，被称为“非重入”（non-reentrancy）特性</p>
+</blockquote>
+<p>感觉这部分只要搞清楚Even Loop就可以了，所以这里略过~</p>
+<h3 id="邻近处理程序的执行顺序"><a href="#邻近处理程序的执行顺序" class="headerlink" title="邻近处理程序的执行顺序"></a>邻近处理程序的执行顺序</h3><blockquote>
+<p>如果给期约添加了多个处理程序，当期约状态变化时，相关处理程序会按照添加它们的顺序依次执行</p>
+<p>无论是then()、catch()还是finally()添加的处理程序都是如此</p>
+</blockquote>
+<p>这个执行顺序主要是遵循了队列的先进先出原则，掠过~</p>
+<h3 id="传递解决值和拒绝理由"><a href="#传递解决值和拒绝理由" class="headerlink" title="传递解决值和拒绝理由"></a>传递解决值和拒绝理由</h3><blockquote>
+<p>到了落定状态后，期约会提供其解决值（如果兑现）或其拒绝理由（如果拒绝）给相关状态的处理程序</p>
+<p>拿到返回值后，就可以进一步对这个值进行操作</p>
+<p>在执行函数中，解决的值和拒绝的理由是分别作为resolve()和reject()的第一个参数往后传的，然后，这些值又会传给它们各自的处理程序，作为onResolved 或onRejected 处理程序的唯一参数</p>
+</blockquote>
+<img src="/2022/07/12/JavaScript/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0_Promise%E5%9F%BA%E7%A1%80/promises.png" class title="promises">
+
+<p>把这张图理顺~问题不大</p>
+<h3 id="拒绝promise和拒绝错误处理"><a href="#拒绝Promise和拒绝错误处理" class="headerlink" title="拒绝Promise和拒绝错误处理"></a>拒绝Promise和拒绝错误处理</h3><p>拒绝期约类似于<code>throw()</code>表达式，因为它们都代表一种程序状态，即需要中断或者特殊处理</p>
+<ol>
+<li>在期约的执行函数或处理程序中抛出错误会导致拒绝，对应的错误对象会成为拒绝的理由</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>(<span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>)));</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; <span class="keyword">throw</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>); &#125;);</span><br><span class="line"><span class="keyword">let</span> p3 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123; <span class="keyword">throw</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>); &#125;);</span><br><span class="line"><span class="keyword">let</span> p4 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p1); <span class="comment">// Promise &lt;rejected&gt;: Error: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p2); <span class="comment">// Promise &lt;rejected&gt;: Error: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p3); <span class="comment">// Promise &lt;rejected&gt;: Error: foo</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p4); <span class="comment">// Promise &lt;rejected&gt;: Error: foo</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>期约可以以任何理由拒绝，包括<code>undefined</code>，但最好统一使用错误对象，这样做主要是因为创建错误对象可以让浏览器捕获错误对象中的栈追踪信息，而这些信息对调试是非常关键的</p>
+</li>
+<li><p>异步错误只能通过异步的onRejected处理程序进行处理【还记得之前说的：Promise的状态是私有的】</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不正确</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>)).<span class="title function_">catch</span>(<span class="function"><span class="params">e</span> =&gt;</span> &#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不正确</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>))</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><code>then()</code>和<code>catch()</code>的<code>onRejected </code>处理程序在语义上相当于<code>try/catch</code>，出发点都是捕获错误之后将其隔离，同时不影响正常逻辑执行，为此，onRejected 处理程序的任务应该是在捕获异步错误之后返回一个解决的期约</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;begin synchronous execution&#x27;</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">throw</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;caught error&#x27;</span>, e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;continue synchronous execution&#x27;</span>);</span><br><span class="line"><span class="comment">// begin synchronous execution</span></span><br><span class="line"><span class="comment">// caught error Error: foo</span></span><br><span class="line"><span class="comment">// continue synchronous execution</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;begin asynchronous execution&#x27;</span>);</span><br><span class="line">	<span class="title function_">reject</span>(<span class="title class_">Error</span>(<span class="string">&#x27;bar&#x27;</span>));</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;caught error&#x27;</span>, e);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;continue asynchronous execution&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// begin asynchronous execution</span></span><br><span class="line"><span class="comment">// caught error Error: bar</span></span><br><span class="line"><span class="comment">// continue asynchronous execution</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.finally/">手写原理 | Promise.finally</a></p>
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p><a href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise/">手写原理 | Promise</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.then/">手写原理 | Promise.then</a></p>
+<p><a href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.finally/">手写原理 | Promise.finally</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://promisesaplus.com/">Promises&#x2F;A+</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/12/JavaScript/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8_%E7%94%9F%E6%88%90%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/12/JavaScript/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8_%E7%94%9F%E6%88%90%E5%99%A8/" class="post-title-link" itemprop="url">迭代器和生成器 | 生成器（含手写生成器应用）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-12 10:13:12 / Modified: 22:42:58" itemprop="dateCreated datePublished" datetime="2022-07-12T10:13:12+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><blockquote>
+<p>生成器是ES6新增的解构，拥有在一个函数块内<strong>暂停和恢复</strong>代码执行的能力</p>
+</blockquote>
+<h4 id="生成器基础"><a href="#生成器基础" class="headerlink" title="生成器基础"></a>生成器基础</h4><p>生成器的形式是一个函数，<strong>函数名称</strong>前面加一个星号（*）【星号不受两侧空格影响】表示它是一个生成器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	只要是可以定义函数的地方，就可以定义生成器</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成器函数声明</span></span><br><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成器函数表达式</span></span><br><span class="line"><span class="keyword">let</span> generatorFn = <span class="keyword">function</span> *() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为对象字面量方法的生成器函数</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为类实例方法的生成器函数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    * <span class="title function_">generatorFnn</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为类静态方法的生成器函数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>调用生成器函数会生成一个<strong>生成器对象</strong></p>
+<ul>
+<li>生成器对象一开始处于<strong>暂停状态</strong>（<code>suspended</code>）</li>
+</ul>
+</li>
+<li><p>生成器方法也实现了<strong>Iterator接口</strong>，因此也可以调用<code>next()</code>方法，一旦调用这个方法，就会让生成器开始或者恢复执行（相当于激活了~）</p>
+<ul>
+<li><p><code>next()</code>方法返回值类似于迭代器，有一个<code>done</code>属性和一个<code>value</code>属性</p>
+</li>
+<li><p>函数体为空的生成器中间不会停留，调用一次<code>next()</code>就会让生成器达到<code>done:true</code>状态</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;&#125;   <span class="comment">// 定义一个生成器对象，生成器对象是一个函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();   <span class="comment">// 调用生成器对象</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);         <span class="comment">//  generatorFn &#123;&lt;suspended&gt;&#125;   生成器对象处于暂停状态</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());  <span class="comment">//  &#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>value</code>属性是生成器的返回值，默认为<code>undefined</code>，可以通过生成器函数的返回值指定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;foo&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);         <span class="comment">//  generatorFn &#123;&lt;suspended&gt;&#125;   </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// &#123;value: &#x27;foo&#x27;, done: true&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>生成器函数只会在<strong>初次</strong>调用<code>next()</code>方法后开始执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();    <span class="comment">// 并不会打印foo</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);         <span class="comment">//  generatorFn &#123;&lt;suspended&gt;&#125;   </span></span><br><span class="line">g.<span class="title function_">next</span>()   <span class="comment">// &#x27;foo&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成器对象实现了Iterator接口，它们默认的迭代器是自引用的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(generatorFn);   <span class="comment">// ƒ *generatorFn() &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">generatorFn</span>()[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]);  <span class="comment">// ƒ [Symbol.iterator]() &#123; [native code] &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">generatorFn</span>());  <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">generatorFn</span>()[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]());   <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g  = <span class="title function_">generatorFn</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g === g[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]());  <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="通过yield中断执行"><a href="#通过yield中断执行" class="headerlink" title="通过yield中断执行"></a>通过yield中断执行</h4><blockquote>
+<p>yield关键字可以让生成器停止和开始执行</p>
+<p>yield关键字只能在生成器函数内部使用</p>
+<p>yield可以作为函数的中间返回语句使用，yield关键字可以作为函数的中间参数使用，yield关键字可以同时用于输入和输出</p>
+</blockquote>
+<ul>
+<li>生成器函数在遇到<code>yield</code>关键字之前正常执行，遇到这个关键字之后，执行会停止，函数作用域的状态会被保留，停止执行的生成器函数只能通过在生成器对象上调用<code>next()</code>方法来恢复执行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// &#123;done: false, value: undefined&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// &#123;done: false, value: undefined&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>yield关键字有点像函数中间的返回语句，它生成的值会出现在<code>next()</code>方法返回的对象里（不同的是：通过yield关键字退出的生成器函数会处在<code>done:false</code>状态；通过<code>retrun</code>关键字退出的生成器函数会处于<code>done:true</code>状态）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;foo&#x27;</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;baz&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;foo&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;bar&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());    <span class="comment">// &#123;done: true, value: &#x27;baz&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成器函数内部的执行流程会针对每个生成器对象区分作用域，在一个生成器对象上调用next()不会影响其他生成器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;foo&#x27;</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;baz&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g1 = <span class="title function_">generatorFn</span>();</span><br><span class="line"><span class="keyword">let</span> g2 = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g1.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;foo&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g2.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;foo&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g1.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;bar&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g2.<span class="title function_">next</span>());    <span class="comment">// &#123;done: false, value: &#x27;bar&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1生成器对象作为可迭代对象"><a href="#（1）生成器对象作为可迭代对象" class="headerlink" title="（1）生成器对象作为可迭代对象"></a>（1）生成器对象作为可迭代对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> <span class="title function_">generatorFn</span>()) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>应用场景：</strong>我们需要定义一个可迭代对象，而它会产生一个迭代器，这个迭代器会执行指定的次数。使用生成器，可以通过一个简单的循环来实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">nTimes</span>(<span class="params">n</span>) &#123;   <span class="comment">// 这个函数可以控制迭代循环的次数</span></span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;   <span class="comment">// 当n为0时，while判断返回为false，循环退出</span></span><br><span class="line">        <span class="keyword">yield</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> _ <span class="keyword">of</span> <span class="title function_">nTimes</span>(<span class="number">3</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// foo</span></span><br><span class="line"><span class="comment">// foo</span></span><br><span class="line"><span class="comment">// foo</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2使用yield实现输入和输出"><a href="#（2）使用yield实现输入和输出" class="headerlink" title="（2）使用yield实现输入和输出"></a>（2）使用yield实现输入和输出</h5><blockquote>
+<p>注意： 第一次调用next()传入的值不会被使用，因为这一次调用是为了开始执行生成器函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// yield关键字可以作为函数的中间参数使用</span></span><br><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params">initial</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(initial);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">yield</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">yield</span>);            </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>(<span class="string">&#x27;foo&#x27;</span>);     <span class="comment">// 这时候生成器处于暂停状态，是不会输出任何结果的，必须使用next激活</span></span><br><span class="line">g.<span class="title function_">next</span>(<span class="string">&#x27;bar&#x27;</span>)   <span class="comment">// foo    第一次调用next()传入的值不会被使用，因为这一次调用是为了开始执行生成器函数</span></span><br><span class="line">g.<span class="title function_">next</span>(<span class="string">&#x27;baz&#x27;</span>)   <span class="comment">// baz</span></span><br><span class="line">g.<span class="title function_">next</span>(<span class="string">&#x27;qux&#x27;</span>)   <span class="comment">// qux</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// yield关键字可以同时用于输入和输出</span></span><br><span class="line"><span class="keyword">function</span> *<span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">yield</span> <span class="string">&#x27;foo&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();    <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;  </span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// 激活生成器函数   &#123;value: &#x27;foo&#x27;, done: false&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>(<span class="string">&#x27;bar&#x27;</span>));  <span class="comment">// &#123;value: &#x27;bar&#x27;, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>因为函数必须对整个表达式求值才能确定要返回的值，所以它在遇到<code>yield</code>关键字时暂停执行并计算出要产生的值：<code>&quot;foo&quot;</code>，下一次调用<code>next()</code>传入了<code>&quot;bar&quot;</code>，作为交给同一个<code>yield</code>的值，然后这个值被确定为本次生成器函数要返回的值</p>
+<h5 id="3yield关键字可以允许使用多次"><a href="#（3）yield关键字可以允许使用多次" class="headerlink" title="（3）yield关键字可以允许使用多次"></a>（3）yield关键字可以允许使用多次</h5><p><strong>应用场景1：</strong>定义一个生成器函数，它会根据配置的值迭代相应次数并产生迭代的索引</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实现1</span></span><br><span class="line"><span class="keyword">function</span> * <span class="title function_">nTimes</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">yield</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> <span class="title function_">nTimes</span>(<span class="number">3</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现2</span></span><br><span class="line"><span class="keyword">function</span> * <span class="title function_">nTimes</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="keyword">yield</span> i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> <span class="title function_">nTimes</span>(<span class="number">3</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>应用场景2：</strong>使用生成器实现范围</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">range</span>(<span class="params">start, end</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span> (end &gt; start) &#123;</span><br><span class="line">        <span class="keyword">yield</span> start;</span><br><span class="line">        start++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> <span class="title function_">range</span>(<span class="number">4</span>,<span class="number">7</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>应用场景3：</strong>使用生成器实现填充数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">zeros</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="keyword">yield</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(<span class="title function_">zeros</span>(<span class="number">8</span>)))   <span class="comment">// [0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4产生可迭代对象"><a href="#（4）产生可迭代对象" class="headerlink" title="（4）产生可迭代对象"></a>（4）产生可迭代对象</h5><blockquote>
+<p>可以使用星号（*）【星号两侧的空格不影响其行为】增强yield的值，让它能够迭代一个可迭代对象，从而一次产出一个值</p>
+</blockquote>
+<ul>
+<li><code>yield*</code>实际上只是将一个可迭代对象序列化为一连串可以单独产出的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等价的generatorFn</span></span><br><span class="line"><span class="comment">// function * generatorFn() &#123;</span></span><br><span class="line"><span class="comment">// 		for (const x of [1, 2, 3]) &#123;</span></span><br><span class="line"><span class="comment">// 			yeild x;	</span></span><br><span class="line"><span class="comment">// 		&#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> * [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>().<span class="property">value</span>);   <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>().<span class="property">value</span>);   <span class="comment">// 2 </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>().<span class="property">value</span>);   <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者是</span></span><br><span class="line"><span class="keyword">let</span> g1 = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> g) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>yield*</code>的值是关联迭代器返回<code>done:true</code>时的<code>value</code>属性</p>
+<ul>
+<li>对于普通的迭代器来说，这个值是<code>undefined</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;iter value:&#x27;</span>, <span class="keyword">yield</span>*[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> <span class="title function_">generatorFn</span>()) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="comment">// iter value: undefined</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对于生成器函数产生的迭代器来说，这个值就是生成器函数返回的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> *<span class="title function_">innerGeneratorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;foo&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> *<span class="title function_">outerGeneratorFn</span>(<span class="params">genObj</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;iter value:&#x27;</span>, <span class="keyword">yield</span> * <span class="title function_">innerGeneratorFn</span>())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> <span class="title function_">outerGeneratorFn</span>()) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;value:&#x27;</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// value: foo</span></span><br><span class="line"><span class="comment">// iter value: bar</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="5使用yield实现递归算法"><a href="#（5）使用yield-实现递归算法" class="headerlink" title="（5）使用yield*实现递归算法"></a>（5）使用yield*实现递归算法</h5><blockquote>
+<p>实现递归操作是yield*最有用的地方</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">nTimes</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">yield</span> * <span class="title function_">nTimes</span>(n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">yield</span> n - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> <span class="title function_">nTimes</span>(<span class="number">3</span>)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>应用场景：</strong>使用生成器测试一个随机的双向图是否联通</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建节点 节点的邻里关系</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">id</span> = id;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">neighbors</span> = <span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">connect</span>(<span class="params">node</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (node !== <span class="variable language_">this</span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">neighbors</span>.<span class="title function_">add</span>(node);</span><br><span class="line">            node.<span class="property">neighbors</span>.<span class="title function_">add</span>(<span class="variable language_">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 随机连接节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RandomGraph</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">size</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">nodes</span> = <span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 创建节点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">nodes</span>.<span class="title function_">add</span>(<span class="keyword">new</span> <span class="title class_">Node</span>(i))</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 随机连接节点</span></span><br><span class="line">        <span class="keyword">const</span> threshold = <span class="number">1</span> / size;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> <span class="variable language_">this</span>.<span class="property">nodes</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> y <span class="keyword">of</span> <span class="variable language_">this</span>.<span class="property">nodes</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; threshold) &#123;</span><br><span class="line">                    x.<span class="title function_">connect</span>(y);   <span class="comment">// 连接成功</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    	<span class="comment">// 这个方法仅用于调试</span></span><br><span class="line">        <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> node <span class="keyword">of</span> <span class="variable language_">this</span>.<span class="property">nodes</span>) &#123;</span><br><span class="line">                <span class="keyword">const</span> ids = [...node.<span class="property">neighbors</span>]</span><br><span class="line">                					.<span class="title function_">map</span>(<span class="function"><span class="params">n</span> =&gt;</span> n.<span class="property">id</span>)</span><br><span class="line">                					.<span class="title function_">join</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">                </span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;node.id&#125;</span>:<span class="subst">$&#123;ids&#125;</span>`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="keyword">new</span> <span class="title class_">RandomGraph</span>(<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">g.<span class="title function_">print</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0:1,3,4,5</span></span><br><span class="line"><span class="comment">// 1:0,3,4</span></span><br><span class="line"><span class="comment">// 2:4</span></span><br><span class="line"><span class="comment">// 3:1,0</span></span><br><span class="line"><span class="comment">// 4:2,0,1</span></span><br><span class="line"><span class="comment">// 5:0</span></span><br></pre></td></tr></table></figure>
+
+<p>生成器函数必须接收一个可迭代对象，产出该对象中的每一个值，并且对每个值进行递归，这个实现可以用来测试某个图是否连通，即是否没有不可到达的节点。只要从一个节点开始，然后尽力访问每个节点就可以了；结果就得到了一个非常简洁的深度优先遍历：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建节点 节点的邻里关系</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">connect</span>(<span class="params">node</span>) &#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 随机连接节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RandomGraph</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">size</span>) &#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">     <span class="comment">// 这个方法仅用于调试</span></span><br><span class="line">     <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">         ......</span><br><span class="line">     &#125;</span><br><span class="line">         </span><br><span class="line">      <span class="title function_">isConnected</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> visitedNodes = <span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">function</span> *<span class="title function_">traverse</span>(<span class="params">nodes</span>) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">const</span> node <span class="keyword">of</span> nodes) &#123;</span><br><span class="line">                  <span class="keyword">if</span> (!visitedNodes.<span class="title function_">has</span>(node)) &#123;</span><br><span class="line">                      <span class="keyword">yield</span> node;</span><br><span class="line">                      <span class="keyword">yield</span> * <span class="title function_">traverse</span>(node.<span class="property">beighbors</span>);</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          <span class="comment">// 取得集合中的第一个节点</span></span><br><span class="line">          <span class="keyword">const</span> firstNode = <span class="variable language_">this</span>.<span class="property">nides</span>[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]().<span class="property">next</span>.<span class="title function_">value</span>();</span><br><span class="line">          </span><br><span class="line">          <span class="comment">// 使用递归生成器迭代每一个节点</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">const</span> node <span class="keyword">of</span> <span class="title function_">traverse</span>([firstNode])) &#123;</span><br><span class="line">              visitedNodes.<span class="title function_">add</span>(node);</span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">return</span> visitedNodes.<span class="property">size</span> === <span class="variable language_">this</span>.<span class="property">nodes</span>.<span class="property">size</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="生成器作为默认迭代器"><a href="#生成器作为默认迭代器" class="headerlink" title="生成器作为默认迭代器"></a>生成器作为默认迭代器</h4><p>因为生成器实现了Iterator接口，而且生成器函数和默认迭代器被调用之后都产生迭代器，所以生成器适合作为默认迭代器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">values</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    * [<span class="title class_">Symbol</span>.<span class="property">iterator</span>]() &#123;</span><br><span class="line">        <span class="keyword">yield</span> * <span class="variable language_">this</span>.<span class="property">values</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> f = <span class="keyword">new</span> <span class="title class_">Foo</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> f) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	for-of 循环调用了默认迭代器（它恰好又是一个生成器函数）并产生了一个生成器对象</span></span><br><span class="line"><span class="comment">	这个生成器对象是可迭代的，所以完全可以在迭代中使用</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="提前终止生成器"><a href="#提前终止生成器" class="headerlink" title="提前终止生成器"></a>提前终止生成器</h4><blockquote>
+<p>return() 和 throw() 方法都可以用于强制生成器进入关闭状态</p>
+</blockquote>
+<h5 id="1return"><a href="#（1）return" class="headerlink" title="（1）return()"></a>（1）return()</h5><blockquote>
+<p>return()方法会强制生成器进入关闭状态，提供给return的值就是终止迭代器对象的值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">yield</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>(); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);  <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="keyword">return</span>(<span class="number">4</span>)); <span class="comment">// &#123;value: 4, done: true&#125;;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);  <span class="comment">// generatorFn &#123;&lt;closed&gt;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>与迭代器不同，所有生成器对象都有return()方法，只要通过它进入关闭状态，就<strong>无法恢复</strong>了</p>
+</li>
+<li><p>后续调用next()会显示done: true 状态，而提供的任何返回值都不会被存储或传播</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">yield</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>(); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);  <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="keyword">return</span>(<span class="number">4</span>)); <span class="comment">// &#123;value: 4, done: true&#125;;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());  <span class="comment">// &#123;value: undefined, done: true&#125;;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());  <span class="comment">// &#123;value: undefined, done: true&#125;;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());  <span class="comment">// &#123;value: undefined, done: true&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>for-of</code> 循环等内置语言结构会忽略状态为<code>done: true</code> 的<code>IteratorObject</code> 内部返回的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">yield</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> g) &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        g.<span class="keyword">return</span>(<span class="number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2throw"><a href="#（2）throw" class="headerlink" title="（2）throw()"></a>（2）throw()</h5><blockquote>
+<p>throw()方法会在暂停的时候将一个提供的错误注入到生成器对象中，如果错误未被处理，生成器就会关闭</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">yield</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);  <span class="comment">// generatorFn &#123;&lt;suspended&gt;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    g.<span class="keyword">throw</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;   <span class="comment">// 错误会被catch捕获</span></span><br><span class="line">    cnosole.<span class="title function_">log</span>(e);   <span class="comment">// foo</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g);  <span class="comment">// generatorFn &#123;&lt;closed&gt;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>假如生成器函数内部处理了这个错误，那么生成器就不会关闭，而且还可以恢复执行，错误处理会跳过对应的<code>yield</code>，因此在这个例子中会跳过一个值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">yield</span> x;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// &#123;value: 1, done: true&#125;;</span></span><br><span class="line">g.<span class="keyword">throw</span>(<span class="string">&#x27;foo&#x27;</span>);          <span class="comment">// foo</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());   <span class="comment">// &#123;value: 2, done: true&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	跳过了value2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，生成器在<code>try/catch</code>块中的<code>yield</code>关键字处暂停执行。在暂停期间，<code>throw()</code>方法向生成器对象内部注入了一个错误：字符串<code>&quot;foo&quot;</code>。这个错误会被<code>yield</code>关键字抛出。因为错误是在生成器的<code>try/catch</code>块中抛出的，所以仍然在生成器内部被捕获可是，由于<code>yield</code>抛出了那个错误，生成器就不会再产出值<code>2</code>。此时，生成器函数继续执行，在下一次迭代再次遇到<code>yield</code>关键字时产出了值<code>3</code></p>
+<blockquote>
+<p>注意：如果生成器对象还没有开始执行，那么调用<code>throw()</code>抛出的错误不会在函数内部被捕获，因为这相当于在函数块外部抛出了错误</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> * <span class="title function_">generatorFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> x <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">yield</span> x;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generatorFn</span>();</span><br><span class="line">g.<span class="keyword">throw</span>(<span class="string">&#x27;foo&#x27;</span>);   <span class="comment">// Uncaught foo  相当于在外部抛出了错误</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/12/JavaScript/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8_%E8%BF%AD%E4%BB%A3%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -261,15 +833,15 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
     </span>
 
@@ -1198,15 +1770,15 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1422,15 +1994,15 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E5%92%8C%E6%88%91%E4%B8%80%E8%B5%B7%E8%AF%BB%E7%BA%A2%E5%AE%9D%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">和我一起读红宝书</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1590,11 +2162,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
     </span>
 
@@ -1698,11 +2270,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
         </span>
     </span>
 
@@ -1755,232 +2327,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.all/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.all/" class="post-title-link" itemprop="url">手写原理 | Promise.all</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-10 16:55:28" itemprop="dateCreated datePublished" datetime="2022-07-10T16:55:28+08:00">2022-07-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-12 22:57:06" itemprop="dateModified" datetime="2022-07-12T22:57:06+08:00">2022-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><code>Promise.all</code> 方法接收一个promise的iterable类型（比如：Array，Map，Set）的输入，并且只返回一个Promise实例，如果所有的promise都是resolve状态，value就为结果数组，结果的顺序与传入顺序一致，如果promise中有reject，就会抛出错误，reason为抛出的是第一个reject的信息</p>
-<p>应用场景：在请求数据的过程中，偶尔会遇到发送多个请求并根据请求顺序获取和使用数据的场景</p>
-</blockquote>
-<p><strong>实现思路及注意点</strong></p>
-<ul>
-<li>输入promises可以是一个iterator类型的参数，不一定需要局限在array（好多手写一上来就判断是不是array）</li>
-<li>如果iterator为空，resolve返回空数组</li>
-<li>非Promise实例的需要经过Promise.resolve包裹</li>
-<li>如果都会resolve，输出的结果数组必须和原顺序一致，并不是谁先执行完谁先进入结果数组</li>
-<li>返回一个Promise实例可以调用then和catch方法，then里面为保持原顺序的数组，catch里面则为最早reject的返回值</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myPromiseAll</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> promiseResults = [];</span><br><span class="line">        <span class="comment">// 迭代的顺序</span></span><br><span class="line">        <span class="keyword">let</span> iteratorIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 用于记录已经完成的数量，注意这个不是顺序</span></span><br><span class="line">        <span class="keyword">let</span> fullCount = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 迭代开始</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> promise <span class="keyword">of</span> promises) &#123;   <span class="comment">// for of就是用于遍历可迭代对象的</span></span><br><span class="line">            <span class="comment">// for of 是顺序执行的</span></span><br><span class="line">            <span class="keyword">let</span> resultIndex = iteratorIndex;</span><br><span class="line">            iteratorIndex++;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 非Promise实例的需要经过Promise.resolve包裹</span></span><br><span class="line">            <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(promise).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                promiseResults[resultIndex] = res;</span><br><span class="line">                <span class="comment">// then后表示完成</span></span><br><span class="line">                fullCount++;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Iterator接口无法单纯根据length和size判断长度</span></span><br><span class="line">                <span class="keyword">if</span> (fullCount === iteratorIndex) &#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(promiseResults);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="title function_">reject</span>(err);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 如果iterator为空，resolve返回空数组</span></span><br><span class="line">        <span class="keyword">if</span> (iteratorIndex === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(promiseResults);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="number">1337</span>;</span><br><span class="line"><span class="keyword">var</span> p3 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(resolve, <span class="number">100</span>, <span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="title function_">myPromiseAll</span>([p1, p2, p3]);  <span class="comment">// Promise &#123;&lt;fulfilled&gt;: [3, 1337, &quot;foo&quot;]&#125;</span></span><br><span class="line">p.<span class="title function_">then</span>(<span class="function"><span class="params">values</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values); <span class="comment">// [3, 1337, &quot;foo&quot;]</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.allSelected/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/10/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86_Promise.allSelected/" class="post-title-link" itemprop="url">手写原理 | Promise.allSelected</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-07-10 16:54:28 / Modified: 18:26:40" itemprop="dateCreated datePublished" datetime="2022-07-10T16:54:28+08:00">2022-07-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%89%8B%E5%86%99%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">手写原理</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><code>Promise.allSettled()</code>方法返回一个在所有给定的 promise 都已经<code>fulfilled</code>或<code>rejected</code>后的 promise，并带有一个对象数组，每个对象表示对应的 promise 结果</p>
-<p><code>[ &#123;status: &#39;fulfilled&#39;, value: 3&#125;, &#123;status: &#39;rejected&#39;, reason: &#39;foo&#39;&#125;]</code></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myPromiseAllSelected</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> res = [];</span><br><span class="line">        <span class="keyword">let</span> iteratorIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> fullCount = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> promises) &#123;</span><br><span class="line">          <span class="keyword">let</span> resIndex =  iteratorIndex;</span><br><span class="line">          iteratorIndex++;</span><br><span class="line">            </span><br><span class="line">          <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(item).<span class="title function_">then</span>(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">              res[resIndex] = &#123;</span><br><span class="line">                  <span class="attr">status</span>: <span class="string">&#x27;fulfilled&#x27;</span>,</span><br><span class="line">                  value,</span><br><span class="line">              &#125;;</span><br><span class="line">              fullCount++;</span><br><span class="line">              </span><br><span class="line">              <span class="keyword">if</span> (fullCount === iteratorIndex) &#123;</span><br><span class="line">                  <span class="title function_">resolve</span>(res);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">reason</span> =&gt;</span> &#123;</span><br><span class="line">              res[resIndex] = &#123;</span><br><span class="line">                  <span class="attr">status</span>: <span class="string">&#x27;rejected&#x27;</span>,</span><br><span class="line">                  reason,</span><br><span class="line">              &#125;;</span><br><span class="line">              fullCount++;</span><br><span class="line">              </span><br><span class="line">              <span class="keyword">if</span> (fullCount === iteratorIndex) &#123;</span><br><span class="line">                  <span class="title function_">resolve</span>(res);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">allSettled</span>([p1, p2]).<span class="title function_">then</span>(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(val)</span><br><span class="line">&#125;). <span class="keyword">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">&#125;);  </span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    [</span></span><br><span class="line"><span class="comment">        &#123; status: &#x27;fulfilled&#x27;, value: 3 &#125;,</span></span><br><span class="line"><span class="comment">        &#123; status: &#x27;rejected&#x27;, reason: 2 &#125;</span></span><br><span class="line"><span class="comment">    ]</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title function_">myPromiseAllSelected</span>([p1,p2]).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(res), <span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
@@ -2003,13 +2351,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">295k</span>
+    <span title="Symbols count total">297k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:28</span>
+    <span title="Reading time total">4:30</span>
   </span>
 </div>
 <div class="busuanzi-count">
