@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"superkatrina123.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在《HTML5与CSS3基础教程》（第8版）P215有这样一句话：  如果不显式设置宽度和高度，浏览器就会使用auto，对于大多数默认显示为块级元素的元素，width的auto值是由包含块的宽度减去元素的内边距、边框和外边距计算出来的，简单地说，包含块的宽度指的是父元素给元素留出的宽度  熟悉盒模型的话这句话特别容易理解，这里不多说了。 问题1： heigth:auto失效问题问题描述：举一个例子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="盒模型 | 奇奇怪怪的auto">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/index.html">
+<meta property="og:site_name" content="耿直咸鱼">
+<meta property="og:description" content="在《HTML5与CSS3基础教程》（第8版）P215有这样一句话：  如果不显式设置宽度和高度，浏览器就会使用auto，对于大多数默认显示为块级元素的元素，width的auto值是由包含块的宽度减去元素的内边距、边框和外边距计算出来的，简单地说，包含块的宽度指的是父元素给元素留出的宽度  熟悉盒模型的话这句话特别容易理解，这里不多说了。 问题1： heigth:auto失效问题问题描述：举一个例子">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B1.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B2.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B3.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B4.png">
+<meta property="og:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B5.png">
+<meta property="article:published_time" content="2022-08-09T06:00:34.000Z">
+<meta property="article:modified_time" content="2022-08-09T07:44:43.169Z">
+<meta property="article:author" content="Katrina">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="盒模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B1.png">
+
+
+<link rel="canonical" href="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/","path":"2022/08/09/CSS/盒模型_奇奇怪怪的auto/","title":"盒模型 | 奇奇怪怪的auto"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>盒模型 | 奇奇怪怪的auto | 耿直咸鱼</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/SuperKatrina123" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">耿直咸鱼</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">的45°人生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">59</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%981-heigthauto%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题1： heigth:auto失效问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E8%A7%A3%E9%87%8A"><span class="nav-number">1.2.</span> <span class="nav-text">原因解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%982marginauto%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">问题2：margin:auto垂直方向失效问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E8%A7%A3%E9%87%8A"><span class="nav-number">2.2.</span> <span class="nav-text">原因解释：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E9%80%9A%E8%BF%87%E5%AE%9A%E4%BD%8Dmargin%E8%A7%A3%E5%86%B3"><span class="nav-number">2.3.</span> <span class="nav-text">解决办法：通过定位+margin解决</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E9%97%AE%E9%A2%98css%E7%99%BE%E5%88%86%E6%AF%94%E7%9A%84%E5%8F%82%E7%85%A7%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">拓展问题：CSS百分比的参照问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text">知识点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E8%B7%B5%E5%87%BA%E7%9C%9F%E7%9F%A5margin-padding-%E5%8F%82%E7%85%A7%E9%97%AE%E9%A2%98"><span class="nav-number">3.3.</span> <span class="nav-text">实践出真知：margin padding 参照问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">3.3.1.</span> <span class="nav-text">原因分析：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Katrina"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Katrina</p>
+  <div class="site-description" itemprop="description">Katrina is trying...</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SuperKatrina123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SuperKatrina123" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyuyan@zju.edu.cn" title="E-Mail → mailto:yingyuyan@zju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Katrinasayhello" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Katrinasayhello" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/katrinasayhello_" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;katrinasayhello_" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="盒模型 | 奇奇怪怪的auto | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          盒模型 | 奇奇怪怪的auto
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-08-09 14:00:34 / Modified: 15:44:43" itemprop="dateCreated datePublished" datetime="2022-08-09T14:00:34+08:00">2022-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在《HTML5与CSS3基础教程》（第8版）P215有这样一句话：</p>
+<blockquote>
+<p>如果不显式设置宽度和高度，浏览器就会使用auto，对于大多数默认显示为块级元素的元素，width的auto值是由包含块的宽度减去元素的内边距、边框和外边距计算出来的，简单地说，<strong>包含块的宽度指的是父元素给元素留出的宽度</strong></p>
+</blockquote>
+<p>熟悉盒模型的话这句话特别容易理解，这里不多说了。</p>
+<h3 id="问题1-heigthauto失效问题"><a href="#问题1：-heigth-auto失效问题" class="headerlink" title="问题1： heigth:auto失效问题"></a>问题1： heigth:auto失效问题</h3><h4 id="问题描述"><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h4><p>举一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">vertical-align</span>: center;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:auto;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>根据上述定义auto的计算方式，不难计算，内部div的width为168px</p>
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B1.png" class title="举例1">
+
+<p>但是如果我同步将height设置为auto，原本想的是，height可以按照width:auto一样的计算方式得到结果，但是发现，内部div的height为0！</p>
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B2.png" class title="举例2">
+
+<h4 id="原因解释"><a href="#原因解释：" class="headerlink" title="原因解释："></a>原因解释：</h4><p>这里需要注意的是：</p>
+<blockquote>
+<p>在块级元素中，width:auto会自适应撑满父元素宽度，这里的撑满是指撑满剩余部分，是需要经过计算的</p>
+<p>在内联元素中，width:auto则呈现包裹性，即元素宽度由子元素的宽度决定</p>
+<p>而对于height:auto来说，不论是内联元素还是块级元素，height:auto都是呈包裹性的，即元素的高度由子元素高度决定</p>
+</blockquote>
+<p>总结来说，造成上述问题的原因是要理解，height:auto根据块内内容自动调节高度。</p>
+<h3 id="问题2marginauto垂直方向失效问题"><a href="#问题2：margin-auto垂直方向失效问题" class="headerlink" title="问题2：margin:auto垂直方向失效问题"></a>问题2：margin:auto垂直方向失效问题</h3><p>在《HTML5与CSS3基础教程》（第8版）P21继续提到：</p>
+<blockquote>
+<p>如果手动设置width，但将某个外边距设置为auto，那么这个外边距将进行伸缩以弥补不足的部分</p>
+<p>如果手动设置width，并将左右边距设为auto，那么两个外边距就会将设为相等的最大值，实现元素居中</p>
+</blockquote>
+<h4 id="问题描述"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h4><p>看一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: auto;   </span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B3.png" class title="举例3">
+
+<p>从图中可以发现，将margin设置为auto后，浏览器自动计算了内部div的margin值以弥补空间</p>
+<p>问题是，按照道理来说，margin:auto是将上下左右四个方向都设置为了auto，为什么计算的时候只对左右两个方向有效？上下两个方向无效？</p>
+<h4 id="原因解释"><a href="#原因解释：-1" class="headerlink" title="原因解释："></a>原因解释：</h4><p>这里我们首先需要理解下面两点：</p>
+<ol>
+<li>理解auto的概念：auto是自动填充剩余空间的意思</li>
+<li>理解块级元素的概念：块级元素在默认情况下会占据整行空间，即使元素宽度不是百分之百占据浏览器，浏览器也会给它留出整行的空间</li>
+</ol>
+<p>因此，对于内部div来说，如果设置左右外边距为auto的话，计算方式如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外部div的width = 左外边距 + 左边框宽度 + 左内边距 + 内部div的width + 右内边距 + 右边框宽度 + 右外边距</span><br></pre></td></tr></table></figure>
+
+<p>但是块级元素的高度是不会自动扩充的，所以它的外部尺寸是不会自动充满父元素的，也没有剩余空间，因为margin上下设置auto不能实现垂直居中</p>
+<h4 id="解决办法通过定位margin解决"><a href="#解决办法：通过定位-margin解决" class="headerlink" title="解决办法：通过定位+margin解决"></a>解决办法：通过定位+margin解决</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: auto; </span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>:absolute;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">right</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">bottom</span>: <span class="number">0</span>; </span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B4.png" class title="举例4">
+
+<p>这里的关键在于：<strong>上下左右四个定位全部设置为0，这样就有了多余空间，auto就能平分剩余的空间去实现水平垂直居中</strong></p>
+<h3 id="拓展问题css百分比的参照问题"><a href="#拓展问题：CSS百分比的参照问题" class="headerlink" title="拓展问题：CSS百分比的参照问题"></a>拓展问题：CSS百分比的参照问题</h3><h4 id="问题描述"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h4><p>之前在牛客做过这样一道选择题：</p>
+<blockquote>
+<p>当 margin-top、padding-top 的值是百分比时，分别是如何计算的？                                        </p>
+<p>A. 相对父级元素的 height，相对自身的 height</p>
+<p>B. 相对最近父级块级元素的 height，相对自身的 height</p>
+<p>C. 相对父级元素的 width，相对自身的 width</p>
+<p>D. 相对最近父级块级元素的 width，相对最近父级块级元素的 width</p>
+</blockquote>
+<h4 id="知识点"><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h4><ul>
+<li>参照父元素宽度的元素：padding margin width text-indent</li>
+<li>参照父元素高度的元素：height</li>
+<li>参照父元素属性：font-size line-height</li>
+<li>特殊情况：相对定位的时候，top bottom left right参照的是父元素的内容区的高度与宽度，而绝对定位参照的是最近定位元素包含padding的高度与宽度</li>
+</ul>
+<h4 id="实践出真知margin-padding-参照问题"><a href="#实践出真知：margin-padding-参照问题" class="headerlink" title="实践出真知：margin padding 参照问题"></a>实践出真知：margin padding 参照问题</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>:absolute;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding-top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B5.png" class title="举例5">
+
+<h5 id="原因分析"><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h5><blockquote>
+<p>假如padding-top是按照height来说,父元素的高度会包含子元素的高度,如果子元素的padding-top继续增加,那么父元素的高度也会增加,因为父元素要包含子元素嘛,这样的话,父元素的高度就成为了一个死循环. 还有一种说法,我们都知道padding-left&#x2F;right和margin-left&#x2F;right都是按照宽度来说的,当我们不设置具体的上下左右只设置margin或padding时四个值应该保持为一种类型</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+              <a href="/tags/%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag"><i class="fa fa-tag"></i> 盒模型</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/" rel="prev" title="redux源码 | Part3_combineReducers && bindActionCreators">
+                  <i class="fa fa-chevron-left"></i> redux源码 | Part3_combineReducers && bindActionCreators
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katrina</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">335k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">5:05</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<!-- 不蒜子统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div>
+	<span class="user-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+	Views:<span id="busuanzi_value_site_pv"></span>     
+	<span class="post-meta-divider">|</span>
+	<span class="view-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+	Visitors:<span id="busuanzi_value_site_uv"></span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

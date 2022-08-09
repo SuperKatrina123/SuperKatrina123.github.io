@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">58</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">96</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">59</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">97</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -171,7 +171,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">59</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -223,7 +223,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -241,7 +241,168 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/" class="post-title-link" itemprop="url">redux源码 | Part3_combineReducers && bindActionCreators</a>
+          <a href="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/" class="post-title-link" itemprop="url">盒模型 | 奇奇怪怪的auto</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-08-09 14:00:34 / Modified: 15:44:43" itemprop="dateCreated datePublished" datetime="2022-08-09T14:00:34+08:00">2022-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在《HTML5与CSS3基础教程》（第8版）P215有这样一句话：</p>
+<blockquote>
+<p>如果不显式设置宽度和高度，浏览器就会使用auto，对于大多数默认显示为块级元素的元素，width的auto值是由包含块的宽度减去元素的内边距、边框和外边距计算出来的，简单地说，<strong>包含块的宽度指的是父元素给元素留出的宽度</strong></p>
+</blockquote>
+<p>熟悉盒模型的话这句话特别容易理解，这里不多说了。</p>
+<h3 id="问题1-heigthauto失效问题"><a href="#问题1：-heigth-auto失效问题" class="headerlink" title="问题1： heigth:auto失效问题"></a>问题1： heigth:auto失效问题</h3><h4 id="问题描述"><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h4><p>举一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">vertical-align</span>: center;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:auto;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>根据上述定义auto的计算方式，不难计算，内部div的width为168px</p>
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B1.png" class title="举例1">
+
+<p>但是如果我同步将height设置为auto，原本想的是，height可以按照width:auto一样的计算方式得到结果，但是发现，内部div的height为0！</p>
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B2.png" class title="举例2">
+
+<h4 id="原因解释"><a href="#原因解释：" class="headerlink" title="原因解释："></a>原因解释：</h4><p>这里需要注意的是：</p>
+<blockquote>
+<p>在块级元素中，width:auto会自适应撑满父元素宽度，这里的撑满是指撑满剩余部分，是需要经过计算的</p>
+<p>在内联元素中，width:auto则呈现包裹性，即元素宽度由子元素的宽度决定</p>
+<p>而对于height:auto来说，不论是内联元素还是块级元素，height:auto都是呈包裹性的，即元素的高度由子元素高度决定</p>
+</blockquote>
+<p>总结来说，造成上述问题的原因是要理解，height:auto根据块内内容自动调节高度。</p>
+<h3 id="问题2marginauto垂直方向失效问题"><a href="#问题2：margin-auto垂直方向失效问题" class="headerlink" title="问题2：margin:auto垂直方向失效问题"></a>问题2：margin:auto垂直方向失效问题</h3><p>在《HTML5与CSS3基础教程》（第8版）P21继续提到：</p>
+<blockquote>
+<p>如果手动设置width，但将某个外边距设置为auto，那么这个外边距将进行伸缩以弥补不足的部分</p>
+<p>如果手动设置width，并将左右边距设为auto，那么两个外边距就会将设为相等的最大值，实现元素居中</p>
+</blockquote>
+<h4 id="问题描述"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h4><p>看一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: auto;   </span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B3.png" class title="举例3">
+
+<p>从图中可以发现，将margin设置为auto后，浏览器自动计算了内部div的margin值以弥补空间</p>
+<p>问题是，按照道理来说，margin:auto是将上下左右四个方向都设置为了auto，为什么计算的时候只对左右两个方向有效？上下两个方向无效？</p>
+<h4 id="原因解释"><a href="#原因解释：-1" class="headerlink" title="原因解释："></a>原因解释：</h4><p>这里我们首先需要理解下面两点：</p>
+<ol>
+<li>理解auto的概念：auto是自动填充剩余空间的意思</li>
+<li>理解块级元素的概念：块级元素在默认情况下会占据整行空间，即使元素宽度不是百分之百占据浏览器，浏览器也会给它留出整行的空间</li>
+</ol>
+<p>因此，对于内部div来说，如果设置左右外边距为auto的话，计算方式如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外部div的width = 左外边距 + 左边框宽度 + 左内边距 + 内部div的width + 右内边距 + 右边框宽度 + 右外边距</span><br></pre></td></tr></table></figure>
+
+<p>但是块级元素的高度是不会自动扩充的，所以它的外部尺寸是不会自动充满父元素的，也没有剩余空间，因为margin上下设置auto不能实现垂直居中</p>
+<h4 id="解决办法通过定位margin解决"><a href="#解决办法：通过定位-margin解决" class="headerlink" title="解决办法：通过定位+margin解决"></a>解决办法：通过定位+margin解决</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: auto; </span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>:absolute;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">right</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">bottom</span>: <span class="number">0</span>; </span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B4.png" class title="举例4">
+
+<p>这里的关键在于：<strong>上下左右四个定位全部设置为0，这样就有了多余空间，auto就能平分剩余的空间去实现水平垂直居中</strong></p>
+<h3 id="拓展问题css百分比的参照问题"><a href="#拓展问题：CSS百分比的参照问题" class="headerlink" title="拓展问题：CSS百分比的参照问题"></a>拓展问题：CSS百分比的参照问题</h3><h4 id="问题描述"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h4><p>之前在牛客做过这样一道选择题：</p>
+<blockquote>
+<p>当 margin-top、padding-top 的值是百分比时，分别是如何计算的？                                        </p>
+<p>A. 相对父级元素的 height，相对自身的 height</p>
+<p>B. 相对最近父级块级元素的 height，相对自身的 height</p>
+<p>C. 相对父级元素的 width，相对自身的 width</p>
+<p>D. 相对最近父级块级元素的 width，相对最近父级块级元素的 width</p>
+</blockquote>
+<h4 id="知识点"><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h4><ul>
+<li>参照父元素宽度的元素：padding margin width text-indent</li>
+<li>参照父元素高度的元素：height</li>
+<li>参照父元素属性：font-size line-height</li>
+<li>特殊情况：相对定位的时候，top bottom left right参照的是父元素的内容区的高度与宽度，而绝对定位参照的是最近定位元素包含padding的高度与宽度</li>
+</ul>
+<h4 id="实践出真知margin-padding-参照问题"><a href="#实践出真知：margin-padding-参照问题" class="headerlink" title="实践出真知：margin padding 参照问题"></a>实践出真知：margin padding 参照问题</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.outer</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>:pink;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">position</span>:absolute;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding-top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/%E4%B8%BE%E4%BE%8B5.png" class title="举例5">
+
+<h5 id="原因分析"><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h5><blockquote>
+<p>假如padding-top是按照height来说,父元素的高度会包含子元素的高度,如果子元素的padding-top继续增加,那么父元素的高度也会增加,因为父元素要包含子元素嘛,这样的话,父元素的高度就成为了一个死循环. 还有一种说法,我们都知道padding-left&#x2F;right和margin-left&#x2F;right都是按照宽度来说的,当我们不设置具体的上下左右只设置margin或padding时四个值应该保持为一种类型</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Katrina">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耿直咸鱼">
+      <meta itemprop="description" content="Katrina is trying...">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 耿直咸鱼">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/" class="post-title-link" itemprop="url">redux源码 | Part3_combineReducers && bindActionCreators</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1589,265 +1750,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Katrina">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="耿直咸鱼">
-      <meta itemprop="description" content="Katrina is trying...">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 耿直咸鱼">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/" class="post-title-link" itemprop="url">登录功能 | node+express+mysql实现用户注册以及token校验</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-27 21:22:04" itemprop="dateCreated datePublished" datetime="2022-07-27T21:22:04+08:00">2022-07-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-30 16:55:30" itemprop="dateModified" datetime="2022-07-30T16:55:30+08:00">2022-07-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Demo/" itemprop="url" rel="index"><span itemprop="name">Demo</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/node/" itemprop="url" rel="index"><span itemprop="name">node</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>6.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="实现需求"><a href="#实现需求" class="headerlink" title="实现需求"></a>实现需求</h2><ul>
-<li>登录</li>
-<li>注册</li>
-<li>权限校验</li>
-</ul>
-<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><ul>
-<li>客户端使用用户名和密码请求登录</li>
-<li>服务端收到请求后验证是否登录成功<ul>
-<li>成功：返回一个token给客户端</li>
-<li>失败：提示失败信息</li>
-</ul>
-</li>
-<li>客户端收到token后存储token（token采用jwt进行加密，而不是普通的base64）</li>
-<li>每次发起请求时将token发给服务端</li>
-<li>服务端接收到请求后，token的合法性<ul>
-<li>成功：返回客户端所需数据</li>
-<li>失败：返回验证失败的信息</li>
-</ul>
-</li>
-</ul>
-<h2 id="流程图解"><a href="#流程图解" class="headerlink" title="流程图解"></a>流程图解</h2><img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B.png" class title="登录注册流程">
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/JWT.png" class title="JWT">
-
-<h2 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
-<li>node</li>
-<li>express</li>
-<li>mysql</li>
-</ul>
-<h4 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init <span class="literal">-y</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="安装express"><a href="#安装express" class="headerlink" title="安装express"></a>安装express</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i express</span><br></pre></td></tr></table></figure>
-
-<h4 id="启动node服务_新建appjs文件"><a href="#启动node服务-新建app-js文件" class="headerlink" title="启动node服务_新建app.js文件"></a>启动node服务_新建app.js文件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    port: 4000</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">4000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;serve is running on port: 4000&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/express-js-app-listen-function/">app.listen参数</a></p>
-<p>启动端口</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js </span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E5%90%AF%E5%8A%A8node.png" class title="启动node">
-
-<h3 id="连接mysql"><a href="#连接MySQL" class="headerlink" title="连接MySQL"></a>连接MySQL</h3><p>下面的过程都可以看文档：<a target="_blank" rel="noopener" href="https://www.sequelize.com.cn/">sequelize文档</a></p>
-<h4 id="安装sequelize和mysql"><a href="#安装Sequelize和MySql" class="headerlink" title="安装Sequelize和MySql"></a>安装Sequelize和MySql</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i sequelize <span class="comment"># 这将安装最新版本的 Sequelize</span></span><br><span class="line">npm i mysql2 <span class="comment"># MySQL</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="连接到数据库_databasex2finitjs"><a href="#连接到数据库-database-x2F-init-js" class="headerlink" title="连接到数据库_database&#x2F;init.js"></a>连接到数据库_database&#x2F;init.js</h4><p>要连接到数据库,必须创建一个 Sequelize 实例. 这可以通过将连接参数分别传递到 Sequelize 构造函数或通过传递一个连接 URI 来完成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// database/init.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Sequelize</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;sequelize&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sequelize= <span class="keyword">new</span> <span class="title class_">Sequelize</span>(<span class="string">&#x27;数据库名称&#x27;</span>, <span class="string">&#x27;root&#x27;</span>, <span class="string">&#x27;你的密码&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">    <span class="attr">dialect</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><p>引入到app.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;./database/init&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>你可以使用 <code>.authenticate()</code> 函数测试连接是否正常：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> sequelize.<span class="title function_">authenticate</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connection has been established successfully.&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Unable to connect to the database:&#x27;</span>, error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="关闭连接"><a href="#关闭连接" class="headerlink" title="关闭连接"></a>关闭连接</h4><p>默认情况下,<code>Sequelize</code> 将保持连接打开状态,并对所有查询使用相同的连接. 如果你需要关闭连接,请调用 <code>sequelize.close()</code>(这是异步的并返回一个 Promise).</p>
-<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// database/init.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Sequelize</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;sequelize&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sequelize= <span class="keyword">new</span> <span class="title class_">Sequelize</span>(<span class="string">&#x27;test_login&#x27;</span>, <span class="string">&#x27;root&#x27;</span>, <span class="string">&#x27;yyy674531&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">    <span class="comment">// @ts-ignore</span></span><br><span class="line">    <span class="attr">port</span>: <span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">    <span class="attr">dialect</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试连接</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    sequelize.<span class="title function_">authenticate</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connection has been established successfully.&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Unable to connect to the database:&#x27;</span>, error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>  = &#123;<span class="title class_">Sequelize</span>, sequelize&#125;;  <span class="comment">// 这里导出，下面有用！</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="同步表模型"><a href="#同步表模型" class="headerlink" title="同步表模型"></a>同步表模型</h3><h4 id="创建模型实例_databasex2fmodelsx2fuserjs"><a href="#创建模型实例-database-x2F-models-x2F-User-js" class="headerlink" title="创建模型实例_database&#x2F;models&#x2F;User.js"></a>创建模型实例_database&#x2F;models&#x2F;User.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// database/models/User.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Op</span>, <span class="title class_">Model</span>, <span class="title class_">DataTypes</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;sequelize&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Sequelize</span>, sequelize &#125; = <span class="built_in">require</span>(<span class="string">&#x27;../init.js&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">User</span> = sequelize.<span class="title function_">define</span>(<span class="string">&#x27;users_info&#x27;</span>, &#123;</span><br><span class="line">    <span class="comment">// 应用属性： 禁止null 唯一约束 验证器</span></span><br><span class="line">    <span class="attr">username</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="title class_">DataTypes</span>.<span class="property">STRING</span>,  </span><br><span class="line">        <span class="attr">allowNull</span>: <span class="literal">false</span>,   <span class="comment">// 1. 禁止 null 值</span></span><br><span class="line">        <span class="attr">unique</span>: <span class="literal">true</span>,   <span class="comment">// 2. 唯一约束</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">password</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="title class_">DataTypes</span>.<span class="property">STRING</span>,</span><br><span class="line">        <span class="attr">allowNull</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="comment">// validate: &#123;    // 3. 验证器</span></span><br><span class="line">        <span class="comment">//    is: /^[0-9a-f]&#123;64&#125;$/i</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将模型与数据库同步</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    注意：如果表已经存在，使用&#123;force: true&#125;将该表删除 </span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="title class_">User</span>.<span class="title function_">sync</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;user表模型已经同步&#x27;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-
-<h4 id="导出到appjs并启动"><a href="#导出到app-js并启动" class="headerlink" title="导出到app.js并启动"></a>导出到app.js并启动</h4><img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%96%B0%E5%BB%BAUser.png" class title="新建User">
-
-<h3 id="实现路由部署准备"><a href="#实现路由部署（准备）" class="headerlink" title="实现路由部署（准备）"></a>实现路由部署（准备）</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/routes">Express 教程 4：路由和控制器</a></p>
-<h4 id="路由部署_expressrouter"><a href="#路由部署-express-Router" class="headerlink" title="路由部署_express.Router"></a>路由部署_express.Router</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> router = express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// middleware that is specific to this router</span></span><br><span class="line"><span class="comment">// router.use(function timeLog(req, res, next) &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Time:&#x27;, Date.now());</span></span><br><span class="line"><span class="comment">//     next();</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注册</span></span><br><span class="line">router.<span class="title function_">get</span>(<span class="string">&#x27;/home&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;Welcome!&#x27;</span>&#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = router;</span><br></pre></td></tr></table></figure>
-
-<h4 id="引入使用"><a href="#引入使用" class="headerlink" title="引入使用"></a>引入使用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">&#x27;./router/user&#x27;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;));</span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/user&#x27;</span>, router);</span><br></pre></td></tr></table></figure>
-
-<h4 id="postman测试"><a href="#postman测试" class="headerlink" title="postman测试"></a>postman测试</h4><img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B5%8B%E8%AF%951.png" class title="测试1">
-
-<h3 id="实现注册功能"><a href="#实现注册功能" class="headerlink" title="实现注册功能"></a>实现注册功能</h3><h4 id="路由部署"><a href="#路由部署" class="headerlink" title="路由部署"></a>路由部署</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/register&#x27;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;username, password&#125; = req.<span class="property">body</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(username);  <span class="comment">// postman测试能够拿到username信息</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B5%8B%E8%AF%952.png" class title="测试2">
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B5%8B%E8%AF%952-1.png" class title="测试2-1">
-
-<p>可以看到控制台已经打印了~说明能够获取到username的信息</p>
-<blockquote>
-<p>注册功能说明：</p>
-<p>服务器获取到浏览器传过来的username</p>
-<p>首先检验是否存在这个username，如果存在就返回“该用户已经存在，请直接登录”</p>
-<p>如果不存在，再进行创建</p>
-<ol>
-<li>去哪里检验——MySQL数据库里面</li>
-<li>怎么创建——利用MySQL的create</li>
-</ol>
-<p>接下来会详细说明</p>
-</blockquote>
-<h4 id="用户查询"><a href="#用户查询" class="headerlink" title="用户查询"></a>用户查询</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line"><span class="comment">// 注册</span></span><br><span class="line"><span class="keyword">const</span> bcryptjs = <span class="built_in">require</span>(<span class="string">&#x27;bcryptjs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/register&#x27;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;username, password&#125; = req.<span class="property">body</span>;</span><br><span class="line">    <span class="comment">// console.log(username);  // postman测试能够拿到username信息</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 用户查询</span></span><br><span class="line">    <span class="keyword">const</span> model = <span class="keyword">await</span> <span class="title class_">User</span>.<span class="title function_">findOne</span>(&#123;<span class="attr">where</span>: &#123;<span class="attr">username</span>: username&#125;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (model) &#123;</span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;该用户已经存在，请直接登录！&#x27;</span>&#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> user = <span class="keyword">await</span> <span class="title class_">User</span>.<span class="title function_">create</span>(&#123;username, <span class="attr">password</span>:bcryptjs.<span class="title function_">hashSync</span>(password, <span class="number">5</span>)&#125;); <span class="comment">// 加密</span></span><br><span class="line">        <span class="comment">// console.log(user.dataValues);</span></span><br><span class="line">        res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;注册成功！&#x27;</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>postman测试：创建成功~</p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B5%8B%E8%AF%953.png" class title="测试3">
-
-<p>查询数据库：创建成功~</p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B3%A8%E5%86%8C1.png" class title="注册1">
-
-<p>当我再次用同样的username进行注册请求的时候，返回结果为：<strong>该用户已经存在，请直接登录！</strong></p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%B5%8B%E8%AF%952-2.png" class title="测试2-2">
-
-<p>注册功能验证成功~</p>
-<h3 id="实现登录功能"><a href="#实现登录功能" class="headerlink" title="实现登录功能"></a>实现登录功能</h3><blockquote>
-<p>登录功能说明：</p>
-<p>通过发送username和password进行登录</p>
-<ul>
-<li><p>如果uername不存在，就返回“该用户不存在，请先注册”</p>
-</li>
-<li><p>如果username存在，要先进行密码校验</p>
-<ul>
-<li>密码校验不成功——返回“密码错误”</li>
-<li>密码校验成功——返回token</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h4 id="登录功能部署"><a href="#登录功能部署" class="headerlink" title="登录功能部署"></a>登录功能部署</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line"><span class="comment">// 登录功能</span></span><br><span class="line"><span class="keyword">const</span> bcryptjs = <span class="built_in">require</span>(<span class="string">&#x27;bcryptjs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;username, password&#125; = req.<span class="property">body</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">body</span>);</span><br><span class="line">    <span class="keyword">const</span> model = <span class="keyword">await</span> <span class="title class_">User</span>.<span class="title function_">findOne</span>(&#123;<span class="attr">where</span>: &#123;<span class="attr">username</span>: username&#125;&#125;);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(model);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!model) &#123;</span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;该用户不存在，请先注册！&#x27;</span>&#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 如果存在username就要进行密码校验</span></span><br><span class="line">        <span class="keyword">const</span> passwordValid = bcryptjs.<span class="title function_">compareSync</span>(password, model.<span class="property">dataValues</span>.<span class="property">password</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!passwordValid) &#123;</span><br><span class="line">            <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;密码错误！&#x27;</span>&#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;登录成功！&#x27;</span>&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>正确输入用户名和密码：</p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E7%99%BB%E5%BD%951.png" class title="登录1">
-
-<p>输入错误密码：</p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E7%99%BB%E5%BD%952.png" class title="登录2">
-
-<p>输入未注册用户名：</p>
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E7%99%BB%E5%BD%953.png" class title="登录3">
-
-<h4 id="token生成及返回_jsonwebtoken"><a href="#token生成及返回-jsonwebtoken" class="headerlink" title="token生成及返回_jsonwebtoken"></a>token生成及返回_jsonwebtoken</h4><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009494020">jwt中文文档</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jwt.<span class="title function_">sign</span>(payload, secretOrPrivateKey, [options, callback]);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line"><span class="keyword">const</span> token = jwt.<span class="title function_">sign</span>(&#123;username&#125;, <span class="string">&#x27;ccken&#x27;</span>)</span><br><span class="line">res.<span class="title function_">send</span>(&#123;token&#125;)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/token.png" class title="token">
-
-<h3 id="实现权限校验"><a href="#实现权限校验" class="headerlink" title="实现权限校验"></a>实现权限校验</h3><blockquote>
-<p>权限校验说明：</p>
-<ol>
-<li>token包含在请求头里面，所以第一步我们要获取token<ul>
-<li>如果没有token说明前面没有登录过或者是登录已经失效，返回“请登录”</li>
-</ul>
-</li>
-<li>利用token 密钥 和 payload对token进行解析</li>
-<li>对解析结果进行校验查询<ul>
-<li>如果查询结果为空，返回’请注册‘</li>
-<li>如果不为空，则说明“权限校验成功！”</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/user.js</span></span><br><span class="line"><span class="comment">// 权限校验</span></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/auth&#x27;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 获取token，token是在请求头里面的</span></span><br><span class="line">    <span class="keyword">const</span> token =  <span class="title class_">String</span>(req.<span class="property">headers</span>.<span class="property">authorization</span>).<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">pop</span>();</span><br><span class="line">    <span class="comment">// 如果没有token说明前面没有登录过或者是登录已经失效</span></span><br><span class="line">    <span class="keyword">if</span> (!token) <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;请登录！&#x27;</span>&#125;)</span><br><span class="line">    <span class="comment">// 根据密钥和字段解析token</span></span><br><span class="line">    <span class="keyword">const</span> &#123;username&#125; = jwt.<span class="title function_">verify</span>(token, <span class="string">&#x27;ccken&#x27;</span>);   <span class="comment">// 之前使用username进行注册的</span></span><br><span class="line">    <span class="comment">// 对解析结果进行校验查询</span></span><br><span class="line">    <span class="keyword">const</span> model = <span class="title class_">User</span>.<span class="title function_">findOne</span>(&#123;<span class="attr">where</span>: &#123;<span class="attr">username</span>: username&#125;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!model) &#123;</span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;请注册！&#x27;</span>&#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.<span class="title function_">send</span>(&#123;<span class="attr">msg</span>: <span class="string">&#x27;权限校验成功！&#x27;</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/07/27/Demo/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD_node+express+mysql%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Atoken%E6%A0%A1%E9%AA%8C/%E6%A0%A1%E9%AA%8C1.png" class title="校验1">
-
-
-
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>以上过程的代码放在github了~</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/express-js-app-listen-function/">app.listen参数</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.sequelize.com.cn/">sequelize文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/routes">Express 教程 4：路由和控制器</a></p>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009494020">jwt中文文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6898630134530752520">cookie、session、token、jwt、单点登录</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1872,13 +1774,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">332k</span>
+    <span title="Symbols count total">335k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:02</span>
+    <span title="Reading time total">5:05</span>
   </span>
 </div>
 <div class="busuanzi-count">

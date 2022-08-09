@@ -23,7 +23,7 @@
     <meta name="description" content="学习资料redux源码 v 4.x 学习目标 redux源码createStore（Part1） redux中间件原理（Part2） redux源码combineReducers（Part3）  过程解析getUndefinedStateErrorMessage1234567891011function getUndefinedStateErrorMessage(key, action) &amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redux源码 | Part3_combineReducers &amp;&amp; bindActionCreators">
-<meta property="og:url" content="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/index.html">
+<meta property="og:url" content="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/index.html">
 <meta property="og:site_name" content="耿直咸鱼">
 <meta property="og:description" content="学习资料redux源码 v 4.x 学习目标 redux源码createStore（Part1） redux中间件原理（Part2） redux源码combineReducers（Part3）  过程解析getUndefinedStateErrorMessage1234567891011function getUndefinedStateErrorMessage(key, action) &amp;#12">
 <meta property="og:locale" content="en_US">
@@ -36,11 +36,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/">
+<link rel="canonical" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/","path":"2022/08/02/源码阅读/源码_redux源码（三）_ middleware/","title":"redux源码 | Part3_combineReducers && bindActionCreators"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/","path":"2022/08/02/源码阅读/redux源码 _Part3_combineReducers && bindActionCreators/","title":"redux源码 | Part3_combineReducers && bindActionCreators"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>redux源码 | Part3_combineReducers && bindActionCreators | 耿直咸鱼</title>
@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">58</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">96</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">59</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">97</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -166,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -177,7 +177,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">59</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -230,7 +230,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/%E6%BA%90%E7%A0%81_redux%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%89%EF%BC%89_%20middleware/">
+    <link itemprop="mainEntityOfPage" href="https://superkatrina123.github.io/2022/08/02/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/redux%E6%BA%90%E7%A0%81%20_Part3_combineReducers%20&&%20bindActionCreators/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -372,6 +372,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/08/09/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B_%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84auto/" rel="next" title="盒模型 | 奇奇怪怪的auto">
+                  盒模型 | 奇奇怪怪的auto <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -403,13 +406,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">332k</span>
+    <span title="Symbols count total">335k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:02</span>
+    <span title="Reading time total">5:05</span>
   </span>
 </div>
 <div class="busuanzi-count">
